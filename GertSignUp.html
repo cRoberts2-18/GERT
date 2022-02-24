@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html translate=no>
+<link rel="stylesheet" href="GERT.css">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <title>GERT - Sign Up</title>
-<style type="text/css">
-body{
-	background-size: cover;
-}
-header{
-	padding:10px;  
-	border-radius:5px;  
-}  
-.center{
-	text-align: center;
-	font-family: "Times New Roman", Times, serif;
-	font-size: 30px;
-}
-.form{
-	text-align: center;
-	font-family: Times, Serif;
-	font-size: 20px;
-}
-.right{
-	text-align: right;
-	font-family: Times, Serif;
-	font-size: 30px;
-}
-</style>
+
 <header>
 <h2 class="center">GERT: Global Emmissions Research Tool</h2>
 </header>
@@ -37,9 +16,18 @@ header{
 <label for="password">Enter Desired Password:</label><br>
 <input type="text" id="password" name="password" placeholder="Password"><br>
 <input type="text" id="checkpassword" name="checkpassword" placeholder="Re-Enter password"><br>
-<input type=submit value = "Sign Up">
-<input type = button value = "Go Back">
+<input class="buttonstyle" type=button onclick="SignedUp()" value = "Sign Up">
+<input class="buttonstyle" type = button onclick="GoBack()" value = "Go Back">
 </form>
 </body>
+<script>
+  function GoBack() {
+    window.location.href = 'GertLogin.html';
+  }
+  function SignedUp() {
+    alert("you signed up");
+  }
+  </script>
+
 
 </html>
