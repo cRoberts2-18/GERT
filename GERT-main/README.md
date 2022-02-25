@@ -1,2 +1,0 @@
-# GERT
-# LETS GET GERTY
