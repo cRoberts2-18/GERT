@@ -138,6 +138,11 @@ header{
 .form a{
 	font-size: 25px;
 }
+.smallform{
+	text-align: centre;
+	font-size: 16px;
+	left: 50%;
+}
 .box{
 	height: 40px;
 	width: 300px;
