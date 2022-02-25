@@ -13,9 +13,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a href="#">Save Search</a>
+      <a href="#">Load Search</a>
+	  <a href="#">View My Searches</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -23,9 +23,8 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a href="#">New Search</a>
+      <a href="#">Example Searches</a>
     </div>
   </div>
   <div class="dropdown">
@@ -33,9 +32,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a href="#">General</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Profile</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -43,9 +42,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a href="#">Getting Started</a>
+      <a href="#">Data explanations</a>
+      <a href="#">Help</a>
     </div>
   </div> 
   <optionR onclick="SignOut()">Sign Out</optionR>
@@ -53,11 +52,41 @@
 </header>
 
 <body>
-body
+
+<div id="mySidebar" class="sidebar">
+  <a href="#">button to open analytics</a>
+  <a href="#">=============</a>
+  <a href="#">Here we will be displaying data</a>
+  <a href="#">it will be able to be filtered here too</a>
+ 
+</div>
+
+<div id="main">
+  <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
 </body>
+
+<iframe src="placeholderMap.png" class="map"></iframe>
+
+
 <script>
 function SignOut() {
     window.location.href = 'GertLogin.html';
   }
+  
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-left\"></i>";
+  document.getElementById("sideButton").setAttribute( "onClick", "javascript: closeNav();" );
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-right\"></i>";
+  document.getElementById("sideButton").setAttribute( "onClick", "javascript: openNav();" );
+}
 </script>
 </html>
