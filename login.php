@@ -20,7 +20,7 @@ $result = $conn->query($sqlQueryDetails);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    if ($row["Username"].toLowerCase() == $uName.toLowerCase() && $row["Password"] == $pWord){
+    if ($row["Username"].val().toLowerCase() == $uName.val().toLowerCase() && $row["Password"] == $pWord){
       echo "true";
       }
     else{
