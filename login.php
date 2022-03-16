@@ -20,7 +20,12 @@ $result = $conn->query($sqlQueryDetails);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo $row["Username"]. $row["Password"].$row["Email"].$row["UserID"].$uName.$pWord;
+    if (($row["Username"] == $uName) && ($row["Password"] == $pWord)){
+      echo true
+      }
+    else{
+      echo false
+      }
   }
 } else {
   echo "0 results";
