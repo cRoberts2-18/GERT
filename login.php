@@ -4,7 +4,7 @@ $username = "root";
 $password = "root";
 $dbname = "GERT";
 
-$username = $_POST['username'];
+$username1 = $_POST['username'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
   
