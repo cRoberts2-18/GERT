@@ -12,5 +12,5 @@ if ($conn->connect_error) {
   
 $sqlQueryDetails = "SELECT * FROM `Users`;
 $result = $conn->query($sqlQueryDetails);
-return $result;
+echo $result;
 </php>
