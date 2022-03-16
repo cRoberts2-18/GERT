@@ -21,10 +21,10 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
     if ($row["Username"] == $uName && $row["Password"] == $pWord){
-      echo "true"
+      echo "true";
       }
     else{
-      echo "false"
+      echo "false";
       }
   }
 } else {
