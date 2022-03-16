@@ -8,6 +8,7 @@
   function SignUp() {
     window.location.href = 'GertSignUp.html';
   }
+  
 
 $(function() {
   $("#Submit").click(function () {
@@ -23,7 +24,12 @@ $(function() {
         alert(msg);
       })   
       .fail(function(msg){
-        alert(msg);
+        if(msg == "true"){
+          window.location.href = 'GertHome.html';
+        }
+        if(msg == "false"){
+          alert("incorrect username or password");
+        }
       });
     });
  
