@@ -11,11 +11,11 @@
 
 $(function() {
   $("#Submit").click(function () {
-    var uName = $("#username").val(); 
+    var $uName = $("#username").val(); 
     $.ajax({
       method: "POST",
       url: "login.php"
-      data: {uName = $uName}
+      data: {uName:$uName}
       
     })
       .done(function(msg) {
