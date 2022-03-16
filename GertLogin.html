@@ -12,10 +12,11 @@
 $(function() {
   $("#Submit").click(function () {
     var $uName = $("#username").val(); 
+    var $pWord = $("#password").val(); 
     $.ajax({
       method: "POST",
       url: "login.php",
-      data: {uName:$uName}
+      data: {uName:$uName , pWord:$pWord}
       
     })
       .done(function(msg) {
