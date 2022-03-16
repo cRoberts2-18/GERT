@@ -35,8 +35,9 @@ $(function() {
     $.ajax({
       method: "POST";
       url: "login.php";
-      success:function(data){
-        alert(data)
+      .done(function( msg ) {
+        alert(msg);
+      });   
       }
     });
   )};
