@@ -17,7 +17,7 @@ $result = $conn->query($sqlQueryDetails);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "Username: " . $row["Username"]. " - Password: " . $row["Password"]. "Email" . $row["Email"]. "id:" $row["UserID"]";
+    echo $row["Username"]. $row["Password"].$row["Email"].$row["UserID"];
   }
 } else {
   echo "0 results";
