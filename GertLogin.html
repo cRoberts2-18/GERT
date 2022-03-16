@@ -35,11 +35,11 @@ $(function() {
     $.ajax({
       method: "get";
       url: "login.php";
-    <!-- data:{} -->
+      data: datastring;
     });
   
-    .done(function(message){
-      alert(message);
+    .done(function(data){
+      alert(data);
     )}
   )};
 )};
