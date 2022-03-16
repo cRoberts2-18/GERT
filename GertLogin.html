@@ -3,9 +3,11 @@
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <title>GERT - Login</title>
+
 <header>
 <h2 class="center">GERT: Global Emmissions Research Tool</h2>
 </header>
+  
 <body>
 <form class="form">User Login<br><br>
 <label for="username">Username:</label><br>
@@ -18,13 +20,29 @@
 </form>
 </body>
 
-  <script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>7
+<script>
   function goHome() {
     window.location.href = 'GertHome.html';
   }
   function SignUp() {
     window.location.href = 'GertSignUp.html';
   }
-  </script>
 
+  
+$(function () {
+  $.ajax({
+    method: "POST";
+    url: "login.php";
+  <!-- data:{} -->
+  })
+  
+  .done(function(message){
+    alert(message);
+  }
+}
+</script>
+  
+  
 </html>
