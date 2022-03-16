@@ -10,7 +10,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
   
-$sqlQueryDetails = "SELECT * FROM `Users`;
+$sqlQueryDetails = "SELECT * FROM `Users`";
 $result = $conn->query($sqlQueryDetails);
 
   
