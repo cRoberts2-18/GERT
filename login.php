@@ -4,6 +4,7 @@ $username = "root";
 $password = "root";
 $dbname = "GERT";
 
+$uName = $_POST['uName'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
   
@@ -18,7 +19,7 @@ $result = $conn->query($sqlQueryDetails);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo $row["Username"]. $row["Password"].$row["Email"].$row["UserID"].$username1 ;
+    echo $row["Username"]. $row["Password"].$row["Email"].$row["UserID"].$uName ;
   }
 } else {
   echo "0 results";
