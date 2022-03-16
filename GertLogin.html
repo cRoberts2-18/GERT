@@ -5,9 +5,6 @@
 <title>GERT - Login</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-  function goHome() {
-    window.location.href = 'GertHome.html';
-  }
   function SignUp() {
     window.location.href = 'GertSignUp.html';
   }
@@ -41,7 +38,7 @@ $(function() {
 <label for="password">Password:</label><br>
 <input type="text" id="password" name="password" placeholder="Enter password" class = "box"><br>
 <a href="GertResetPassword.html">Forgot Password?</a><br>
-<button class="buttonstyle" value = "Submit">Submit</button>
+<button class="buttonstyle" id = "Submit" value = "Submit">Submit</button>
 <button class="buttonstyle" type = button onclick="SignUp()" value = "Sign Up">
 </form>
 </body>
