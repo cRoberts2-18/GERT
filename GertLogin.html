@@ -21,15 +21,15 @@ $(function() {
       
     })
       .done(function(msg) {
-        alert(msg);
-      })   
-      .fail(function(msg){
         if(msg == "true"){
           window.location.href = 'GertHome.html';
         }
         if(msg == "false"){
           alert("incorrect username or password");
         }
+      })   
+      .fail(function(msg){
+        alert("Error");
       });
     });
  
