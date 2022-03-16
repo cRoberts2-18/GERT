@@ -30,8 +30,8 @@
     window.location.href = 'GertSignUp.html';
   }
 
-$function() {
-  $("#Submit").on("click", function () {
+$(function() {
+  $("#Submit").click(function () {
     $.ajax({
       method: "get";
       url: "login.php";
@@ -40,7 +40,7 @@ $function() {
   
     .done(function(message){
       alert(message);
-    }
+    )}
   )};
 )};
 </script>
