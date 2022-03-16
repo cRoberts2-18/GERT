@@ -30,18 +30,19 @@
     window.location.href = 'GertSignUp.html';
   }
 
+$function() {
+  $("#Submit").on("click", function () {
+    $.ajax({
+      method: "POST";
+      url: "login.php";
+    <!-- data:{} -->
+    });
   
-$("#Submit").on("click", function (e) {
-  $.ajax({
-    method: "POST";
-    url: "login.php";
-  <!-- data:{} -->
-  })
-  
-  .done(function(message){
-    alert(message);
-  }
-}
+    .done(function(message){
+      alert(message);
+    }
+  )};
+)};
 </script>
   
   
