@@ -86,6 +86,7 @@ $(function() {
 	  $.ajax({
   		url: 'GERTLogout.php',
   		success: function(data) {
+			 window.location.href = 'GertLogin.php';
     		}
 });
 });
