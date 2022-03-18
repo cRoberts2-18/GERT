@@ -14,10 +14,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-  
+
+$Maxresult = mysqli_query($conn, "SELECT MAX(UserID) FROM `Users`");
+$row = mysqli_fetch_array($Maxresult);
+$MaxID = $row[0]+1;
+
 $sqlQueryDetails = "SELECT * FROM `Users`";
 
-$sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('$uName', '$pWord', '$email', '3');";
+$sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('$uName', '$pWord', '$email', '$MaxID');";
 $result = $conn->query($sqlQueryDetails);
 $usernameMatch = false;
 $emailMatch = false;
