@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
       session_start();
       $_SESSION["GERTloggedin"] = true;
       $_SESSION["Username"] = $row["Username"];
-    exit
+    exit;
     }
     
     else{
