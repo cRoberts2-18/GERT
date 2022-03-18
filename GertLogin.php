@@ -32,8 +32,8 @@ $(function() {
         if(msg == "true"){
           window.location.href = 'GertHome.php';
         }
-        else{//if(msg == "false"){
-          alert(msg);
+        else{
+          alert("Invalid username or password");
         }
       })   
       .fail(function(msg){
@@ -55,8 +55,8 @@ $("#s").keypress(function(e) {
         if(msg == "true"){
           window.location.href = 'GertHome.php';
         }
-        if(msg == "false"){
-          alert("incorrect username or password");
+        else{
+          alert("Invalid username or password");
         }
       })   
       .fail(function(msg){
