@@ -19,7 +19,7 @@ $(function() {
     $.ajax({
       method: "POST",
       url: "signUp.php",
-      data: {email:$email ,uName:$uName, pWord:$pWord, $pWordCheck:$pWordCheck}
+      data: {email:$email ,uName:$uName, pWord:$pWord, pWordCheck:$pWordCheck}
       
     })
       .done(function(msg) {
