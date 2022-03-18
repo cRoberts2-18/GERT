@@ -27,10 +27,6 @@ if ($result->num_rows > 0) {
       $_SESSION["Username"] = $row["Username"];
     exit;
     }
-    
-    else{
-      echo "false";
-      }
   }
 } else {
   echo "0 results";
