@@ -43,7 +43,7 @@ $(function() {
  
 });
     
-$("#s").keypress(function(e) {
+$(document).keypress(function(e) {
     if(e.which == 13) {
         $.ajax({
       method: "POST",
