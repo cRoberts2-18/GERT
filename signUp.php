@@ -26,7 +26,7 @@ if($pWord == $pWordCheck){
     if($email == $row['Email']){
       $emailMatch = true;
     }
-    if($uName == $row['Username']){
+    if(strtolower($uName) == strtolower($row['Username'])){
       $usernameMatch = true;
     }
   }
