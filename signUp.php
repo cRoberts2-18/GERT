@@ -17,12 +17,19 @@ if ($conn->connect_error) {
   
 $sqlQueryDetails = "SELECT * FROM `Users`";
 $result = $conn->query($sqlQueryDetails);
-
-  
-if ($result->num_rows > 0) {
+var passMatch; 
+if($pWord == $pWordCheck){
+  if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo $email.$uName.$pWord.$pWordCheck;
+    if($email == $row["email"]){
+      echo "email Match";
+    }
   }
 }
+}
+else{
+echo "Passwords Do not Match" ;
+}
+
 ?>
