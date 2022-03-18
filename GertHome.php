@@ -10,6 +10,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 }
 ?>
 <html translate="no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
