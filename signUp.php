@@ -17,7 +17,8 @@ if ($conn->connect_error) {
   
 $sqlQueryDetails = "SELECT * FROM `Users`";
 $result = $conn->query($sqlQueryDetails);
-
+$usernameMatch = false;
+$emailMatch = false;
 if($pWord == $pWordCheck){
   if ($result->num_rows > 0) {
   // output data of each row
