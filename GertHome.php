@@ -1,8 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION["GERTloggedin"]) && $_SESSION["GERTloggedin"] !== true){
-    header("location: GertLogin.php");
-    exit;
+	header("location: GertLogin.php");
+	exit;
+}
+else if(isset($_SESSION["GERTloggedin"])!== true){
+	header("location: GertLogin.php");
+	exit;
 }
 ?>
 <html translate="no">
