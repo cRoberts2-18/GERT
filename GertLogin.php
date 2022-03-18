@@ -42,6 +42,30 @@ $(function() {
     });
  
 });
+    
+$("#s").keypress(function(e) {
+    if(e.which == 13) {
+        $.ajax({
+      method: "POST",
+      url: "login.php",
+      data: {uName:$uName , pWord:$pWord}
+      
+    })
+      .done(function(msg) {
+        if(msg == "true"){
+          window.location.href = 'GertHome.php';
+        }
+        if(msg == "false"){
+          alert("incorrect username or password");
+        }
+      })   
+      .fail(function(msg){
+        alert("Error");
+      });
+    
+    }
+});
+    
 </script>
   
   
