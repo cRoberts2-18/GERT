@@ -59,8 +59,8 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a href="#">Help</a>
     </div>
   </div>
-  <optionR id="Profile"><?php echo $_SESSION["Username"] ?></optionR>	
   <optionR id="SignOut">Sign Out</optionR>
+  <optionR id="Profile"><?php echo $_SESSION["Username"] ?></optionR>	
 </div>
 </header>
 
