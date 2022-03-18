@@ -57,7 +57,7 @@ $(function() {
 <input type="password" id="password" name="password" placeholder="Enter password" class = "box"><br>
 <a href="GertResetPassword.html">Forgot Password?</a><br>
 <button class="buttonstyle" id = "Submit" value = "Submit">Submit</button>
-<button class="buttonstyle" type = button onclick="SignUp()" value = "Sign Up">
+<button class="buttonstyle" type = button onclick="SignUp()" value = "Sign Up">Sign Up</button>
 </form>
 </body>
 
