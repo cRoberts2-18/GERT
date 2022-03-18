@@ -33,7 +33,7 @@ $(function() {
           window.location.href = 'GertHome.php';
         }
         else{//if(msg == "false"){
-          alert(mag);
+          alert(msg);
         }
       })   
       .fail(function(msg){
