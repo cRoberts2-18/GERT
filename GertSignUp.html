@@ -3,7 +3,40 @@
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <title>GERT - Sign Up</title>
-
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+  
+  function GoBack() {
+    window.location.href = 'GertLogin.html';
+  }
+$(function() {
+  $("#SignedUp").click(function () {
+    var $email = $("#email).val();
+    var $uName = $("#username").val(); 
+    var $pWord = $("#password").val(); 
+    $.ajax({
+      method: "POST",
+      url: "login.php",
+      data: {uName:$uName , pWord:$pWord}
+      
+    })
+      .done(function(msg) {
+        if(msg == "true"){
+          window.location.href = 'GertHome.html';
+        }
+        if(msg == "false"){
+          alert("incorrect username or password");
+        }
+      })   
+      .fail(function(msg){
+        alert("Error");
+      });
+    });
+ 
+});
+</script>
+  
 <header>
 <h2 class="center">GERT: Global Emmissions Research Tool</h2>
 </header>
@@ -16,17 +49,12 @@
 <label for="password">Enter Desired Password:</label><br>
 <input type="text" id="password" name="password" placeholder="Password" class = "box"><br>
 <input type="text" id="checkpassword" name="checkpassword" placeholder="Re-Enter password" class = "box"><br>
-<input class="buttonstyle" type=button onclick="SignedUp()" value = "Sign Up">
+<button id="SignUp" value = "Sign Up">
 <input class="buttonstyle" type = button onclick="GoBack()" value = "Go Back">
 </form>
 </body>
 <script>
-  function GoBack() {
-    window.location.href = 'GertLogin.html';
-  }
-  function SignedUp() {
-    alert("you signed up");
-  }
+ 
   </script>
 
 
