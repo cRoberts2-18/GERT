@@ -58,7 +58,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a href="#">Help</a>
     </div>
   </div> 
-  <optionR onclick="SignOut()">Sign Out</optionR>
+  <optionR id="SignOut">Sign Out</optionR>
 </div>
 </header>
 
@@ -80,9 +80,14 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 
 
 <script>
-function SignOut() {
-    window.location.href = 'GertLogin.html';
-  }
+$(function() {
+  $("#SignOut").click(function () {
+	  $.ajax({
+  		url: 'GERTLogout.php',
+  		success: function(data) {
+    		}
+});
+  });
   
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
