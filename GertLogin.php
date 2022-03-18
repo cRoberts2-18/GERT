@@ -30,7 +30,7 @@ $(function() {
     })
       .done(function(msg) {
         if(msg == "true"){
-          window.location.href = 'GertHome.html';
+          window.location.href = 'GertHome.php';
         }
         if(msg == "false"){
           alert("incorrect username or password");
