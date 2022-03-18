@@ -33,7 +33,7 @@ $(function() {
           window.location.href = 'GertHome.php';
         }
         else{//if(msg == "false"){
-          alert("incorrect username or password");
+          alert(mag);
         }
       })   
       .fail(function(msg){
