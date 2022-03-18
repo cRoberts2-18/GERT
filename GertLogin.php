@@ -45,6 +45,8 @@ $(function() {
     
 $(window).keypress(function(e) {
     if(e.which == 13) {
+        var $uName = $("#username").val(); 
+        var $pWord = $("#password").val();
         $.ajax({
       method: "POST",
       url: "login.php",
