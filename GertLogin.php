@@ -28,8 +28,9 @@ $(function() {
       data: {uName:$uName , pWord:$pWord}
       
     })
-      .delay(5000).done(function(msg) {
+      .done(function(msg) {
         if(msg == "true"){
+          alert("test");
           window.location.href = 'GertHome.php';
         }
         if(msg == "false"){
