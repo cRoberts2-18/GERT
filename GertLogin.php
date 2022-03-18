@@ -28,7 +28,7 @@ $(function() {
       data: {uName:$uName , pWord:$pWord}
       
     })
-      .delay(500).done(function(msg) {
+      .delay(5000).done(function(msg) {
         if(msg == "true"){
           window.location.href = 'GertHome.php';
         }
