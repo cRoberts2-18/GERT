@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   
 $sqlQueryDetails = "SELECT * FROM `Users`";
 $sqlInsert = "INSERT INTO Users (".$uName.",".$password.","$email."7)";
-VALUES ('John', 'Doe', 'john@example.com')";
+
 $result = $conn->query($sqlQueryDetails);
 $usernameMatch = false;
 $emailMatch = false;
@@ -43,7 +43,7 @@ if($pWord == $pWordCheck){
   }
   if(!$emailMatch && !$usernameMatch){
     
-    if ($conn->query($sqlInsert) === true) {
+    if ($conn->query($sqlInsert) == true) {
       echo "user created";
     }
   }
