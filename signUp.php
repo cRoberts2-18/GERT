@@ -39,6 +39,9 @@ if($pWord == $pWordCheck){
       }
     }
   }
+  if(!$emailMatch && !usernameMatch){
+    echo "user created";
+  }
 }
 else{
 echo "passwordNotMatch" ;
