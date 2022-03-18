@@ -80,7 +80,7 @@ $("#s").keypress(function(e) {
 <label for="password">Password:</label><br>
 <input type="password" id="password" name="password" placeholder="Enter password" class = "box"><br>
 <a href="GertResetPassword.html">Forgot Password?</a><br>
-<button class="buttonstyle" id = "Submit" value = "Submit">Submit</button>
+<input class="buttonstyle" tpye=button id = "Submit" value = "Submit">
 <button class="buttonstyle" type = button onclick="SignUp()" value = "Sign Up">Sign Up</button>
 </form>
 </body>
