@@ -43,7 +43,7 @@ if($pWord == $pWordCheck){
   }
   if(!$emailMatch && !$usernameMatch){
     
-    if ($conn->query($sqlInsert) == true) {
+    if ($conn->query($sqlInsert) === true) {
       echo "user created";
     }
   }
