@@ -23,13 +23,24 @@ if($pWord == $pWordCheck){
   // output data of each row
   while($row = $result->fetch_assoc()) {
     if($email == $row['Email']){
-      echo "email Match";
+      $emailMatch = true;
+    }
+    if($username == $row['Username']){
+      $usernameMatch = true;
+    }
+  }
+    if($emailMatch){
+     echo "emailMatch";
+    }
+    else{
+      if($usernameMatch){
+         echo "usernameMatch";
+      }
     }
   }
 }
-}
 else{
-echo "Passwords Do not Match" ;
+echo "passwordNotMatch" ;
 }
 
 ?>
