@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   
 $sqlQueryDetails = "SELECT * FROM `Users`";
 
-
+$sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('ddd', 'ddd', 'ddd', '2')";
 $result = $conn->query($sqlQueryDetails);
 $usernameMatch = false;
 $emailMatch = false;
