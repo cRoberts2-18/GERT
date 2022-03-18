@@ -39,7 +39,7 @@ if($pWord == $pWordCheck){
       }
     }
   }
-  if(!$emailMatch && !usernameMatch){
+  if(!$emailMatch && !$usernameMatch){
     echo "user created";
   }
 }
