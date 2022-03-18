@@ -18,8 +18,8 @@ $(function() {
     var $pWordCheck = $("#checkpassword).val();
     $.ajax({
       method: "POST",
-      url: "login.php",
-      data: {uName:$uName , pWord:$pWord}
+      url: "signUp.php",
+      data: {email:$email ,uName:$uName, pWord:$pWord, $pWordCheck:$pWordCheck}
       
     })
       .done(function(msg) {
