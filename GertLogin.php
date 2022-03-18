@@ -30,7 +30,6 @@ $(function() {
     })
       .done(function(msg) {
         if(msg == "true"){
-          alert("test");
           window.location.href = 'GertHome.php';
         }
         if(msg == "false"){
@@ -54,7 +53,6 @@ $("#s").keypress(function(e) {
     })
       .done(function(msg) {
         if(msg == "true"){
-          alert("test");
           window.location.href = 'GertHome.php';
         }
         if(msg == "false"){
