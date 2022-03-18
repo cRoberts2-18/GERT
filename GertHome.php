@@ -46,7 +46,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
     <div class="dropdown-content">
       <a href="#">General</a>
       <a href="#">Accessibility</a>
-      <a href="#">Profile</a>
+      
     </div>
   </div> 
   <div class="dropdown">
@@ -58,7 +58,8 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a href="#">Data explanations</a>
       <a href="#">Help</a>
     </div>
-  </div> 
+  </div>
+  <optionR id="Profile"><?php echo $_SESSION["Username"] ?></optionR>	
   <optionR id="SignOut">Sign Out</optionR>
 </div>
 </header>
