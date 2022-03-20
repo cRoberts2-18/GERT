@@ -27,8 +27,12 @@ $result = $conn->query($sqlQueryDetails);
 
 
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
+if(strlen($pWord) < 8 || strlen($pWord) > 16){
+  echo("$uName is not 8 - 17 characters long");
+  exit();
+}
 
-
+//email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       echo("$email is not a valid email address");
       exit();
