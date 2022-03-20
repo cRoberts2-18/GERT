@@ -41,7 +41,7 @@ if(strlen($pWord) < 8 || strlen($pWord) > 16){
   exit();
 }
 
-if(preg_match("/[A-Z]/" , $pWord) && preg_match("/[a-z]/" , $pWord) ){
+if(preg_match("/[A-Z]/" , $pWord) && preg_match("/[a-z]/" , $pWord) && preg_match("/[0-9]/" , $pWord) && preg_match("/[\W]/" , $pWord)   ){
   echo("Password Good");
   exit();
 }
