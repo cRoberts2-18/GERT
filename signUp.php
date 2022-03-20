@@ -28,7 +28,7 @@ if(strlen($uName) < 8 || strlen($uName) > 16){
   echo("$uName is not 8 - 16 characters long");
   exit();
 }
-if(preg_match([\W] , $uName){
+if(preg_match([\W]+ , $uName){
   echo("wrong");
 }
 
