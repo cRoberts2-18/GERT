@@ -37,7 +37,7 @@ if(preg_match("[\W]" , $uName)){
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
 if(strlen($pWord) < 8 || strlen($pWord) > 16){
-  echo("$pWord is not 4 - 12 characters long");
+  echo("$pWord is not 8 - 16 characters long");
   exit();
 }
 
