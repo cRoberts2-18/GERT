@@ -28,8 +28,11 @@ $result = $conn->query($sqlQueryDetails);
 
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
-//email check valid - code from net https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
-var emailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo("$email is a valid email address");
+      exit();
+   }
 
 if(!$email.value.match(emailValid){
   echo "email not good";
