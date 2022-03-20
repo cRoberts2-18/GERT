@@ -23,17 +23,28 @@ $sqlQueryDetails = "SELECT * FROM `Users`";
 
 $sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('$uName', '$pWord', '$email', '$MaxID');";
 $result = $conn->query($sqlQueryDetails);
+
 //username check valid - 4 - 12 characters - no special
-if(strlen($uName) < 8 || strlen($uName) > 16){
+if(strlen($uName) < 4 || strlen($uName) > 12){
   echo("$uName is not 8 - 16 characters long");
   exit();
 }
 if(preg_match("[\W]" , $uName)){
-  echo("$uName is Wrong");
+  echo("$uName has illegal characters.");
+  exit();
 }
 
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
+if(strlen($pWord) < 8 || strlen($pWord) > 16){
+  echo("$pWord is not 4 - 12 characters long");
+  exit();
+}
+
+if(preg_match("[A-Z]" , $pWord) && preg_match("[a-z]" , $pWord) && preg_match("[\d]" , $pWord) && preg_match("[\w]" , $pWord)){
+  echo("Password Good");
+  exit();
+}
 
 //email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
