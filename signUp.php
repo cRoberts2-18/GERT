@@ -24,16 +24,16 @@ $sqlQueryDetails = "SELECT * FROM `Users`";
 $sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('$uName', '$pWord', '$email', '$MaxID');";
 $result = $conn->query($sqlQueryDetails);
 //username check valid - 4 - 12 characters - no special
-
-
-//password check valid - 8 - 16 characters 1 special 1 capital 1 number  
-if(strlen($pWord) < 8 || strlen($pWord) > 16){
+if(strlen($uName) < 8 || strlen($uName) > 16){
   echo("$uName is not 8 - 16 characters long");
   exit();
 }
-if(preg_match([\W] , $pWord){
+if(preg_match([\W] , $uName){
   echo("wrong");
 }
+
+//password check valid - 8 - 16 characters 1 special 1 capital 1 number  
+
 
 //email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
