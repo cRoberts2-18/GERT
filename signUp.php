@@ -23,6 +23,19 @@ $sqlQueryDetails = "SELECT * FROM `Users`";
 
 $sqlInsert = "INSERT INTO `Users` (`Username`, `Password`, `Email`, `UserID`) VALUES ('$uName', '$pWord', '$email', '$MaxID');";
 $result = $conn->query($sqlQueryDetails);
+//username check valid - 4 - 12 characters - no special
+
+
+//password check valid - 8 - 16 characters 1 special 1 capital 1 number  
+
+//email check valid - code from net https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
+var emailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if(!$email.value.match(emailValid){
+  echo "email not good";
+  exit();
+}
+
 $usernameMatch = false;
 $emailMatch = false;
 if($pWord == $pWordCheck){
