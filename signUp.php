@@ -29,8 +29,8 @@ $result = $conn->query($sqlQueryDetails);
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      echo("$email is a valid email address");
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      echo("$email is not a valid email address");
       exit();
    }
 
