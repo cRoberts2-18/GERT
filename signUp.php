@@ -34,11 +34,6 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
       exit();
    }
 
-if(!$email.value.match(emailValid){
-  echo "email not good";
-  exit();
-}
-
 $usernameMatch = false;
 $emailMatch = false;
 if($pWord == $pWordCheck){
