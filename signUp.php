@@ -28,7 +28,9 @@ if(strlen($uName) < 8 || strlen($uName) > 16){
   echo("$uName is not 8 - 16 characters long");
   exit();
 }
-
+if(preg_match("[\W]+" , $uName)){
+  echo("$uName is Wrong");
+}
 
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
