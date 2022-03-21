@@ -23,7 +23,7 @@ if(mysqli_num_rows($result)==1)
     $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
     require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
     require '/usr/share/php/libphp-phpmailer/class.smtp.php';
-    $mail = new PHPMailer;
+    /*$mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
     $mail->Subject = 'Message sent by PHPMailer';
@@ -43,7 +43,7 @@ if(mysqli_num_rows($result)==1)
     echo 'Email error: ' . $mail->ErrorInfo;
 } else {
     echo 'Email has been sent.';
-}
+}*/
 
   
   echo $link;
