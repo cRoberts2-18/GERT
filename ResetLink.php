@@ -27,14 +27,14 @@ if(mysqli_num_rows($result)==1)
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
     $mail->Subject = 'Password Reset';
-    $mail->Body = 'Click the link to reset password: '.$link;
+    $mail->Body = $link;
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
     $mail->Host = 'ssl://smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Port = 465;
     //Set your existing gmail address as user name  
-    $mail->Username = 'gertool31@gmail.com';
+    $mail->Username = 'GERT';
 
   //Set the password of your gmail address here
   $mail->Password = 'Gert_123';
@@ -44,12 +44,5 @@ if(mysqli_num_rows($result)==1)
 } else {
     echo 'Email has been sent.';
 }
-
-  
-  echo $link;
 }
-else{echo "lmao";}
-
-
-
 ?>
