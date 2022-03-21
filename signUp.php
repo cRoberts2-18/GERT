@@ -26,7 +26,7 @@ $result = $conn->query($sqlQueryDetails);
 
 //username check valid - 4 - 12 characters - no special
 if(strlen($uName) < 4 || strlen($uName) > 12){
-  echo("$uName is not 8 - 16 characters long");
+  echo("$uName is not 4 - 12 characters long");
   exit();
 }
 if(preg_match("[\W]" , $uName)){
