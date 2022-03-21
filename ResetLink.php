@@ -15,7 +15,7 @@ $select="SELECT * FROM `Users` WHERE `Email` = '$Email';";
 $result=$conn->query($select);
 if(mysqli_num_rows($result)==1)
   {
-  while($row=mysql_fetch_array($select))
+  while($row = $result->fetch_assoc())
     {
       $email=md5($row['Email']);
       $pass=md5($row['Password']);
