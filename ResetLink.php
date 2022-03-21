@@ -24,9 +24,9 @@ if(mysqli_num_rows($result)==1)
     require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
     require '/usr/share/php/libphp-phpmailer/class.smtp.php';
     $mail = new PHPMailer;
-    /*$mail->setFrom('gertool31@gmail.com');
+    $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
-    $mail->Subject = 'Message sent by PHPMailer';
+    /*$mail->Subject = 'Message sent by PHPMailer';
     $mail->Body = 'Hello! use PHPMailer to send email using PHP';
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
