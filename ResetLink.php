@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 $select="SELECT * FROM `Users` WHERE `Email` = '$email';";
 $result=$conn->query($select);
-if(mysqli_num_rows($select)==1)
+if(mysqli_num_rows($result)==1)
   {
   while($row=mysql_fetch_array($select))
     {
@@ -51,7 +51,7 @@ if(mysqli_num_rows($select)==1)
       echo "Mail Error - >".$mail->ErrorInfo;
     }
 }
-else{echo $email;}
+else{echo mysqli_num_rows($result);}
 
 
 
