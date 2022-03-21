@@ -33,6 +33,7 @@ header{
 	text-align: center;
 	color: #4BB3E1;
 	font-size: 30px;
+
 	padding-top: 10px;	
 	Padding-bottom: 10px;
 }
@@ -137,6 +138,10 @@ header{
 }
 .form a{
 	font-size: 25px;
+}
+.form p{
+	font-size: 11px;
+	font-color: red;
 }
 .smallform{
 	text-align: centre;
