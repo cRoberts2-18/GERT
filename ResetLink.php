@@ -5,7 +5,6 @@ $password = "root";
 $dbname = "GERT";
 
 $email = $_POST['email'];
-echo $email;
 $conn = new mysqli($servername, $username, $password, $dbname);
   
 if ($conn->connect_error) {
@@ -15,7 +14,7 @@ if ($conn->connect_error) {
 $select=mysql_query("SELECT * FROM `Users` WHERE `Email` = 'admin@admin.co.uk';");
 if(mysql_num_rows($select)==1)
   {
-  echo $row['Email'];   
+  echo $email;   
 }
 
 
