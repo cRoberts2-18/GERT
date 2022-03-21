@@ -44,7 +44,7 @@ if(mysqli_num_rows($result)==1)
 } else {
     echo 'Email has been sent.';
 }
-?>  
+
   
   echo $link;
 }
