@@ -33,8 +33,7 @@ $(function() {
       .done(function(msg) {
         if(msg == "user created"){
           notifyMessage(msg + "returning to login page","success")
-          pause(1000);
-          window.location.href = 'GertLogin.php';
+          setTimeout(goBack,1000);
         }
         
 
