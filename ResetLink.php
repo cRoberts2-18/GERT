@@ -20,8 +20,8 @@ if(mysqli_num_rows($result)==1)
       $email=md5($row['Email']);
       $pass=md5($row['Password']);
     }
-    $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
-    require_once('phpmail/PHPMailerAutoload.php');
+    //$link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
+    //require_once('phpmail/PHPMailerAutoload.php');
     /*$mail = new PHPMailer();
     $mail->CharSet =  "utf-8";
     $mail->IsSMTP();
