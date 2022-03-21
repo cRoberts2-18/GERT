@@ -27,7 +27,7 @@ if(mysqli_num_rows($result)==1)
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
     $mail->Subject = 'Password Reset';
-    $mail->Body = $link;
+    $mail->Body = "Test";
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
     $mail->Host = 'ssl://smtp.gmail.com';
