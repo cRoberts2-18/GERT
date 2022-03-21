@@ -23,8 +23,9 @@ $(function() {
       
     })
       .done(function(msg) {
-        alert(msg);
-        window.location.href = 'GertLogin.php';
+        if(msg == "user created"){
+          window.location.href = 'GertLogin.php';
+        }
       })   
       .fail(function(msg){
         alert("Error");
