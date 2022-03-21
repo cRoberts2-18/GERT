@@ -50,8 +50,7 @@ if(mysqli_num_rows($result)==1)
     {
       echo "Mail Error - >".$mail->ErrorInfo;
     }*/
-  echo $email;
-  echo $pass;
+  echo $link;
 }
 else{echo "lmao";}
 
