@@ -37,8 +37,8 @@ if(mysqli_num_rows($result)==1)
     $mail->Username = <a href="mailto:'gertool31@gmail.com">'gertool31@gmail.com</a>';
 
   //Set the password of your gmail address here
-  $mail->Password = 'Gert_123';
-  /*if(!$mail->send()) {
+  /*$mail->Password = 'Gert_123';
+  if(!$mail->send()) {
     echo 'Email is not sent.';
     echo 'Email error: ' . $mail->ErrorInfo;
 } else {
