@@ -26,8 +26,8 @@ if(mysqli_num_rows($result)==1)
     $mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
-    $mail->Subject = 'Message sent by PHPMailer';
-    $mail->Body = 'Hello! use PHPMailer to send email using PHP';
+    $mail->Subject = 'Password Reset';
+    $mail->Body = 'Click the link to reset password'.$link;
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
     $mail->Host = 'ssl://smtp.gmail.com';
