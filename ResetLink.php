@@ -21,35 +21,31 @@ if(mysqli_num_rows($result)==1)
       $pass=md5($row['Password']);
     }
     $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
-    //require_once('phpmail/PHPMailerAutoload.php');
-    /*$mail = new PHPMailer();
-    $mail->CharSet =  "utf-8";
+    require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
+    require '/usr/share/php/libphp-phpmailer/class.smtp.php';
+    $mail = new PHPMailer;
+    $mail->setFrom('gertool31@gmail.com');
+    $mail->addAddress($Email);
+    $mail->Subject = 'Message sent by PHPMailer';
+    $mail->Body = 'Hello! use PHPMailer to send email using PHP';
     $mail->IsSMTP();
-    // enable SMTP authentication
-    $mail->SMTPAuth = true;                  
-    // GMAIL username
-    $mail->Username = "gertool31@gmail.com";
-    // GMAIL password
-    $mail->Password = "Gert_123";
-    $mail->SMTPSecure = "ssl";  
-    // sets GMAIL as the SMTP server
-    $mail->Host = "smtp.gmail.com";
-    // set the SMTP port for the GMAIL server
-    $mail->Port = "465";
-    $mail->From='gertool31@gmail.com';
-    $mail->FromName='GERT';
-    $mail->AddAddress($email, $email);
-    $mail->Subject  =  'Reset Password';
-    $mail->IsHTML(true);
-    $mail->Body    = 'Click On This Link to Reset Password '.$link.'';
-    if($mail->Send())
-    {
-      echo "Check Your Email and Click on the link sent to your email";
-    }
-    else
-    {
-      echo "Mail Error - >".$mail->ErrorInfo;
-    }*/
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'ssl://smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Port = 465;
+    //Set your existing gmail address as user name  
+    $mail->Username = <a href="mailto:'gertool31@gmail.com">'gertool31@gmail.com</a>';
+
+  //Set the password of your gmail address here
+  $mail->Password = 'Gert_123';
+  if(!$mail->send()) {
+    echo 'Email is not sent.';
+    echo 'Email error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Email has been sent.';
+}
+?>  
+  
   echo $link;
 }
 else{echo "lmao";}
