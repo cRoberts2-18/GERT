@@ -9,7 +9,7 @@
 <script type="text/javascript">
   
   function GoBack() {
-      notifyMessage("hello","success");
+      window.location.href = 'GertLogin.php';
   }
   function notifyMessage(msg,styles){
              $.notify(msg,{
@@ -32,6 +32,7 @@ $(function() {
     })
       .done(function(msg) {
         if(msg == "user created"){
+          notifyMessage(msg,"success")
           window.location.href = 'GertLogin.php';
         }
         alert(msg);
