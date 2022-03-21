@@ -9,7 +9,14 @@
 <script type="text/javascript">
   
   function GoBack() {
-    $.notify("hello World");
+    $.notify({
+    title: 'Would you like some Foo ?',
+    button: 'Confirm'
+    }, { 
+    style: 'foo',
+    autoHide: false,
+    clickToHide: false
+    });
   }
 $(function() {
   $("#signUp").click(function () {
