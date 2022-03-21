@@ -32,10 +32,12 @@ $(function() {
     })
       .done(function(msg) {
         if(msg == "user created"){
-          notifyMessage(msg,"success")
+          notifyMessage(msg + "returning to login page","success")
+          sleep(3);
           window.location.href = 'GertLogin.php';
         }
-        alert(msg);
+        
+
       })   
       .fail(function(msg){
         alert("Error");
