@@ -5,7 +5,7 @@ $password = "root";
 $dbname = "GERT";
 
 $email = $_POST['email'];
-
+echo $email;
 $conn = new mysqli($servername, $username, $password, $dbname);
   
 if ($conn->connect_error) {
