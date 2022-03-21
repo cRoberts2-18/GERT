@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 $select=mysql_query("SELECT * FROM `Users` WHERE `Email` = 'admin@admin.co.uk';");
 if(mysql_num_rows($select)==1)
   {
-  echo $email;   
+  
 }
 
 
