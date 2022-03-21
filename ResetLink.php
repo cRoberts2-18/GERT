@@ -26,7 +26,7 @@ if(mysqli_num_rows($result)==1)
     $mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
-    /*$mail->Subject = 'Message sent by PHPMailer';
+    $mail->Subject = 'Message sent by PHPMailer';
     $mail->Body = 'Hello! use PHPMailer to send email using PHP';
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
@@ -38,7 +38,7 @@ if(mysqli_num_rows($result)==1)
 
   //Set the password of your gmail address here
   $mail->Password = 'Gert_123';
-  if(!$mail->send()) {
+  /*if(!$mail->send()) {
     echo 'Email is not sent.';
     echo 'Email error: ' . $mail->ErrorInfo;
 } else {
