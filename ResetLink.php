@@ -32,9 +32,9 @@ if(mysqli_num_rows($result)==1)
     $mail->SMTPSecure = 'ssl';
     $mail->Host = 'ssl://smtp.gmail.com';
     $mail->SMTPAuth = true;
-    //$mail->Port = 465;
+    $mail->Port = 465;
     //Set your existing gmail address as user name  
-    $mail->Username = <a href="mailto:'gertool31@gmail.com">'gertool31@gmail.com</a>';
+    /*$mail->Username = <a href="mailto:'gertool31@gmail.com">'gertool31@gmail.com</a>';
 
   //Set the password of your gmail address here
   $mail->Password = 'Gert_123';
@@ -43,7 +43,7 @@ if(mysqli_num_rows($result)==1)
     echo 'Email error: ' . $mail->ErrorInfo;
 } else {
     echo 'Email has been sent.';
-}
+}*/
 
   
   echo $link;
