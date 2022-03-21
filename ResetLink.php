@@ -20,14 +20,14 @@ if(mysqli_num_rows($result)==1)
       $email=md5($row['Email']);
       $pass=md5($row['Password']);
     }
-    $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
+    $link="www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass.";
     require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
     require '/usr/share/php/libphp-phpmailer/class.smtp.php';
     $mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
     $mail->Subject = 'Password Reset';
-    $mail->Body = "Test";
+    $mail->Body = "Click the link to reset your password: ".$link;
     $mail->IsSMTP();
     $mail->SMTPSecure = 'ssl';
     $mail->Host = 'ssl://smtp.gmail.com';
