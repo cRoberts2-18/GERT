@@ -4,14 +4,14 @@ $username = "root";
 $password = "root";
 $dbname = "GERT";
 
-$email = $_POST['email'];
+$Email = $_POST['email'];
 $conn = new mysqli($servername, $username, $password, $dbname);
   
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$select="SELECT * FROM `Users` WHERE `Email` = '$email';";
+$select="SELECT * FROM `Users` WHERE `Email` = '$Email';";
 $result=$conn->query($select);
 if(mysqli_num_rows($result)==1)
   {
@@ -22,7 +22,7 @@ if(mysqli_num_rows($result)==1)
     }
     $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
     require_once('phpmail/PHPMailerAutoload.php');
-    $mail = new PHPMailer();
+    /*$mail = new PHPMailer();
     $mail->CharSet =  "utf-8";
     $mail->IsSMTP();
     // enable SMTP authentication
@@ -49,7 +49,9 @@ if(mysqli_num_rows($result)==1)
     else
     {
       echo "Mail Error - >".$mail->ErrorInfo;
-    }
+    }*/
+  echo $email;
+  echo $pass;
 }
 else{echo "lmao";}
 
