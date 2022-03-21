@@ -51,7 +51,7 @@ if(mysqli_num_rows($select)==1)
       echo "Mail Error - >".$mail->ErrorInfo;
     }
 }
-else{echo"oops";}
+else{echo mysqli_num_rows($select);}
 
 
 
