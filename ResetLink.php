@@ -34,7 +34,7 @@ if(mysqli_num_rows($result)==1)
     $mail->SMTPAuth = true;
     $mail->Port = 465;
     //Set your existing gmail address as user name  
-    $mail->Username = 'GERT';
+    $mail->Username = 'gertool31@gmail.com';
 
   //Set the password of your gmail address here
   $mail->Password = 'Gert_123';
