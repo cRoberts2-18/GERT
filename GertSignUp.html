@@ -9,12 +9,14 @@
 <script type="text/javascript">
   
   function GoBack() {
-    $.notify("Hello World",{
-             className: 'success',
+      notifyMessage("hello","success");
+  }
+  function notifyMessage(msg,styles){
+             $.notify(msg,{
+             className: styles,
              globalPosition: 'bottom center'
              
              });
-  }
 $(function() {
   $("#signUp").click(function () {
     var $email = $("#email").val();
