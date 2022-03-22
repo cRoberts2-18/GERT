@@ -20,7 +20,7 @@ if(mysqli_num_rows($result)==1)
       $email=md5($row['Email']);
       $pass=md5($row['Password']);
     }
-    $link="http://18.169.22.165/GERT/reset.html?key=".$email."&reset=".$pass;
+    $link="http://18.169.22.165/GERT/reset.php?key=".$email."&reset=".$pass;
     require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
     require '/usr/share/php/libphp-phpmailer/class.smtp.php';
     $mail = new PHPMailer;
