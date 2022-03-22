@@ -581,7 +581,7 @@
 				"padding-left": "25px",
 				"background-repeat": "no-repeat",
 				"background-position": "3px 7px",
-				"width" : "500 px"
+				"width" : "200 px"
 			},
 			error: {
 				"color": "#B94A48",
