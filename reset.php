@@ -32,11 +32,11 @@ if($_GET['key'] && $_GET['reset'])
     ?>
     <form class="form" method="post" action="submit_new.php">
     <input type="hidden" id="Email" name="email" value="<?php echo $row['Email'];?>">
-    <a>Enter New password</a>
-    <input type="password" id='Password' name='Password'>
-    <a>Confirm New password</a>
-    <input type="password" name='Confirm Password'>  
-    <p></p>
+    <a>Enter New password</a><br>
+    <input type="password" id='Password' name='Password'><br>
+    <a>Confirm New password</a><br>
+    <input type="password" name='Confirm Password'><br>  
+    <p></p><br>
     <input type="submit" id="Submit" name="submit_password">
     </form>
     <?php
