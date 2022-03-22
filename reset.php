@@ -31,7 +31,7 @@ if($_GET['key'] && $_GET['reset'])
   {
     ?>
     <form class="form" method="post" action="submit_new.php">
-    <input type="hidden" name="email" value="<?php echo $email;?>">
+    <input type="hidden" id="Email" name="email" value="<?php echo $row['Email'];?>">
     <a>Enter New password</a>
     <input type="password" id='Password' name='Password'>
     <a>Confirm New password</a>
@@ -49,11 +49,12 @@ if($_GET['key'] && $_GET['reset'])
 <script>
     $(function() {
   $("#Submit").click(function () {
-    var $pass = $("#Password").val();  
+    var $pass = $("#Password").val();
+    var $mail = $("#Email").val();
     $.ajax({
       method: "POST",
       url: "ResetPass.php",
-      data: {email:$email, pass:$pass}
+      data: {email:$mail, pass:$pass}
       
     })
       .done(function(msg) {
