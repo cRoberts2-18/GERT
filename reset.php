@@ -24,9 +24,10 @@ if($_GET['key'] && $_GET['reset'])
 {
   $email=$_GET['key'];
   $pass=$_GET['reset'];
-  $select="SELECT * FROM `Users` WHERE md5(`Email`) = '$Email';";
+  $select="SELECT * FROM `Users`;";
   $result=$conn->query($select);
-  if(mysql_num_rows($select)==1)
+  while($row = $result->fetch_assoc()) {
+    if(md5($row['Email'])==$email)
   {
     ?>
     <form method="post" action="submit_new.php">
@@ -37,6 +38,7 @@ if($_GET['key'] && $_GET['reset'])
     </form>
     <?php
   }
+}
 }
 ?>
 </body>
