@@ -30,7 +30,7 @@ if($_GET['key'] && $_GET['reset'])
     if(md5($row['Email'])==$email)
   {
     ?>
-    <form method="post" action="submit_new.php">
+    <form class="form" method="post" action="submit_new.php">
     <input type="hidden" name="email" value="<?php echo $email;?>">
     <p>Enter New password</p>
     <input type="password" name='password'>
