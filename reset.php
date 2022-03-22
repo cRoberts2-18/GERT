@@ -35,9 +35,9 @@ if($_GET['key'] && $_GET['reset'])
     <a>Enter New password</a><br>
     <input type="password" id='Password' name='Password'><br>
     <a>Confirm New password</a><br>
-    <input type="password" name='Confirm Password'><br>  
+    <input class = "box" type="password" name='Confirm Password'><br>  
     <p></p><br>
-    <input type="submit" id="Submit" name="submit_password">
+    <input class = "box" type="submit" id="Submit" name="submit_password">
     </form>
     <?php
   }
