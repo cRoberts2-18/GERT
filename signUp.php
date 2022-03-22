@@ -30,7 +30,7 @@ if(strlen($uName) < 4 || strlen($uName) > 12){
   exit();
 }
 if(preg_match("[\W]" , $uName)){
-  echo("This Username has illegal characters. Only Letters, Numbers and underscores are allowed");
+  echo("This Username has illegal characters.\n Only Letters, Numbers and underscores are allowed");
   exit();
 }
 
@@ -42,7 +42,7 @@ if(strlen($pWord) < 8 || strlen($pWord) > 16){
 }
 
 if(!(preg_match("/[A-Z]/" , $pWord) && preg_match("/[a-z]/" , $pWord) && preg_match("/[0-9]/" , $pWord) && preg_match("/[\W]/" , $pWord))){
-  echo("Passwords Does not meet the criteria \n test");
+  echo("Passwords Does not meet the criteria. Passwords must contain: \n 1 Special character , 1 Lowercase and Upper case letter and 1 Number");
   exit();
 }
 
