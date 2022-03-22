@@ -85,7 +85,7 @@ if($pWord == $pWordCheck){
   }
 }
 else{
-echo "passwordNotMatch" ;
+echo "The password you have re-entered does not match" ;
 }
 
 ?>
