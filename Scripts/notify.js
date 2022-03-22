@@ -580,7 +580,8 @@
 				"white-space": "nowrap",
 				"padding-left": "25px",
 				"background-repeat": "no-repeat",
-				"background-position": "3px 7px"
+				"background-position": "3px 7px",
+				"width" : "1000 px"
 			},
 			error: {
 				"color": "#B94A48",
