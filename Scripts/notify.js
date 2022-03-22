@@ -581,6 +581,7 @@
 				"padding-left": "25px",
 				"background-repeat": "no-repeat",
 				"background-position": "3px 7px",
+				"word-wrap": "normal",
 				"width" : "200 px"
 			},
 			error: {
