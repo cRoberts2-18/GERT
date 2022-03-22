@@ -9,13 +9,23 @@
 </header>
 <body>
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "GERT";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+  
 if($_GET['key'] && $_GET['reset'])
 {
   $email=$_GET['key'];
   $pass=$_GET['reset'];
-  mysql_connect('localhost','root','');
-  mysql_select_db('sample');
-  $select=mysql_query("select email,password from user where md5(email)='$email' and md5(password)='$pass'");
+  $select="SELECT * FROM `Users` WHERE md5(`Email`) = '$Email';";
+  $result=$conn->query($select);
   if(mysql_num_rows($select)==1)
   {
     ?>
