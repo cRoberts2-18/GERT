@@ -42,7 +42,7 @@ if(strlen($pWord) < 8 || strlen($pWord) > 16){
 }
 
 if(!(preg_match("/[A-Z]/" , $pWord) && preg_match("/[a-z]/" , $pWord) && preg_match("/[0-9]/" , $pWord) && preg_match("/[\W]/" , $pWord))){
-  echo("Passwords Does not meet the criteria. Passwords must contain: \n 1 Special character , 1 Lowercase and Upper case letter and 1 Number");
+  echo("Passwords Does not meet the criteria. Passwords must contain: \n 1 Special character , 1 Lowercase, 1 Upper case letter and 1 Number");
   exit();
 }
 
