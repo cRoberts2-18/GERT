@@ -26,29 +26,29 @@ $result = $conn->query($sqlQueryDetails);
 
 //username check valid - 4 - 12 characters - no special
 if(strlen($uName) < 4 || strlen($uName) > 12){
-  echo("$uName is not 4 - 12 characters long");
+  echo("The Chosen Username is not 4 - 12 characters long");
   exit();
 }
 if(preg_match("[\W]" , $uName)){
-  echo("$uName has illegal characters.");
+  echo("This Username has illegal characters. Only Letters, Numbers and underscores are allowed");
   exit();
 }
 
 //password check valid - 8 - 16 characters 1 special 1 capital 1 number  
 
 if(strlen($pWord) < 8 || strlen($pWord) > 16){
-  echo("$pWord is not 8 - 16 characters long");
+  echo("The Chosen Password is not 8 - 16 characters long");
   exit();
 }
 
 if(!(preg_match("/[A-Z]/" , $pWord) && preg_match("/[a-z]/" , $pWord) && preg_match("/[0-9]/" , $pWord) && preg_match("/[\W]/" , $pWord))){
-  echo("Ilegal Password");
+  echo("Passwords Must contain at least: 1 Special Character, 1 Lowercase Letter, 1 Uppercase Letter and 1 Number");
   exit();
 }
 
 //email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      echo("$email is not a valid email address");
+      echo("This email is not a valid email address");
       exit();
    }
 
