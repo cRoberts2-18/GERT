@@ -13,8 +13,8 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
 #map {
-	width: 1400px;
-	height: 500px;
+	width: 1350px;
+	height: 450px;
 }
 </style>
 <head>
