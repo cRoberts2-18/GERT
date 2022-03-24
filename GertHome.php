@@ -11,6 +11,9 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 ?>
 <html translate="no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var map = L.map('map').setView([51.505, -0.09], 13);
+	</script>
 <head>
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">#
@@ -86,7 +89,6 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 
 <iframe src="placeholderMap.png" class="map"></iframe>
 <div id="map">
-	var map = L.map('map').setView([51.505, -0.09], 13);
 	</div>
 
 
