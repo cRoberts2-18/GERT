@@ -99,6 +99,13 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <div id="map"></div>
 
 <script>
+function notifyMessage(msg,styles){
+             $.notify(msg,{
+             className: styles,
+             globalPosition: 'right center'
+                    
+             });
+ }
 	
 
     var map = L.map('map',{
@@ -111,7 +118,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 }).addTo(map);
 
 	function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
+    notifyMessage("You clicked the map at " + e.latlng, "info");
 }
 
 map.on('click', onMapClick);
