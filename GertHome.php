@@ -13,7 +13,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
 #map {
-	width: 960px;
+	width: 1400px;
 	height: 500px;
 }
 </style>
@@ -102,7 +102,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 	
 
     var map = L.map('map',{
-    center: [43.64701, -79.39425],
+    center: [52.770775, -1.2043467],
     zoom: 15
     });
 
