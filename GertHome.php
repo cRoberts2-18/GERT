@@ -11,6 +11,12 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 ?>
 <html translate="no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+#map {
+	width: 960px;
+	height: 500px;
+}
+</style>
 <head>
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -90,10 +96,21 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
   <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
 </body>
 
-<iframe src="placeholderMap.png" class="map"></iframe>
-
+<div id="map"></div>
 
 <script>
+	
+
+    var map = L.map('map',{
+    center: [43.64701, -79.39425],
+    zoom: 15
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+
 $(function() {
   $("#SignOut").click(function () {
 	  $.ajax({
