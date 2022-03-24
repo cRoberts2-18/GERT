@@ -85,7 +85,9 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 </body>
 
 <iframe src="placeholderMap.png" class="map"></iframe>
-<div id="map"></div>
+<div id="map">
+	var map = L.map('map').setView([51.505, -0.09], 13);
+	</div>
 
 
 <script>
