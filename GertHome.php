@@ -14,7 +14,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <style>
 #map {
 	width: 85%;
-	height: 85%;
+	height: 80%;
 }
 </style>
 <head>
