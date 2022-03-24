@@ -110,6 +110,11 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
 
+	function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
 
 $(function() {
   $("#SignOut").click(function () {
