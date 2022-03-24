@@ -11,11 +11,9 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 ?>
 <html translate="no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <head>
 <link rel="stylesheet" href="GERT.css">
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">#
-
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <title>GERT - Home</title>
 </head>
 <header>
@@ -80,7 +78,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
   <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
 </body>
 
-
+<iframe src="placeholderMap.png" class="map"></iframe>
 
 
 <script>
