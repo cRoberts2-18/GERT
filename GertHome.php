@@ -15,15 +15,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <head>
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">#
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
-       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-<script>
-	var map = L.map('map').setView([51.505, -0.09], 13);
-	</script>
+
 <title>GERT - Home</title>
 </head>
 <header>
@@ -86,8 +78,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 
 <div id="main">
   <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
-	<div id="map">
-	</div>
+	
 </body>
 
 
