@@ -13,7 +13,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="Scripts/notify.js"></script>
 <head>
-<link rel="stylesheet" href="GERT.css">
+
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link
       rel="stylesheet"
@@ -27,6 +27,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
+<link rel="stylesheet" href="GERT.css">
 <title>GERT - Home</title>
 </head>
 <header>
