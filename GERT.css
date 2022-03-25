@@ -187,7 +187,7 @@ header{
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
-  top: -3;
+  top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
@@ -197,7 +197,7 @@ header{
 /* The button used to open the sidebar */
 .openbtn {
   position:relative;
-  top: -5;
+  top: 0;
   right: 0;
   font-size: 20px;
   cursor: pointer;
@@ -211,6 +211,7 @@ header{
 .openbtn:hover {
   background-color: #444;
 }
+
 
 .map{
 	position: absolute;
