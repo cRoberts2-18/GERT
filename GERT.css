@@ -230,3 +230,13 @@ header{
   top: 0;
 }
 
+#map {
+	position: absolute;
+	top:102px;
+	left:0;
+	height: 85%;
+	width: 100%;
+	z-index:0;
+	opacity: .99;
+}
+
