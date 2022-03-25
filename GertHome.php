@@ -9,6 +9,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 	exit;
 }
 ?>
+<link rel="stylesheet" href="GERT.css">
 <html translate="no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="Scripts/notify.js"></script>
@@ -27,7 +28,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
-<link rel="stylesheet" href="GERT.css">
+
 <title>GERT - Home</title>
 </head>
 <header>
