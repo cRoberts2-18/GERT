@@ -95,7 +95,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 
 <div id="main">
   <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
-  <div id="map"></div>
+  <div class="map" id="map"></div>
 </body>
 
 
