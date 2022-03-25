@@ -12,17 +12,6 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <html translate="no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="Scripts/notify.js"></script>
-<style>
-#map {
-	position: absolute;
-	top:102px;
-	left:0;
-	height: 85%;
-	width: 100%;
-	z-index:0;
-	opacity: .99;
-}
-</style>
 <head>
 <link rel="stylesheet" href="GERT.css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
