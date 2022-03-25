@@ -101,19 +101,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <div id="main">
   <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
   
-<div class="map" id="map"></div>
-<script>
-	options = {
-	layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 10, attribution: '...' }),
-	zoom: 5,
-	zoomControl: false,
-	center: L.latLng(46.879966, -121.726909)
-};
-
-mapReady(map: L.Map) {
-	map.addControl(L.control.zoom({ position: 'bottomright' }));
-}	
-</script>	
+<div class="map" id="map"></div>	
 </body>
 
 
