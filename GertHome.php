@@ -14,8 +14,13 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <script src="Scripts/notify.js"></script>
 <style>
 #map {
+	position: absolute;
+	top:102px;
+	left:0;
+	height: 85%;
 	width: 100%;
-	height: 77%;
+	z-index:0;
+	opacity: .99;
 }
 </style>
 <head>
