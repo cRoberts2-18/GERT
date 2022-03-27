@@ -96,7 +96,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 </div>
 
 <div id="main">
-  <iframe src="placeholderMap.png" id="options" name="pageSelect"></iframe>
+  <iframe src="placeholderMap.png" id="map" name="pageSelect"></iframe>
 </div>
   
 	
