@@ -89,8 +89,8 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <body>
 
 <div id="mySidebar" class="sidebar" style="width:250px;">
-  <a href="#">Account Details</a>
-  <a href="#">Billing</a>
+  <a href="AccDetails.php" target="pageSelect">Account Details</a>
+  <a href="Billing.php" target="pageSelect">Billing</a>
   
  
 </div>
