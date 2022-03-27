@@ -32,5 +32,7 @@
     </header>
     
     <body>
+    <form class="form">
     Billing
+    </form>
     </body>
