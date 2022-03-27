@@ -99,10 +99,9 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <body>
 
 <div id="mySidebar" class="sidebar" style="width:250px;">
-  <a href="#">button to open analytics</a>
-  <a href="#">=============</a>
-  <a href="#">Here we will be displaying data</a>
-  <a href="#">it will be able to be filtered here too</a>
+  <a href="#">Account Details</a>
+  <a href="#">Billing</a>
+  
  
 </div>
 
