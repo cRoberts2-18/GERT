@@ -88,7 +88,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content" style="position:absolute; right:0;">
-      <a href="#">My Profile</a>
+      <a href="GertProfile.php">My Profile</a>
       <a id="SignOut" href="#">Sign Out</a>
       
     </div>
