@@ -163,7 +163,7 @@ header{
   position: fixed; /* Stay in place */
   top: 102px;
   left: 0;
-  z-index:100 !important;
+  z-index:100;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
