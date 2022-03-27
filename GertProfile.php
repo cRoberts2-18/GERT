@@ -33,7 +33,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 <header>
 <h2 class="right">GERT<h2>
 <div class="navbar">
-  <optionL href="GertHome.php">Home</optionL>
+  <optionL id="home" href="GertHome.php">Home</optionL>
   <div class="dropdown">
     <button class="dropbtn">File
       <i class="fa fa-caret-down"></i>
@@ -117,6 +117,11 @@ $(function() {
 });
 });
   
-
+$(function() {
+	$("#home").click(function () {
+		document.location.href="GertHome.php";
+	});
+});
+	
 </script>
 </html>
