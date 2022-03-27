@@ -68,6 +68,7 @@ header{
 .dropdown {
   float: left;
   overflow: hidden;
+  z-index: 1000000 !important;	
 }
 
 
@@ -80,16 +81,18 @@ header{
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-  z-index: 1;
+  z-index: 1000000 !important;
   transition-duration: 0.2s;
 }
 
 .navbar optionL:hover, .dropdown:hover .dropbtn {
+  z-index: 1000000 !important;
   background-color: #FFFFFF;
   color: #000000;
   font-weight:normal;  
 }
 .navbar optionR:hover, .dropdown:hover .dropbtn {
+  z-index: 1000000 !important;
   background-color: #FFFFFF;
   color: #000000;
   font-weight:normal;
@@ -103,7 +106,7 @@ header{
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000000;
+  z-index: 1000000 !important;
   transition-duration: 0.2s;
 }
 
@@ -116,17 +119,19 @@ header{
   text-decoration: none;
   display: block;
   text-align: left;
-  z-index: 1;
+  z-index: 1000000 !important;
   transition-duration: 0.2s;
 }
 
 .dropdown-content a:hover {
   background-color: #B8B8B8;
+  z-index: 1000000 !important;
 }
 
 .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
+  z-index: 1000000 !important;	
   
 }
 .form{
@@ -206,7 +211,7 @@ header{
   color: white;
   padding: 10px 15px;
   border: none;
-  z-index:100 !important;
+  z-index:100;
 }
 
 .openbtn:hover {
