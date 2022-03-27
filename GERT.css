@@ -70,10 +70,6 @@ header{
   overflow: hidden;
 }
 
-.dropdownR {
-  float: right;
-  overflow: hidden;
-}
 
 .dropdown .dropbtn {
   font-size: 16px;  
