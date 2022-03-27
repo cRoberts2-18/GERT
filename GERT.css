@@ -178,7 +178,7 @@ header{
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  z-index:100 !important
+  z-index:100;
 }
 /* The button used to open the sidebar */
 .openbtn {
@@ -191,7 +191,7 @@ header{
   color: white;
   padding: 10px 15px;
   border: none;
-  z-index:100 !important;
+  z-index:100;
 }
 .openbtn:hover {
   background-color: #444;
