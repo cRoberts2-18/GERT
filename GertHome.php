@@ -92,9 +92,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a id="SignOut" href="#">Sign Out</a>
       
     </div>
-  </div>
-  <optionR id="SignOut">Sign Out</optionR>
-  <optionR id="Profile"><?php echo $_SESSION["Username"] ?></optionR>	
+  </div>	
 </div>
 </header>
 
