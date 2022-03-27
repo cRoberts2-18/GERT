@@ -98,7 +98,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 
 <body>
 
-<div id="mySidebar" class="sidebar" style="width:250px; left:250px;">
+<div id="mySidebar" class="sidebar" style="width:250px;">
   <a href="#">button to open analytics</a>
   <a href="#">=============</a>
   <a href="#">Here we will be displaying data</a>
@@ -107,7 +107,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
 </div>
 
 <div id="main">
-  <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
+  
   
 	
 </body>
@@ -127,20 +127,6 @@ $(function() {
 });
 });
   
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-left\"></i>";
-  document.getElementById("sideButton").setAttribute( "onClick", "javascript: closeNav();" );
-}
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-right\"></i>";
-  document.getElementById("sideButton").setAttribute( "onClick", "javascript: openNav();" );
-}
 </script>
 </html>
