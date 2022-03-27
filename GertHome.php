@@ -83,7 +83,7 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a href="#">Help</a>
     </div>
   </div>
-  <div class="dropdownR">
+  <div class="dropdown">
     <button class="dropbtn"><?php echo $_SESSION["Username"] ?> 
       <i class="fa fa-caret-down"></i>
     </button>
