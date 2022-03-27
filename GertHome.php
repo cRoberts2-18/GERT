@@ -83,6 +83,16 @@ else if(isset($_SESSION["GERTloggedin"])!== true){
       <a href="#">Help</a>
     </div>
   </div>
+  <div class="dropdownR">
+    <button class="dropbtn"><?php echo $_SESSION["Username"] ?> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">My Profile</a>
+      <a id="SignOut" href="#">Sign Out</a>
+      
+    </div>
+  </div>
   <optionR id="SignOut">Sign Out</optionR>
   <optionR id="Profile"><?php echo $_SESSION["Username"] ?></optionR>	
 </div>
