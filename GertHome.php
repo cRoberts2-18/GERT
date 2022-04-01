@@ -127,6 +127,7 @@ function notifyMessage(msg,styles){
     var map = L.map('map',{
     center: [52.770775, -1.2043467],
     zoom: 15
+    new L.Control.Zoom({ position: 'topright' }).addTo(map);
     });
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
