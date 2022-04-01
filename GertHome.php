@@ -129,7 +129,7 @@ function notifyMessage(msg,styles){
     zoom: 15
 	    
     });
-    map.zoomControl.setPosition('verticalcenterright');
+    L.zoomControl.setPosition('verticalcenterright');
     
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
