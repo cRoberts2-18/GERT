@@ -119,7 +119,7 @@ function notifyMessage(msg,styles){
              $.notify(msg,{
              className: styles,
              globalPosition: 'right center'
-                    
+                 
              });
  }
 	
@@ -127,9 +127,10 @@ function notifyMessage(msg,styles){
     var map = L.map('map',{
     center: [52.770775, -1.2043467],
     zoom: 15
+    zoomControl: false
 	    
     });
-    L.zoomControl.setPosition('verticalcenterright');
+    L.control.zoom({position: 'bottomright'}).addTo(map);
     
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
