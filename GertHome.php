@@ -126,11 +126,11 @@ function notifyMessage(msg,styles){
 
     var map = L.map('map',{
     center: [52.770775, -1.2043467],
-    zoom: 15
+    zoom: 15,
     zoomControl: false
 	    
     });
-    L.control.zoom({position: 'bottomright'}).addTo(map);
+    L.control.zoom({position: 'topright'}).addTo(map);
     
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
