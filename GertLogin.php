@@ -12,7 +12,9 @@ if(isset($_SESSION["GERTloggedin"]) && $_SESSION["GERTloggedin"] === true){
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <title>GERT - Login</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Scripts/notify.js"></script>
 <script type="text/javascript">
+
   function SignUp() {
     window.location.href = 'GertSignUp.html';
   }
