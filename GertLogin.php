@@ -16,7 +16,13 @@ if(isset($_SESSION["GERTloggedin"]) && $_SESSION["GERTloggedin"] === true){
   function SignUp() {
     window.location.href = 'GertSignUp.html';
   }
-  
+  function notifyMessage(msg,styles){
+             $.notify(msg,{
+             className: styles,
+             globalPosition: 'bottom center'
+                    
+             });
+  }
 
 $(function() {
   $("#Submit").click(function () {
@@ -33,7 +39,7 @@ $(function() {
           window.location.href = 'GertHome.php';
         }
         else{
-          alert("Invalid username or password");
+          notifyMessage("Invalid username or password", "error");
         }
       })   
       .fail(function(msg){
@@ -58,7 +64,7 @@ $(window).keypress(function(e) {
           window.location.href = 'GertHome.php';
         }
         else{
-          alert("Invalid username or password");
+          notifyMessage("Invalid username or password", "error");
         }
       })   
       .fail(function(msg){
