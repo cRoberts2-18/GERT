@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+    
+<div id="mySidebar" class="sidebar">
+    <a href="#">button to open analytics</a>
+    <a href="#">=============</a>
+    <a href="#">Here we will be displaying data</a>
+    <a href="#">it will be able to be filtered here too</a>
+   
+  </div>
+  
+  <div id="main">
+    <button class="openbtn" id="sideButton" onclick="openNav()"><i class="fa fa-caret-right"></i></button>
+    
+  <div class="map" id="map"></div>	
+  </div>
+  <script>
+    function notifyMessage(msg,styles){
+                 $.notify(msg,{
+                 className: styles,
+                 globalPosition: 'right center'
+                        
+                 });
+     }
+        
+    
+        var map = L.map('map',{
+        center: [52.770775, -1.2043467],
+        zoom: 15
+        });
+    
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map);
+    
+        function onMapClick(e) {
+        notifyMessage("You clicked the map at " + e.latlng, "info");
+    }
+    
+    map.on('click', onMapClick);
+    
+    $(function() {
+      $("#SignOut").click(function () {
+          $.ajax({
+              url: 'GERTLogout.php',
+              success: function(data) {
+                 window.location.href = 'GertLogin.php';
+                }
+    });
+    });
+    });
+      
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-left\"></i>";
+      document.getElementById("sideButton").setAttribute( "onClick", "javascript: closeNav();" );
+    }
+    
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.getElementById("sideButton").innerHTML="<i class=\"fa fa-caret-right\"></i>";
+      document.getElementById("sideButton").setAttribute( "onClick", "javascript: openNav();" );
+    }
+    </script>
+{% endblock %}
+
