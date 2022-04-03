@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html translate=no>
+<link rel="stylesheet" href="GERT.css">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<title>GERT - Sign Up</title>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Scripts/notify.js"></script>
+<script type="text/javascript">
+  
+  function GoBack() {
+      window.location.href = 'GertLogin.php';
+  }
+  function notifyMessage(msg,styles){
+             $.notify(msg,{
+             className: styles,
+             globalPosition: 'bottom center'
+                    
+             });
+  }
+$(function() {
+  $("#signUp").click(function () {
+    var $email = $("#email").val();
+    var $uName = $("#username").val(); 
+    var $pWord = $("#password").val();
+    var $pWordCheck = $("#checkpassword").val();
+    $.ajax({
+      method: "POST",
+      url: "signUp.php",
+      data: {email:$email ,uName:$uName, pWord:$pWord, pWordCheck:$pWordCheck}
+      
+    })
+      .done(function(msg) {
+        if(msg == "user created"){
+          notifyMessage(msg + "returning to login page","success")
+          setTimeout(GoBack,1000);
+        }
+        else{
+          notifyMessage(msg,"error");
+        }
+        
+
+      })   
+      .fail(function(msg){
+        alert("Error");
+      });
+    });
+ 
+});
+</script>
+  
+<header>
+<h2 class="center">GERT: Global Emmissions Research Tool</h2>
+</header>
+<body>
+<form class="form">Sign Up Account<br><br>
+<label for="email">Enter E-Mail:</label><br>
+<input type="text" id="email" name="email" placeholder="E-mail" class = "box"><br>
+<label for="username">Enter Desired Username:</label><br>
+<input type="text" id="username" name="username" placeholder="Name" class = "box"><br>
+<label for="password">Enter Desired Password:</label><br>
+<input type="text" id="password" name="password" placeholder="Password" class = "box"><br>
+<input type="text" id="checkpassword" name="checkpassword" placeholder="Re-Enter password" class = "box"><br>
+<input class="buttonstyle" type = button id = "signUp" value="Sign Up">
+<input class="buttonstyle" type = button onclick="GoBack()" value = "Go Back">
+</form>
+</body>
+<script>
+ 
+  </script>
+
+
+</html>
