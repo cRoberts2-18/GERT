@@ -18,10 +18,9 @@ def loginPage():
     return render_template('login.html')
 
 @app.route('/processLogin', methods = ['POST'])
-def login():
-    uName = request.json['uName']
-    password = request.json['pWord']
-    return(uName + password)
+def processLogin():
+    
+    return("hello")
 
 @app.route('/signUp.php')
 def phpScript():
