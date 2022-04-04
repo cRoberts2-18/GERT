@@ -1,10 +1,7 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
 
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
+require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
 
 $servername = "localhost";
 $username = "root";
