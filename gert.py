@@ -22,8 +22,9 @@ def loginPage():
     return render_template('login.html')
 
 @app.route('/processLogin/', methods = ['POST'])
+uName = request.get(uName)
 def processLogin():
-    return("true")
+    return(uName)
 
 @app.route('/signUp.php')
 def phpScript():
