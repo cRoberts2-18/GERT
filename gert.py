@@ -13,6 +13,10 @@ def profile():
 def signup():
     return render_template('GertSignUp.html')
 
+@app.route('/resetPassword/')
+def resetPassword():
+    return render_template('GertResetPassword.html')
+
 @app.route('/login/')
 def loginPage():
     return render_template('login.html')
