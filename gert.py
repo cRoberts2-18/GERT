@@ -9,8 +9,8 @@ def home():
 def profile():
     return render_template('profile.html')
 
-@app.route('/signUp/')
-def signUp():
+@app.route('/signup/')
+def signup():
     return render_template('GertSignUp.html')
 
 @app.route('/login/')
