@@ -30,14 +30,14 @@ if($_GET['key'] && $_GET['reset'])
     if(md5($row['Email'])==$email)
   {
     ?>
-    <form class="form">
+    <form class="form" method="post" action="http://18.169.22.165/gert/login/">
     <input type="hidden" id="Email" name="email" value="<?php echo $row['Email'];?>">
     <a>Enter New password</a><br>
     <input class = "box" type="password" id='Password' name='Password'><br>
     <a>Confirm New password</a><br>
     <input class = "box" type="password" name='Confirm Password'><br>  
     <p></p><br>
-    <button class="buttonstyle" id="Submit" name="submit_password">Submit</button>
+    <input class="buttonstyle" type="submit" id="Submit" name="submit_password">
     </form>
     <?php
   }
@@ -47,8 +47,6 @@ if($_GET['key'] && $_GET['reset'])
 </body>
 
 <script>
-  function GoBack() {
-      window.location.href = 'http://18.169.22.165/gert/login/';
   
   
     $(function() {
@@ -63,7 +61,6 @@ if($_GET['key'] && $_GET['reset'])
     })
       .done(function(msg) {
         alert(msg);
-        setTimeout(GoBack,10);
       })   
       .fail(function(msg){
         alert(msg);
