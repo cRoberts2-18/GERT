@@ -17,7 +17,7 @@ def signup():
 def loginPage():
     return render_template('login.html')
 
-@app.route('/process/login', methods = ['POST'])
+@app.route('/process/login/', methods = ['POST'])
 def login():
     uName = request.json['uName']
     password = request.json['pWord']
