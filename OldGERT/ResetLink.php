@@ -1,8 +1,4 @@
 <?php
-require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
-
-require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
-
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -25,7 +21,8 @@ if(mysqli_num_rows($result)==1)
       $pass=md5($row['Password']);
     }
     $link="http://18.169.22.165/GERT/OldGERT/reset.php?key=".$email."&reset=".$pass;
-    
+    require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
+    require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
     
     $mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
