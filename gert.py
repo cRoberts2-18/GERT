@@ -17,7 +17,7 @@ def signup():
 def resetPassword():
     return render_template('GertResetPassword.html')
 
-@app.route('/login/')
+@app.route('/login/', methods = ['POST'])
 def loginPage():
     return render_template('login.html')
 
