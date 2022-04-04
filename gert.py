@@ -9,8 +9,19 @@ def home():
 def profile():
     return render_template('profile.html')
 
+@app.route('/signup/')
+def signup():
+    return render_template('GertSignUp.html')
 
+@app.route('/login/')
+def loginPage():
+    return render_template('login.html')
 
+@app.route('/process/login', methods = ['POST'])
+def login():
+    uName = request.json['uName']
+    password = request.json['pWord']
+    return(uName + password)
 
 if __name__ == '__main__':
     app.run(debug=True)
