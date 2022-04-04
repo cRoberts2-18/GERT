@@ -12,7 +12,7 @@
 <script type="text/javascript">
   
   function GoBack() {
-      window.location.href = 'GertLogin.php';
+      window.location.href = '{{ url_for('login')}}';
   }
   function notifyMessage(msg,styles){
              $.notify(msg,{
