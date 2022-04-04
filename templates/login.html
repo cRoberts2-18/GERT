@@ -49,7 +49,7 @@ $(window).keypress(function(e) {
         
         $.ajax({
       method: "POST",
-      url: "/processLogin",
+      url: "{{ url_for('processLogin')}}",
       
       
     })
