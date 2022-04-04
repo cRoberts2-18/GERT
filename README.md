@@ -8,4 +8,4 @@ for the new system that uses flask, the main python controller gert.py should be
 
 to access the python page just to to http://18.169.22.165/gert/ and in order to change this page you will be pulling using "sudo ./pullpy.sh". this should update the page but if it doesnt the just do "sudo systemctl restart apache2". 
 
-If when adding to or editing the python page you get errors "sudo nano /var/log/apache2.error.log" opens the error log
+If when adding to or editing the python page you get errors "sudo nano /var/log/apache2/error.log" opens the error log
