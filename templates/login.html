@@ -85,7 +85,7 @@ $(window).keypress(function(e) {
 <input type="text" id="username" name="username" placeholder="Enter name" class = "box"><br>
 <label for="password">Password:</label><br>
 <input type="password" id="password" name="password" placeholder="Enter password" class = "box"><br>
-<a href="GertResetPassword.html">Forgot Password?</a><br>
+<a href="{{ url_for('resetPassword')}}">Forgot Password?</a><br>
 <input class="buttonstyle" type=button id = "Submit" value = "Submit">
 <button class="buttonstyle" type = button onclick="SignUp()" value = "Sign Up">Sign Up</button>
 </form>
