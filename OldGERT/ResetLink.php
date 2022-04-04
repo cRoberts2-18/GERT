@@ -21,7 +21,9 @@ if(mysqli_num_rows($result)==1)
       $pass=md5($row['Password']);
     }
     $link="http://18.169.22.165/GERT/OldGERT/reset.php?key=".$email."&reset=".$pass;
-    require '/usr/share/php/libphp-phpmailer/autoload.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;';
     
     $mail = new PHPMailer;
     $mail->setFrom('gertool31@gmail.com');
