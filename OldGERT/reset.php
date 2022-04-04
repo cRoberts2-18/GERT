@@ -47,6 +47,10 @@ if($_GET['key'] && $_GET['reset'])
 </body>
 
 <script>
+  function GoBack() {
+      window.location.href = 'http://18.169.22.165/gert/login/';
+  
+  
     $(function() {
   $("#Submit").click(function () {
     var $pass = $("#Password").val();
@@ -59,7 +63,7 @@ if($_GET['key'] && $_GET['reset'])
     })
       .done(function(msg) {
         alert(msg);
-        window.location.href = "http://18.169.22.165/gert/login/";
+        setTimeout(GoBack,10);
       })   
       .fail(function(msg){
         alert(msg);
