@@ -26,7 +26,7 @@ $(function() {
     var $pWordCheck = $("#checkpassword").val();
     $.ajax({
       method: "POST",
-      url: "signUp.php",
+      url: "GERT/templates/signUp.php",
       data: {email:$email ,uName:$uName, pWord:$pWord, pWordCheck:$pWordCheck}
       
     })
