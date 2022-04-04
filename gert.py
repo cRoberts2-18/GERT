@@ -17,7 +17,7 @@ def signup():
 def loginPage():
     return render_template('login.html')
 
-@app.route('/processLogin/')
+@app.route('/processLogin/', methods = ['POST'])
 def processLogin():
     
     return "hello"
