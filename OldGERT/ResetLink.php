@@ -24,7 +24,7 @@ if(mysqli_num_rows($result)==1)
     require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
     require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
     
-    $mail = new PHPMailer;
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->setFrom('gertool31@gmail.com');
     $mail->addAddress($Email);
     $mail->Subject = 'Password Reset';
