@@ -18,11 +18,11 @@ def signup():
 def resetPassword():
     return render_template('GertResetPassword.html')
 
-@app.route('/login/', methods = ['POST'])
+@app.route('/login/', methods = ['GET', 'POST'])
 def loginPage():
     return render_template('login.html')
 
-@app.route('/processLogin/', methods = ['POST'])
+@app.route('/processLogin/', methods = ['GET', 'POST'])
 
 def processLogin():
     data =  request.values.get('uName')
