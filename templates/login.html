@@ -50,7 +50,7 @@ $(window).keypress(function(e) {
         var $pWord = $("#password").val();
         $.ajax({
       method: "POST",
-      url: "/process/login",
+      url: "/processLogin",
       data: {uName:$uName , pWord:$pWord}
       
     })
