@@ -23,6 +23,11 @@ def login():
     password = request.json['pWord']
     return(uName + password)
 
+@app.route('/signUp.php')
+def phpScript():
+    out = sp.run(["php","signUp.php"], stdout = sp.PIPE)
+    return out.stdout
+
 if __name__ == '__main__':
     app.run(debug=True)
     
