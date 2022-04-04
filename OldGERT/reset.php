@@ -30,14 +30,14 @@ if($_GET['key'] && $_GET['reset'])
     if(md5($row['Email'])==$email)
   {
     ?>
-    <form class="form" action="http://18.169.22.165/gert/login/">
+    <form class="form">
     <input type="hidden" id="Email" name="email" value="<?php echo $row['Email'];?>">
     <a>Enter New password</a><br>
     <input class = "box" type="password" id='Password' name='Password'><br>
     <a>Confirm New password</a><br>
     <input class = "box" type="password" name='Confirm Password'><br>  
     <p></p><br>
-    <input class="buttonstyle" type="submit" id="Submit" name="submit_password">
+    <button class="buttonstyle" id="Submit" name="submit_password"></button>
     </form>
     <?php
   }
@@ -59,7 +59,7 @@ if($_GET['key'] && $_GET['reset'])
     })
       .done(function(msg) {
         alert(msg);
-        $("p").text("If the entered email is valid, a reset link will be sent shortly");
+        window.location.href = "http://18.169.22.165/gert/login/";
       })   
       .fail(function(msg){
         alert(msg);
