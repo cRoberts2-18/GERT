@@ -24,8 +24,8 @@ def loginPage():
 @app.route('/processLogin/', methods = ['POST'])
 
 def processLogin():
-    uName = request.get(uName)
-    return(uName)
+    
+    return("hello")
 
 @app.route('/signUp.php')
 def phpScript():
