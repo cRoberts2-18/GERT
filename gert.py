@@ -25,7 +25,7 @@ def loginPage():
 
 def processLogin():
     data = request.get_data()
-    return("data")
+    return(data)
 
 @app.route('/signUp.php')
 def phpScript():
