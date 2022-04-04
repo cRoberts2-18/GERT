@@ -11,7 +11,7 @@ def profile():
 
 @app.route('/signUp/')
 def signUp():
-    return render_template('GERTSignUp.html')
+    return render_template('GertSignUp.html')
 
 @app.route('/login/')
 def loginPage():
