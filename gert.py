@@ -24,7 +24,6 @@ def loginPage():
     return render_template('login.html')
 
 @app.route('/processLogin/', methods = ['GET', 'POST'])
-
 def processLogin():
     
     mydb = mysql.connector.connect(
@@ -40,10 +39,6 @@ def processLogin():
     
     for row in myresult:
         return(row)
-
-    
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
