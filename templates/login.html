@@ -32,7 +32,6 @@ $(function() {
       
     })
       .done(function(msg) {
-        alert(msg);
         if(msg == "true"){
           window.location.href = "{{ url_for('home')}}";
         }
