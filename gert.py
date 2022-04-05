@@ -7,7 +7,10 @@ app.secret_key="GERTool31"
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    if session['LoggedIn']==True:
+        return render_template('home.html')
+    else:
+        return redirect(url_for("loginPage"))
 
 @app.route('/profile/')
 def profile():
@@ -45,6 +48,7 @@ def processLogin():
             if(request.values.get('pWord') ==  row[2]):
                 session['uName']=row[1]
                 session['Email']=row[3]
+                session['LoggedIn']=True
                 return('true')
     return('false')
 
