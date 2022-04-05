@@ -21,6 +21,9 @@
     function test(){
     alert("test");
     }
+
+	  
+	  
 	  
     function notifyMessage(msg,styles){
                  $.notify(msg,{
@@ -59,6 +62,23 @@
     });
     });
     });
+	
+	$(function() {
+		$("#makeCall").click(function () {
+    	   	$.ajax({
+    			method: "POST",
+      			url: "{{ url_for('processAPICall')}}",
+      			
+   		})
+		.done(function(msg) {
+		alert(msg)
+		})   
+		.fail(function(msg){
+			alert("Error");
+		});
+		});
+ 
+	});
       
     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
     function openNav() {
