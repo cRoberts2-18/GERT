@@ -32,7 +32,7 @@ def processLogin():
         password="root",
         database="GERT"
         )
-     return("working")
+     alert("working")
     
 
 
