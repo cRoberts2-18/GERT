@@ -4,7 +4,7 @@
 
     
 <div id="mySidebar" class="sidebar">
-    <button class="buttonstyle">API Call</button>
+    <btn onclick="test()">API Call</btn>
     
    
   </div>
@@ -18,6 +18,10 @@
   
   <div class="home">
   <script>
+    function test(){
+    alert("test");
+    }
+	  
     function notifyMessage(msg,styles){
                  $.notify(msg,{
                  className: styles,
