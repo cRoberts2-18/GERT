@@ -14,7 +14,10 @@ def home():
 
 @app.route('/profile/')
 def profile():
-    return render_template('profile.html')
+    if session.get('LoggedIn')==True:
+        return render_template('profile.html')
+    else:
+        return redirect(url_for("loginPage"))
 
 @app.route('/signup/')
 def signup():
