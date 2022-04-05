@@ -55,6 +55,10 @@ def processLogin():
                 return('true')
     return('false')
 
+@app.route('/processAPICall/', methods = ['GET', 'POST'])
+def processAPICall():
+    return("working")
+
 @app.route('/logout/')
 def logout():
     session.clear()
