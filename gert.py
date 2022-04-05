@@ -3,6 +3,8 @@ import cdsapi
 import mysql.connector
 
 app= Flask(__name__)
+app.secret_key="GERTool31"
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -41,8 +43,17 @@ def processLogin():
     for row in myresult:
         if(request.values.get('uName') == row[1]):
             if(request.values.get('pWord') ==  row[2]):
+                session['uName']=row[1]
+                session['Email']=row[3]
                 return('true')
     return('false')
+
+@app.route('/logout/')
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
