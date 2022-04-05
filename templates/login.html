@@ -34,7 +34,7 @@ $(function() {
       .done(function(msg) {
         alert(msg);
         if(msg == "true"){
-          window.location.href = 'GertHome.php';
+          window.location.href = "{{ url_for('home')}}";
         }
         else{
           notifyMessage("Invalid username or password", "error");
@@ -60,7 +60,7 @@ $(window).keypress(function(e) {
     })
       .done(function(msg) {
         if(msg == "true"){
-          alert("work");
+          window.location.href = "{{ url_for('home')}}";
         }
         else{
           notifyMessage("Invalid username or password", "error");
