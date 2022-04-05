@@ -39,7 +39,7 @@ def processLogin():
     myresult = mycursor.fetchall()
     
     for row in myresult:
-        return(x)
+        return(row)
 
     
 
