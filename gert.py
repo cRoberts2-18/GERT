@@ -38,7 +38,7 @@ def processLogin():
     mycursor.execute("SELECT * FROM Users")
     myresult = mycursor.fetchall()
     
-    for x in myresult:
+    for row in myresult:
         return(x)
 
     
