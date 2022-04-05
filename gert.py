@@ -26,13 +26,20 @@ def loginPage():
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 
 def processLogin():
-     mydb = mysql.connector.connect(
+    
+    mydb = mysql.connector.connect(
         host="localhost",
-        user="root",
+        user="root", 
         password="root",
         database="GERT"
-     )
-     return("working")
+    )
+    mycursor = mydb.cursor()
+
+    mycursor.execute("SELECT * FROM users")
+    myresult = mycursor.fetchall()
+    
+    for x in myresult:
+        return(x)
 
     
 
