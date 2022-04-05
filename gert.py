@@ -70,7 +70,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return redirect(url_for('home.html'))
+    return redirect(url_for('home'))
 
 @app.route('/logout/')
 def logout():
