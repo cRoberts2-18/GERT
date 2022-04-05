@@ -27,7 +27,7 @@ $(function() {
     var $pWord = $("#password").val(); 
     $.ajax({
       method: "POST",
-      url: "login.php",
+      url: "{{ url_for('processLogin')}}",
       data: {uName:$uName , pWord:$pWord}
       
     })
@@ -59,7 +59,6 @@ $(window).keypress(function(e) {
       
     })
       .done(function(msg) {
-        alert(msg);
         if(msg == "true"){
           alert("work");
         }
