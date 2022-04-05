@@ -32,13 +32,14 @@ def processLogin():
         password="root",
         database="GERT"
     )
+    
     mycursor = mydb.cursor()
 
     mycursor.execute("SELECT * FROM Users")
     myresult = mycursor.fetchall()
     
     for row in myresult:
-        return(row)
+        return("hello")
 
 if __name__ == '__main__':
     app.run(debug=True)
