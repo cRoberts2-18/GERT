@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import cdsapi
-import mysql.connector
 
 app= Flask(__name__)
 @app.route('/')
@@ -26,7 +25,8 @@ def loginPage():
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 
 def processLogin():
-    
+    data =  request.values.get('uName')
+    return(data)
 
 
 
