@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import cdsapi
+import mysql.connector
 
 app= Flask(__name__)
 @app.route('/')
@@ -25,8 +26,22 @@ def loginPage():
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 
 def processLogin():
-    data =  request.values.get('uName')
-    return(data)
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root"
+        database="mydatabase"
+    )
+    
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM Users")
+    myresult = mycursor.fetchall()
+    for x in myresult:
+        return(x)
+        
+    
+    ##data =  request.values.get('uName')
+    ##return(data)
 
 
 
