@@ -47,7 +47,7 @@ def processLogin():
     myresult = mycursor.fetchall()
     
     for row in myresult:
-        if(request.values.get('uName').toLower() == row[1].toLower()):
+        if(request.values.get('uName').lower() == row[1].lower()):
             if(request.values.get('pWord') ==  row[2]):
                 session['uName']=row[1]
                 session['Email']=row[3]
