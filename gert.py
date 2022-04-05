@@ -38,7 +38,7 @@ def processLogin():
     mycursor.execute("SELECT * FROM Users")
     myresult = mycursor.fetchone()
    
-    return(myresult[1].toString())
+    return(myresult[1])
 
 if __name__ == '__main__':
     app.run(debug=True)
