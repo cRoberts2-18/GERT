@@ -51,7 +51,7 @@ def processLogin():
 @app.route('/logout/')
 def logout():
     session.clear()
-    return redirect(url_for("login"))
+    return redirect(url_for("loginPage"))
 
 
 
