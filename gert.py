@@ -29,7 +29,7 @@ def processLogin():
      mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="root"
+        password="root",
         database="GERT"
     )
     data =  request.values.get('uName')
