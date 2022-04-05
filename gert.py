@@ -40,9 +40,9 @@ def processLogin():
     
     for row in myresult:
         if(request.values.get('uName') == row[1]):
-            return('true')
-    
-    return(myresult[1])
+            if(request.values.get('pWord') ==  row[2]):
+                return('true')
+    return('false')
 
 if __name__ == '__main__':
     app.run(debug=True)
