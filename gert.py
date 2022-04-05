@@ -25,7 +25,7 @@ def loginPage():
 
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 def processLogin():
-    
+    stringRow = ""
     mydb = mysql.connector.connect(
         host="localhost",
         user="root", 
@@ -39,7 +39,8 @@ def processLogin():
     myresult = mycursor.fetchall()
     
     for row in myresult:
-        return("hello")
+        stringRow = stringRow + row
+    return(stringRow)
 
 if __name__ == '__main__':
     app.run(debug=True)
