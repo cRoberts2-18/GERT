@@ -11,7 +11,7 @@
 <script type="text/javascript">
 
   function SignUp() {
-    window.location.href = 'signup';
+    window.location.href = "{{ url_for('signup')}}"
   }
   function notifyMessage(msg,styles){
              $.notify(msg,{
