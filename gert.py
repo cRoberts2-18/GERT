@@ -57,7 +57,17 @@ def processLogin():
 
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
-    return("working")
+    c = cdsapi.Client()
+
+    c.retrieve(
+        'cams-global-reanalysis-eac4',
+        {
+            'date': '2021-06-30/2021-06-30',
+            'format': 'grib',
+            'time': '03:00',
+            'variable': 'total_column_nitrogen_dioxide',
+        },
+        'download.grib')
 
 @app.route('/logout/')
 def logout():
