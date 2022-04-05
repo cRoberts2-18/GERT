@@ -32,8 +32,7 @@ def processLogin():
         password="root",
         database="GERT"
     )
-    data =  request.values.get('uName')
-    return(data)
+    
 
 
 
