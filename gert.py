@@ -7,7 +7,7 @@ app.secret_key="GERTool31"
 
 @app.route('/')
 def home():
-    if session['LoggedIn']==True:
+    if session.get('LoggedIn')==True:
         return render_template('home.html')
     else:
         return redirect(url_for("loginPage"))
