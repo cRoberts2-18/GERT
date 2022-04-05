@@ -39,7 +39,8 @@ def processLogin():
     myresult = mycursor.fetchall()
     
     for row in myresult:
-        if request.data('uName') == 
+        if request.value.get('uName') == row[1]:
+            return('true')
     
     return(myresult[1])
 
