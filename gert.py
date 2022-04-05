@@ -68,7 +68,7 @@ def processAPICall():
             'variable': 'total_column_nitrogen_dioxide',
         },
         
-        '/home/ubuntu/download.grib')
+        '/home/ubuntu/data/download.grib')
 
 @app.route('/logout/')
 def logout():
