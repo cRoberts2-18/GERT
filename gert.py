@@ -36,8 +36,11 @@ def processLogin():
     mycursor = mydb.cursor()
 
     mycursor.execute("SELECT * FROM Users")
-    myresult = mycursor.fetchone()
-   
+    myresult = mycursor.fetchall()
+    
+    for row in myresult:
+        if request.data('uName') == 
+    
     return(myresult[1])
 
 if __name__ == '__main__':
