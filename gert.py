@@ -67,7 +67,7 @@ def processAPICall():
             'time': '03:00',
             'variable': 'total_column_nitrogen_dioxide',
         },
-        'download.grib')
+        '/home/ubuntu/GERT/static/data/download.grib')
 
 @app.route('/logout/')
 def logout():
