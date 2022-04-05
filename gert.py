@@ -70,7 +70,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return True
+    return('true')
 
 @app.route('/logout/')
 def logout():
