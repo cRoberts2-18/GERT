@@ -30,7 +30,7 @@ def processLogin():
         host="localhost",
         user="root",
         password="root"
-        database="mydatabase"
+        database="GERT"
     )
     
     mycursor = mydb.cursor()
