@@ -14,7 +14,7 @@
   <label class="labels" for="Email">Email:</label><br> 
   <input class="profile" type="text" id="email" value="{{ session['Email'] }}" disabled><br><br>
   <input class="buttonstyle" type="button" id="submit" value="Submit" hidden="hidden">  
-  <input class="buttonstyle" type="button" id="edit" style="float:right;" value="Edit Profile" onclick="edit()">
+  <input class="buttonstyle" type="button" id="edit" style="float:right;" value="Edit Profile" onclick="editProfile()">
     
   </form>
 </div>
@@ -35,12 +35,11 @@
     document.getElementById("Billing").style.display="block";
   }
   
-  function edit(){
+  function editProfile(){
     if(document.getElementById("edit").value=="Edit Profile"){
       document.getElementById("submit").removeAttribute("hidden");
       document.getElementById("edit").value="Cancel";
-    }
-    else if(document.getElementById("edit").value=="Cancel"){
+    } else if(document.getElementById("edit").value=="Cancel"){
       document.getElementById("submit").setAttribute("hidden", "hidden");
       document.getElementById("edit").value="Edit Profile";
     
