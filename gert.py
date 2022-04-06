@@ -86,8 +86,7 @@ def processAPICall():
 
     c.retrieve(
         dataName,
-        requestdict},
-        
+        requestdict,
         '/home/ubuntu/data/download.grib')
     
     return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
