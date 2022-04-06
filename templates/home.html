@@ -25,29 +25,10 @@
 
 	
 	<label>Variables for the chosen data</label><br>
-	<input type="checkbox" id="carbonmonoxide" name="carbonmonoxide">
-  		<label for="carbonmonoxide">Total Column Carbon Monoxide</label>
-	&emsp;
-	<input type="checkbox" id="nitrogenDioxide" name="nitrogenDioxide">
-  		<label for="nitrogenDioxide">Total Column Nitrogen Dioxide</label>
-	<br>
-	<input type="checkbox" id="carbonDioxide" name="carbonDioxide">
-  		<label for="carbonDioxide">Total Column Carbon Dioxide</label>
-	&emsp;
-	<input type="checkbox" id="sulphurDioxide" name="sulphurDioxide">
-  		<label for="sulphurDioxide">Total Column Sulphur Dioxide</label>
-	<br>
-	
-	<label for="leadtimeHour">Leadtime Hour:</label><br>
-	<select name = "leadtimeHour" id="leadtimeHour" >
-            	<option value = "0" selected>0</option>
-		<option value = "1" selected>1</option>
-        </select>
-	<br><br>
 	<div class="multiselect">
     	<div class="selectBox" onclick="showCheckboxes()">
       		<select id="select">
-			<option>test</option>
+			<option>Select and Option</option>
       		</select>
       	<div class="overSelect"></div>
     	</div>
@@ -62,6 +43,15 @@
         	<input type="checkbox" id="four" />Sulphur Dioxide</label>
     </div>
   </div>
+	<br>
+	
+	<label for="leadtimeHour">Leadtime Hour:</label><br>
+	<select name = "leadtimeHour" id="leadtimeHour" >
+            	<option value = "0" selected>0</option>
+		<option value = "1" selected>1</option>
+        </select>
+	<br><br>
+	
 	
 	<br><br>
 	
@@ -267,10 +257,10 @@
 			var $datepicker2 = $("#datepicker2").val();
 			var $time = $("#time").val();
 			var $variables = $('#variables').val();
-			var $carbonMonoxide = $("#carbonmonoxide").is(":checked");
-			var $nitrogenDioxide = $("#nitrogenDioxide").is(":checked");
-			var $sulphurDioxide = $("#sulphurDioxide").is(":checked");
-			var $carbonDioxide = $("#carbonDioxide").is(":checked");
+			var $carbonMonoxide = $("#one").is(":checked");
+			var $nitrogenDioxide = $("#three").is(":checked");
+			var $sulphurDioxide = $("#four").is(":checked");
+			var $carbonDioxide = $("#two").is(":checked");
 			var $leadtimeHour = $("#leadtimeHour").val();
 			var $fileName = $("#fileName").val();
 			var $fileFormat = $("#fileFormat").val();
