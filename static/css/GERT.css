@@ -128,7 +128,6 @@
         transform : translate(-50%, -50%);
     }
     
-
     .form a{
         font-size: 25px;
     }
@@ -136,6 +135,10 @@
         font-size: 11px;
         color: red;
     }
+    .right-btn{
+        text-align: right;
+    }
+    
     .smallform{
         text-align: centre;
         font-size: 16px;
