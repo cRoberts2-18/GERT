@@ -95,7 +95,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return(requestdict)
+    return(str(requestdict))
 
 @app.route('/logout/')
 def logout():
