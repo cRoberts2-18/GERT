@@ -4,8 +4,14 @@
 
     
 <div id="mySidebar" class="sidebar">
+	
+	
 	<h2>API Data Request</h2><br><br>
-	<label for="username">Data Store Name:</label><br>
+	<label for="dropdown">Data Store Name:</label><br>
+	<select name = "datastoreName">
+            <option value = "cams-global-atmospheric-composition-forecasts" selected>cams-global-atmospheric-composition-forecasts</option>
+        </select>
+	<label for="File Name for Download:">Data Store Name:</label><br>
 	<input type="text" id="datastoreName" name="datastoreName"  class = "box"><br><br>
 	<label for="datepicker1">Date Start:   </label>&emsp;&emsp;<label for="datapicker2">   Date End:</label><br>
 	<input type="date" id="datepicker1">&emsp;<input type="date" id="datepicker2"><br><br>
