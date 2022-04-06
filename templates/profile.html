@@ -2,13 +2,30 @@
 {% block content %}
 
 <div id="mySidebar" class="sidebar" style="width:250px;">
-  <a>Account Details</a>
-  <a>Billing</a>
+  <a onclick="acc()">Account Details</a>
+  <a onclick="bill()">Billing</a>
   
 </div>
 
-<div id="main">
-  <h2>this is a div</h2>
+<div id="Profile">
+  
 </div>
+
+<div id="Billing">
+  
+</div>
+
+
+<script>
+
+  function acc(){
+    alert("acc");
+  }
+  
+  function acc(){
+    alert("bill");
+  }
+  
+</script>
 
 {% endblock %}
