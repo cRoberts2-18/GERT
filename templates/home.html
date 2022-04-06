@@ -128,13 +128,12 @@
 			var $datepicker2 = $("#datepicker2").val();
 			var $time = $("#time").val(); 
 			var $carbonMonoxide = $("#carbonmonoxide").is(":checked");
-			var $nitrogenDioxide = $("#nitrogenDioxide").val();
-			var $sulphurDioxide = $("#sulphurDioxide").val();
-			var $carbonDioxide = $("#carbonDioxide").val();
-			var $leadtimeHour = $("#leadtimeHour").val()
-			var $fileName = $("#fileName").val()
-			var $fileFormat = $("#fileFormat").val()
-			alert($carbonMonoxide);
+			var $nitrogenDioxide = $("#nitrogenDioxide").is(":checked");
+			var $sulphurDioxide = $("#sulphurDioxide").is(":checked");
+			var $carbonDioxide = $("#carbonDioxide").is(":checked");
+			var $leadtimeHour = $("#leadtimeHour").val();
+			var $fileName = $("#fileName").val();
+			var $fileFormat = $("#fileFormat").val();
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
