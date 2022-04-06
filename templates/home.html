@@ -7,11 +7,19 @@
 	
 	
 	<h2>API Data Request</h2><br><br>
-	<label for="dropdown">Data Store Name:</label><br>
+	<label for="datastoreName">Data Store Name:</label><br>
 	<select name = "datastoreName" id="datastoreName" >
             <option value = "cams-global-atmospheric-composition-forecasts" selected>cams-global-atmospheric-composition-forecasts</option>
         </select>
-	<br>
+	<br><br>
+	<label for="fileFormat">Data Store Name:</label><br>
+	<select name = "fileFormat" id="fileFormat" >
+            <option value = "grib" selected>.grib</option>
+        </select>
+	<br><br>
+	<input type="checkbox" id="horns" name="horns">
+  		<label for="horns">Horns</label>
+	<br><br>
 
 	<label for="datepicker1">Date Start:   </label>&emsp;&emsp;<label for="datapicker2">   Date End:</label><br>
 	<input type="date" id="datepicker1">&emsp;<input type="date" id="datepicker2"><br><br>
@@ -20,7 +28,7 @@
 	<input type="text" id="fileName" name="fileName"  class = "box"><br><br>
 	
 	<input class="buttonstyle" type=button id = "makeCall" value = "Make API Request">
-	<br><br><br><br><br><br><br><br><br><br>
+	
     	
    
   </div>
