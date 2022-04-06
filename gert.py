@@ -90,10 +90,7 @@ def processAPICall():
     
     c = cdsapi.Client()
 
-    c.retrieve(
-        'cams-global-reanalysis-eac4',
-        requestdict,
-        '/home/ubuntu/data/download.grib')
+    c.retrieve('cams-global-reanalysis-eac4',requestdict,downloadpath)
     
     return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
           + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
