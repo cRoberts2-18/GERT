@@ -38,10 +38,14 @@
   function editProfile(){
     if(document.getElementById("edit").value=="Edit Profile"){
       document.getElementById("submit").removeAttribute("hidden");
+      document.getElementById("username").removeAttribute("disabled");
+      document.getElementById("email").removeAttribute("disabled");
       document.getElementById("edit").value="Cancel";
     } else if(document.getElementById("edit").value=="Cancel"){
       document.getElementById("submit").setAttribute("hidden", "hidden");
       document.getElementById("edit").value="Edit Profile";
+      document.getElementById("username").setAttribute("disabled");
+      document.getElementById("email").setAttribute("disabled");
     
     }
   }
