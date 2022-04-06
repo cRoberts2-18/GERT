@@ -114,11 +114,22 @@
 	$(function() {
 		$("#makeCall").click(function () {
 			var $datastoreName = $("#datastoreName").val(); 
-    			var $pWord = $("#password").val(); 
+    			var $datepicker1 = $("#datepicker1").val(); 
+			var $datepicker2 = $("#datepicker2").val();
+			var $time = $("#time").val(); 
+			var $carbonmonoxide = $("#carbonmonoxide").val();
+			var $nitrogendioxide = $("#nitrogendioxide").val();
+			var $sulphurdioxide = $("#sulphurdioxide").val();
+			var $carbondioxide = $("#carbondioxide").val();
+			var $leadtimeHour = $("#leadtimeHour").val()
+			var $fileName = $("#fileName").val()
+			var $fileFormat = $("#fileFormat").val()
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
-			data: {datastoreName:$datastoreName},
+			data: {datastoreName:$datastoreName , datepicker1:$datepicker1, datepicker2:$datepicker2, time:$time, carbonmonoxide:$carbonmonoxide,
+			      nitrogendioxide:$nitrogendioxide, sulphurdioxide:$sulphurdioxide, carbondioxide:$carbondioxide,
+			       leadtimeHour:$leadtimeHour, fileName:$fileName , fileFormat:$fileFormat},
       			
    		})
 		.done(function(msg) {
