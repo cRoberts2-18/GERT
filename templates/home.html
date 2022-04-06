@@ -12,11 +12,18 @@
             <option value = "cams-global-atmospheric-composition-forecasts" selected>cams-global-atmospheric-composition-forecasts</option>
         </select>
 	<br><br>
-	<label for="fileFormat">File Format:</label><br>
-	<select name = "fileFormat" id="fileFormat" >
-            <option value = "grib" selected>.grib</option>
+	
+		<label for="datepicker1">Date Start:   </label>&emsp;&emsp;<label for="datapicker2">   Date End:</label><br>
+	<input type="date" id="datepicker1">&emsp;<input type="date" id="datepicker2"><br><br>
+	
+	<label for="time">Time Interval:</label><br>
+	<select name = "time" id="time" >
+            	<option value = "00:00" selected>00:00</option>
+		<option value = "12:00" selected>12:00</option>
         </select>
 	<br><br>
+
+	
 	<label>Variables for the chosen data</label><br>
 	<input type="checkbox" id="carbonmonoxide" name="carbonmonoxide">
   		<label for="carbonmonoxide">Total Column Carbon Monoxide</label>
@@ -30,18 +37,12 @@
 	<input type="checkbox" id="sulphurDioxide" name="sulphurDioxide">
   		<label for="sulphurDioxide">Total Column Sulphur Dioxide</label>
 	<br><br>
-	
-	
-	<label for="datepicker1">Date Start:   </label>&emsp;&emsp;<label for="datapicker2">   Date End:</label><br>
-	<input type="date" id="datepicker1">&emsp;<input type="date" id="datepicker2"><br><br>
-	
-	<label for="time">File Format:</label><br>
-	<select name = "time" id="time" >
-            	<option value = "00:00" selected>00:00</option>
-		<option value = "12:00" selected>12:00</option>
+
+	<label for="fileFormat">File Format:</label><br>
+	<select name = "fileFormat" id="fileFormat" >
+            <option value = "grib" selected>.grib</option>
         </select>
 	<br><br>
-
 	
 	<label for="fileName">Chosen File Name:</label><br>
 	<input type="text" id="fileName" name="fileName"  class = "box"><br><br>
