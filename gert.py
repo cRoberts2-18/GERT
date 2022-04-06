@@ -61,6 +61,7 @@ def processAPICall():
     datepicker1 = request.values.get('datepicker1')
     datepicker2 = request.values.get('datepicker2')
     time  = request.values.get('time')
+    variables = request.values.get('variables')
     carbonmonoxide = request.values.get('carbonmonoxide')
     nitrogendioxide  = request.values.get('nitrogendioxide')
     sulphurdioxide  = request.values.get('sulphurdioxide')
@@ -83,7 +84,7 @@ def processAPICall():
         '/home/ubuntu/data/download.grib')
     
     return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
-          + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + fileName + fileFormat)
+          + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
 
 @app.route('/logout/')
 def logout():
