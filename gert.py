@@ -71,7 +71,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return(datastoreName)
+    return(dataName)
 
 @app.route('/logout/')
 def logout():
