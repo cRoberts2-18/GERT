@@ -10,11 +10,15 @@
 <div id="Profile" style="display:block;">
   <form class="form" style="top:250px; left:430px; text-align:left;"><br>Account Details<br><br>
   <label class="labels" for="username">Username:</label><br> 
-  <input class="profile" type="text" id="username" value="{{ session['uName'] }}" disabled><br>  
+  <input class="profile" type="text" id="username" value="{{ session['uName'] }}" disabled>
+  &nbsp;  
+  <input class=buttonstyle type="button" id="submitUname" hidden="hidden" value="submit">
+  <input class=buttonstyle type="button" id="editUname" hidden="hidden" onclick="changeUname()" value="edit">
+    
+  <br>  
   <label class="labels" for="Email">Email:</label><br> 
   <input class="profile" type="text" id="email" value="{{ session['Email'] }}" disabled><br><br>
-  <input class="buttonstyle" type="button" id="submit" value="Submit" hidden="hidden">  
-  <input class="buttonstyle" type="button" id="edit" style="float:right;" value="Edit Profile" onclick="editProfile()">
+  
     
   </form>
 </div>
@@ -34,22 +38,20 @@
     document.getElementById("Profile").style.display="none";
     document.getElementById("Billing").style.display="block";
   }
-  
-  function editProfile(){
-    if(document.getElementById("edit").value=="Edit Profile"){
-      document.getElementById("submit").removeAttribute("hidden");
+ 
+  function changeUname(){
+    if(document.getElementById("editUname").value=="Edit Profile"){
+      document.getElementById("submitUname").removeAttribute("hidden");
       document.getElementById("username").removeAttribute("disabled");
-      document.getElementById("email").removeAttribute("disabled");
-      document.getElementById("edit").value="Cancel";
-    } else if(document.getElementById("edit").value=="Cancel"){
-      document.getElementById("submit").setAttribute("hidden", "hidden");
-      document.getElementById("edit").value="Edit Profile";
+      document.getElementById("editUnmae").value="Cancel";
+    } else if(document.getElementById("editUnmae").value=="Cancel"){
+      document.getElementById("submitUname").setAttribute("hidden", "hidden");
+      document.getElementById("editUname").value="Edit Profile";
       document.getElementById("username").setAttribute("disabled", "disabled");
-      document.getElementById("email").setAttribute("disabled", "disabled");
       document.getElementById("username").value="{{ session['uName'] }}";
-      document.getElementById("email").value="{{ session['Email'] }}";
-    }
+      }
   }
+  
   
 </script>
 
