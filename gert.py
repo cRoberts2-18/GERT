@@ -85,17 +85,13 @@ def processAPICall():
     c = cdsapi.Client()
 
     c.retrieve(
-        'cams-global-reanalysis-eac4',
-        {
-            'date': '2021-06-30/2021-06-30',
-            'format': 'grib',
-            'time': '03:00',
-            'variable': 'total_column_nitrogen_dioxide',
-        },
+        dataName,
+        requestdict},
         
         '/home/ubuntu/data/download.grib')
     
-    return(str(requestdict))
+    return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
+          + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
 
 @app.route('/logout/')
 def logout():
