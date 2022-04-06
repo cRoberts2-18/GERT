@@ -60,7 +60,7 @@ def processAPICall():
     dataName = request.values.get('datastoreName')
     datepicker1 = request.values.get('datepicker1')
     datepicker2 = request.values.get('datepicker2')
-    time  = request.values.get('time ')
+    time  = request.values.get('time')
     carbonmonoxide = request.values.get('carbonmonoxide')
     nitrogendioxide  = request.values.get('nitrogendioxide')
     sulphurdioxide  = request.values.get('sulphurdioxide')
