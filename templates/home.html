@@ -123,18 +123,18 @@
 	
 	$(function() {
 		$("#makeCall").click(function () {
-			var $datastoreName = $("#datastoreName").val(); 
-    			var $datepicker1 = $("#datepicker1").val(); 
-			var $datepicker2 = $("#datepicker2").val();
-			var $time = $("#time").val();
+			var $datastoreName = $("#datastoreName"); 
+    			var $datepicker1 = $("#datepicker1"); 
+			var $datepicker2 = $("#datepicker2");
+			var $time = $("#time");
 			var $variables = $('#variables');
 			var $carbonMonoxide = $("#carbonmonoxide").is(":checked");
 			var $nitrogenDioxide = $("#nitrogenDioxide").is(":checked");
 			var $sulphurDioxide = $("#sulphurDioxide").is(":checked");
 			var $carbonDioxide = $("#carbonDioxide").is(":checked");
-			var $leadtimeHour = $("#leadtimeHour").val();
-			var $fileName = $("#fileName").val();
-			var $fileFormat = $("#fileFormat").val();
+			var $leadtimeHour = $("#leadtimeHour");
+			var $fileName = $("#fileName");
+			var $fileFormat = $("#fileFormat");
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
