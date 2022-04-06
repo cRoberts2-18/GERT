@@ -71,6 +71,9 @@ def processAPICall():
     fileName = request.values.get('fileName')
     fileFormat = request.values.get('fileFormat')
     
+    if fileName=="":
+        fileName="Default"
+    
     downloadpath="/home/ubuntu/data/"
     downloadpath+=str(session['uid'])
     downloadpath+=fileName+"."+fileFormat
