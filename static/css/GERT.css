@@ -127,6 +127,10 @@
         position  : absolute;
         transform : translate(-50%, -50%);
     }
+    .form labels{
+        font-size: 20px;
+    }
+
     .form a{
         font-size: 25px;
     }
@@ -138,6 +142,11 @@
         text-align: centre;
         font-size: 16px;
         left: 50%;
+    }
+    .profile{
+        height: 40px;
+        width: 300px;
+        background-color:white;
     }
     .box{
         height: 40px;
