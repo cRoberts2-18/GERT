@@ -170,6 +170,95 @@
       		
       });
 });  
+
+	  $(function() {
+      $("#two").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CO2 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  $(function() {
+      $("#three").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CO2 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  $(function() {
+      $("#four").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CO2 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  
+	  
+	  
+	  
 	  
 	$(function() {
 		$("#makeCall").click(function () {
