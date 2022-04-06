@@ -69,7 +69,19 @@ def processAPICall():
     leadtimeHour  = request.values.get('leadtimeHour')
     fileName = request.values.get('fileName')
     fileFormat = request.values.get('fileFormat')
-
+    datestring=datepicker1+"/"+datepicker2
+    variables=[]
+    if carbonmonoxide=="true":
+        variables.append("total_column_carbon_monoxide")
+    if nitrogendioxide=="true":
+        variables.append("total_column_nitrogen_dioxide")
+    if sulphurdioxide=="true":
+        variables.append("total_column_sulphur_dioxide")
+    if carbondioxide=="true":
+        variables.append("total_column_carbon_dioxide")
+    
+    requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables}
+    
     c = cdsapi.Client()
 
     c.retrieve(
@@ -83,8 +95,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
-          + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
+    return(requestdict)
 
 @app.route('/logout/')
 def logout():
