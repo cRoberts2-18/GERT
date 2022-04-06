@@ -145,31 +145,29 @@
 	
 	$(function() {
       $("#one").click(function () {
-	      if($("#one").is(":checked") || $("#two").is(":checked") || $("#three").is(":checked") || $("#four").is(":checked")){
-	      		var $str = "";
-		      if($("#one").is(":checked")){
-		      		str=str.concat("CO ");
-		      }	
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
 		      
-		      if($("#two").is(":checked")){
-		      		str=str.concat("CO2 ");
-		      }	
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CO2 ");
+	      }	
 		      
-		      if($("#three").is(":checked")){
-		      		str=str.concat("NO2 ");
-		      }	
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
 		      
-		      if($("#four").is(":checked")){
-		      		str=str.concat("SO2 ");
-		      }	
-	      
-	      }else{
-	      		var $str = "Select an option";
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
 	      }
 	      $("#select").find("option:selected").text($str);
 	      
 	      
-      		$("#select").find("option:selected").text('Newest');
+      		
       });
 });  
 	  
