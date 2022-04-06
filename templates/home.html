@@ -45,8 +45,8 @@
         </select>
 	<br><br>
 	<div class="multiselect">
-    	<div class="selectBox" id="select" onclick="showCheckboxes()">
-      		<select>
+    	<div class="selectBox" onclick="showCheckboxes()">
+      		<select id="select">
 			<option>test</option>
       		</select>
       	<div class="overSelect"></div>
@@ -144,7 +144,31 @@
     });
 	
 	$(function() {
-      $("#select").click(function () {
+      $("#one").click(function () {
+	      if($("#one").is(":checked") || $("#two").is(":checked") || $("#three").is(":checked") || $("#four").is(":checked")){
+	      		var $str = "";
+		      if($("#one").is(":checked")){
+		      		str=str.concat("CO ");
+		      }	
+		      
+		      if($("#two").is(":checked")){
+		      		str=str.concat("CO2 ");
+		      }	
+		      
+		      if($("#three").is(":checked")){
+		      		str=str.concat("NO2 ");
+		      }	
+		      
+		      if($("#four").is(":checked")){
+		      		str=str.concat("SO2 ");
+		      }	
+	      
+	      }else{
+	      		var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
       		$("#select").find("option:selected").text('Newest');
       });
 });  
