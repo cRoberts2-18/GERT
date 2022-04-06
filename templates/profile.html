@@ -19,6 +19,9 @@
   <br>  
   <label class="labels" for="Email">Email:</label><br> 
   <input class="profile" type="text" id="email" value="{{ session['Email'] }}" disabled><br><br>
+  &nbsp;  
+  <input class=buttonstyle type="button" id="editEmail" onclick="changeEmail()" value="Edit">
+  <input class=buttonstyle type="button" id="submitEmail" hidden="hidden" value="submit">
   
     
   </form>
@@ -52,7 +55,18 @@
       document.getElementById("username").value="{{ session['uName'] }}";
       }
   }
-  
+  function changeEmail(){
+    if(document.getElementById("editEmail").value=="Edit"){
+      document.getElementById("submitEmail").removeAttribute("hidden");
+      document.getElementById("email").removeAttribute("disabled");
+      document.getElementById("editEmail").value="Cancel";
+    } else if(document.getElementById("editEmail").value=="Cancel"){
+      document.getElementById("submitEmail").setAttribute("hidden", "hidden");
+      document.getElementById("editEmail").value="Edit";
+      document.getElementById("email").setAttribute("disabled", "disabled");
+      document.getElementById("email").value="{{ session['uName'] }}";
+      }
+  }
   
 </script>
 
