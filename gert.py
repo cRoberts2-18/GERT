@@ -58,6 +58,17 @@ def processLogin():
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
     dataName = request.values.get('datastoreName')
+    datepicker1 = request.values.get('datepicker1')
+    datepicker2 = request.values.get('datepicker2')
+    time  = request.values.get('time ')
+    carbonmonoxide = request.values.get('carbonmonoxide')
+    nitrogendioxide  = request.values.get('nitrogendioxide')
+    sulphurdioxide  = request.values.get('sulphurdioxide')
+    carbondioxide  = request.values.get('carbondioxide')
+    leadtimeHour  = request.values.get('leadtimeHour')
+    fileName = request.values.get('fileName')
+    fileFormat = request.values.get('fileFormat')
+
     c = cdsapi.Client()
 
     c.retrieve(
@@ -71,7 +82,8 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return(dataName)
+    return(dataName + datepicker1 + datepicker2 + time + carbonmonoxide + nitrogendioxide
+          + sulphurdioxide + carbondioxide + leadtimeHour + fileName + fileFormat)
 
 @app.route('/logout/')
 def logout():
