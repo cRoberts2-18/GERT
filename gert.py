@@ -85,7 +85,7 @@ def processAPICall():
     c = cdsapi.Client()
 
     c.retrieve(
-        dataName,
+        'cams-global-reanalysis-eac4',
         requestdict,
         '/home/ubuntu/data/download.grib')
     
