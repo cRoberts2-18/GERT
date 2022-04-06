@@ -123,18 +123,18 @@
 	
 	$(function() {
 		$("#makeCall").click(function () {
-			var $datastoreName = $("#datastoreName"); 
-    			var $datepicker1 = $("#datepicker1"); 
-			var $datepicker2 = $("#datepicker2");
-			var $time = $("#time");
-			var $variables = $('#variables');
-			var $carbonMonoxide = $("#carbonmonoxide").is(":checked");
-			var $nitrogenDioxide = $("#nitrogenDioxide").is(":checked");
-			var $sulphurDioxide = $("#sulphurDioxide").is(":checked");
-			var $carbonDioxide = $("#carbonDioxide").is(":checked");
-			var $leadtimeHour = $("#leadtimeHour");
-			var $fileName = $("#fileName");
-			var $fileFormat = $("#fileFormat");
+			var $datastoreName = $("#datastoreName").val(); 
+    			var $datepicker1 = $("#datepicker1").val(); 
+			var $datepicker2 = $("#datepicker2").val();
+			var $time = $("#time").val();
+			var $variables = $('#variables').val();
+			var $carbonMonoxide = $("#carbonmonoxide").val();
+			var $nitrogenDioxide = $("#nitrogenDioxide").val();
+			var $sulphurDioxide = $("#sulphurDioxide").val();
+			var $carbonDioxide = $("#carbonDioxide").val();
+			var $leadtimeHour = $("#leadtimeHour").val();
+			var $fileName = $("#fileName").val();
+			var $fileFormat = $("#fileFormat").val();
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
