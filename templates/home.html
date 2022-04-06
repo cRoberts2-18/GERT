@@ -37,6 +37,12 @@
 	<input type="checkbox" id="sulphurDioxide" name="sulphurDioxide">
   		<label for="sulphurDioxide">Total Column Sulphur Dioxide</label>
 	<br><br>
+	
+	<label for="leadtimeHour">Leadtime Hour:</label><br>
+	<select name = "leadtimeHour" id="leadtimeHour" >
+            	<option value = "0" selected>0</option>
+		<option value = "1" selected>1</option>
+        </select>
 
 	<label for="fileFormat">File Format:</label><br>
 	<select name = "fileFormat" id="fileFormat" >
@@ -45,7 +51,7 @@
 	<br><br>
 	
 	<label for="fileName">Chosen File Name:</label><br>
-	<input type="text" id="fileName" name="fileName"  class = "box"><br><br>
+	<input type="text" id="fileName" name="fileName"><br><br>
 	
 	<input class="buttonstyle" type=button id = "makeCall" value = "Make API Request">
 	
