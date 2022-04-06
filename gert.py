@@ -57,7 +57,7 @@ def processLogin():
 
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
-    datastoreName = request.values.get(datastoreName)
+    dataName = request.values.get('datastoreName')
     c = cdsapi.Client()
 
     c.retrieve(
