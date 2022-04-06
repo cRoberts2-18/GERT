@@ -46,7 +46,8 @@
 	<br><br>
 	<div class="multiselect">
     	<div class="selectBox" onclick="showCheckboxes()">
-      		<select value="test">
+      		<select id="select">
+			<option>test</option>
       		</select>
       	<div class="overSelect"></div>
     	</div>
@@ -142,6 +143,12 @@
     });
     });
 	
+	$(function() {
+      $("#select").click(function () {
+      		$("#select").find("option:selected").text('Newest');
+      });
+});  
+	  
 	$(function() {
 		$("#makeCall").click(function () {
 			var $datastoreName = $("#datastoreName").val(); 
