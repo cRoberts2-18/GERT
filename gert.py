@@ -49,6 +49,7 @@ def processLogin():
     for row in myresult:
         if(request.values.get('uName').lower() == row[1].lower()):
             if(request.values.get('pWord') ==  row[2]):
+                session['uid']=row[0]
                 session['uName']=row[1]
                 session['Email']=row[3]
                 session['LoggedIn']=True
@@ -69,6 +70,11 @@ def processAPICall():
     leadtimeHour  = request.values.get('leadtimeHour')
     fileName = request.values.get('fileName')
     fileFormat = request.values.get('fileFormat')
+    
+    downloadpath="/home/ubuntu/data/"
+    downloadpath+=str(session['uid'])
+    downloadpath+=fileName+"."+fileFormat
+    
     datestring=datepicker1+"/"+datepicker2
     variables=[]
     if carbonmonoxide=="true":
