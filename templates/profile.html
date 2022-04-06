@@ -7,23 +7,25 @@
   
 </div>
 
-<div id="Profile">
-  
+<div id="Profile" style="display:block;">
+  <h2 style="align:center"> Profile</h2>
 </div>
 
-<div id="Billing">
-  
+<div id="Billing" style="display:none;">
+  <h2 style="align:center"> bill</h2>
 </div>
 
 
 <script>
 
   function acc(){
-    alert("acc");
+    document.getElementById("Billing").style.display="none";
+    document.getElementById("Profile").style.display="block";
   }
   
   function bill(){
-    alert("bill");
+    document.getElementById("Profile").style.display="none";
+    document.getElementById("Billing").style.display="block";
   }
   
 </script>
