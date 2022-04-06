@@ -44,9 +44,10 @@
     } else if(document.getElementById("edit").value=="Cancel"){
       document.getElementById("submit").setAttribute("hidden", "hidden");
       document.getElementById("edit").value="Edit Profile";
-      document.getElementById("username").setAttribute("disabled");
-      document.getElementById("email").setAttribute("disabled");
-    
+      document.getElementById("username").setAttribute("disabled", "disabled");
+      document.getElementById("email").setAttribute("disabled", "disabled");
+      document.getElementById("username").value="{{ session['uName'] }}";
+      document.getElementById("email").value="{{ session['Email'] }}";
     }
   }
   
