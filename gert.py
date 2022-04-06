@@ -82,8 +82,8 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return(dataName + datepicker1 + datepicker2 + time + carbonmonoxide + nitrogendioxide
-          + sulphurdioxide + carbondioxide + leadtimeHour + fileName + fileFormat)
+    return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
+          + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + fileName + fileFormat)
 
 @app.route('/logout/')
 def logout():
