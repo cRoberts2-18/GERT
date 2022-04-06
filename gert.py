@@ -57,6 +57,7 @@ def processLogin():
 
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
+    datastoreName = request.values.get(datastoreName)
     c = cdsapi.Client()
 
     c.retrieve(
@@ -70,7 +71,7 @@ def processAPICall():
         
         '/home/ubuntu/data/download.grib')
     
-    return('true')
+    return(datastoreName)
 
 @app.route('/logout/')
 def logout():
