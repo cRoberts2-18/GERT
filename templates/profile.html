@@ -8,7 +8,7 @@
 </div>
 
 <div id="Profile" style="display:block;">
-  <form class="form" style="top:250px; left:430px; text-align:left;"><br>Account Details<br><br>
+  <form class="form" style="top:250px; left:500px; text-align:left;"><br>Account Details<br><br>
   <label class="labels" for="username">Username:</label><br> 
   <input class="profile" type="text" id="username" value="{{ session['uName'] }}" disabled>
   &nbsp;  
@@ -43,8 +43,8 @@
     if(document.getElementById("editUname").value=="Edit Profile"){
       document.getElementById("submitUname").removeAttribute("hidden");
       document.getElementById("username").removeAttribute("disabled");
-      document.getElementById("editUnmae").value="Cancel";
-    } else if(document.getElementById("editUnmae").value=="Cancel"){
+      document.getElementById("editUname").value="Cancel";
+    } else if(document.getElementById("editUname").value=="Cancel"){
       document.getElementById("submitUname").setAttribute("hidden", "hidden");
       document.getElementById("editUname").value="Edit Profile";
       document.getElementById("username").setAttribute("disabled", "disabled");
