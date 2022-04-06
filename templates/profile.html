@@ -1,7 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="profile">
-    <h1>About me</h1>
-     <p>This is a portfolio site about anything that can be put in a portfolio.</p>
-  </div>
+
+<div id="mySidebar" class="sidebar" style="width:250px;">
+  <a href="AccDetails.php" target="pageSelect">Account Details</a>
+  <a href="Billing.php" target="pageSelect">Billing</a>
+  
+</div>
+
+<div id="main">
+  <iframe src="AccDetails.php" id="options" name="pageSelect"></iframe>
+</div>
+
 {% endblock %}
