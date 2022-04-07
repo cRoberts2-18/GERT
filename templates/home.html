@@ -249,6 +249,7 @@
 	  
 	$(function() {
 		$("#makeCall").click(function () {
+			notifyMessage("Data Download has been Submitted, Do not spam request", "info")
 			var $datastoreName = $("#datastoreName").val(); 
     			var $datepicker1 = $("#datepicker1").val(); 
 			var $datepicker2 = $("#datepicker2").val();
@@ -270,10 +271,10 @@
       			
    		})
 		.done(function(msg) {
-		alert(msg)
+		notifyMessage(msg, "success")
 		})   
 		.fail(function(msg){
-			alert("Error");
+			notifyMessage("An error has occured, Check that there is suitable data requested, /n or contact system manager","error");
 		});
 		});
  
