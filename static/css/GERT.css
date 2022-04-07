@@ -318,7 +318,6 @@
   bottom: 0;
   background-color: #fefefe;
   width: 100%;
-  height:25%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -342,20 +341,21 @@
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #282b30;
   color: white;
 }
 
 .modal-body {padding: 2px 16px;}
 .modal-body p{
     font-size:30px;
-    color:black;
+    background-color:#111;
+    color:white;
 
 
 }
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #282b30;
   color: white;
 }
 
