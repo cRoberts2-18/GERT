@@ -102,8 +102,8 @@ def processAPICall():
     )
     
     mycursor = mydb.cursor()
-    cursor.execute("SELECT MAX(SearchID) AS maximum FROM SavedSearhces")
-    result = cursor.fetchall()
+    mycursor.execute("SELECT MAX(SearchID) AS maximum FROM SavedSearhces")
+    result = mycursor.fetchall()
     maximum=0
     for i in result:
         maximum= float(i[0])
