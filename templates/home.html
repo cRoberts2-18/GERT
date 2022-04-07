@@ -138,7 +138,7 @@
 	      }	
 		      
 	      if($("#two").is(":checked")){
-		      	$str=$str.concat("CO2 ");
+		      	$str=$str.concat("Methane ");
 	      }	
 		      
 	      if($("#three").is(":checked")){
@@ -166,7 +166,7 @@
 	      }	
 		      
 	      if($("#two").is(":checked")){
-		      	$str=$str.concat("CO2 ");
+		      	$str=$str.concat("Methane ");
 	      }	
 		      
 	      if($("#three").is(":checked")){
@@ -194,7 +194,7 @@
 	      }	
 		      
 	      if($("#two").is(":checked")){
-		      	$str=$str.concat("CO2 ");
+		      	$str=$str.concat("Methane ");
 	      }	
 		      
 	      if($("#three").is(":checked")){
@@ -222,7 +222,7 @@
 	      }	
 		      
 	      if($("#two").is(":checked")){
-		      	$str=$str.concat("CO2 ");
+		      	$str=$str.concat("Methane ");
 	      }	
 		      
 	      if($("#three").is(":checked")){
@@ -257,7 +257,7 @@
 			var $carbonMonoxide = $("#one").is(":checked");
 			var $nitrogenDioxide = $("#three").is(":checked");
 			var $sulphurDioxide = $("#four").is(":checked");
-			var $carbonDioxide = $("#two").is(":checked");
+			var $Methane = $("#two").is(":checked");
 			var $leadtimeHour = $("#leadtimeHour").val();
 			var $fileName = $("#fileName").val();
 			var $fileFormat = $("#fileFormat").val();
@@ -265,7 +265,7 @@
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
 			data: {datastoreName:$datastoreName , datepicker1:$datepicker1, datepicker2:$datepicker2, time:$time, variables:$variables, carbonmonoxide:$carbonMonoxide,
-			      nitrogendioxide:$nitrogenDioxide, sulphurdioxide:$sulphurDioxide, carbondioxide:$carbonDioxide,
+			      nitrogendioxide:$nitrogenDioxide, sulphurdioxide:$sulphurDioxide, Methane:$Methane,
 			       leadtimeHour:$leadtimeHour, fileName:$fileName , fileFormat:$fileFormat},
       			
    		})
