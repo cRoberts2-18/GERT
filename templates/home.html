@@ -81,14 +81,14 @@
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Download Successful</h2>
+      <h2 id="Header">Downloading...</h2>
     </div>
     <div class="modal-body">
-      <p>Your Selected model has been downloaded</p>
-      <p>You may either view this model now or save it to view later</p>
+      <p id="Mline1">Please wait while your model is downloaded</p>
+      <p id="Mline2" hidden>You may either view this model now or save it to view later</p>
     </div>
     <div class="modal-footer">
-	<h2 style="text-align:center;"> this is where the save and view buttons will go</h2>
+	<h2 id="Footer" style="text-align:center;" hidden> this is where the save and view buttons will go</h2>
     </div>
   </div>
 
@@ -268,6 +268,7 @@
 	$(function() {
 		$("#makeCall").click(function () {
 			notifyMessage("Data Download has been Submitted, Do not spam request", "info")
+			$("#myModal").css('display','block');
 			var $datastoreName = $("#datastoreName").val(); 
     			var $datepicker1 = $("#datepicker1").val(); 
 			var $datepicker2 = $("#datepicker2").val();
@@ -290,7 +291,10 @@
    		})
 		.done(function(msg) {
 		notifyMessage(msg, "success");
-		$("#myModal").css('display','block');
+		$("#Header").text("Download Successful");
+		$("Mline1").text("Your model has been downloaded successfully");
+		$("Mline2").removeAttr('hidden');
+		$("Footer").removeAttr('hidden');
 		})   
 		.fail(function(msg){
 			notifyMessage("An error has occured, Check that there is suitable data requested, /n or contact system manager","error");
