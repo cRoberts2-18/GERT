@@ -133,7 +133,7 @@
     
         function onMapClick(e) {
         notifyMessage("You clicked the map at " + e.latlng, "info");
-	onmouseup = notifyMessage(e.latlng) , "info");
+	onmouseup = notifyMessage(e.latlng, "info");
     }
     
     map.on('click', onMapClick);
