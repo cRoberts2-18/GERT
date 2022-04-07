@@ -107,10 +107,7 @@ def processAPICall():
     maximum=0
     for i in result:
         maximum= float(i[0])
-    if maximum is none:
-        SaveID=0
-    else:
-        SaveID=maximum+1
+    SaveID=maximum+1
     sql="INSERT INTO SavedSearches (SearchID, Name, OwnerID, Filename) VALUES (%s,%s,%s,%s);"
     values=(SaveID,fileName,session['uid'],SaveName)
     mycursor.execute(sql, values)
