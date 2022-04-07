@@ -292,9 +292,9 @@
 		.done(function(msg) {
 		notifyMessage(msg, "success");
 		$("#Header").text("Download Successful");
-		$("Mline1").text("Your model has been downloaded successfully");
-		$("Mline2").removeAttr('hidden');
-		$("Footer").removeAttr('hidden');
+		$("#Mline1").text("Your model has been downloaded successfully");
+		$("#Mline2").removeAttr('hidden');
+		$("#Footer").removeAttr('hidden');
 		})   
 		.fail(function(msg){
 			notifyMessage("An error has occured, Check that there is suitable data requested, /n or contact system manager","error");
