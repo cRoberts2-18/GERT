@@ -95,8 +95,7 @@ def processAPICall():
 
     c.retrieve(dataName,requestdict,downloadpath)
     
-    return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
-          + str(sulphurdioxide) + str(methane) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
+    return("Data Requested Downloaded")
 
 @app.route('/logout/')
 def logout():
