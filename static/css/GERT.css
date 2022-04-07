@@ -316,7 +316,7 @@
 .modal-content {
   position: fixed;
   bottom: 0;
-  background-color: #fefefe;
+  background-color: #111;
   width: 100%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
@@ -345,7 +345,7 @@
   color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 2px 16px; width:100%}
 .modal-body p{
     font-size:30px;
     background-color:#111;
