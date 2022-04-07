@@ -66,7 +66,7 @@ def processAPICall():
     carbonmonoxide = request.values.get('carbonmonoxide')
     nitrogendioxide  = request.values.get('nitrogendioxide')
     sulphurdioxide  = request.values.get('sulphurdioxide')
-    carbondioxide  = request.values.get('carbondioxide')
+    methane  = request.values.get('methane')
     leadtimeHour  = request.values.get('leadtimeHour')
     fileName = request.values.get('fileName')
     fileFormat = request.values.get('fileFormat')
@@ -86,14 +86,14 @@ def processAPICall():
         variables.append("total_column_nitrogen_dioxide")
     if sulphurdioxide=="true":
         variables.append("total_column_sulphur_dioxide")
-    if carbondioxide=="true":
-        variables.append("total_column_carbon_dioxide")
+    if methane=="true":
+        variables.append("total_column_methane")
     
     requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables}
     
     c = cdsapi.Client()
 
-    c.retrieve('cams-global-reanalysis-eac4',requestdict,downloadpath)
+    c.retrieve(dataName,requestdict,downloadpath)
     
     return(dataName + str(datepicker1) + str(datepicker2) + str(time) + str(carbonmonoxide) + str(nitrogendioxide)
           + str(sulphurdioxide) + str(carbondioxide) + str(leadtimeHour) + str(variables) + fileName + fileFormat)
