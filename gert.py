@@ -89,7 +89,7 @@ def processAPICall():
     if methane=="true":
         variables.append("total_column_methane")
     
-    requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables , 'type': 'forecast',}
+    requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables ,'leadtime_hour': leadtimeHour 'type': 'forecast',}
     
     c = cdsapi.Client()
 
