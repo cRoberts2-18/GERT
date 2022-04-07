@@ -73,10 +73,10 @@ def processAPICall():
     
     if fileName=="":
         fileName="Default"
-    
+    SaveName=fileName+"."+fileFormat
     downloadpath="/home/ubuntu/data/"
     downloadpath+=str(session['uid'])
-    downloadpath+=fileName+"."+fileFormat
+    downloadpath+=SaveName
     
     datestring=datepicker1+"/"+datepicker2
     variables=[]
@@ -94,6 +94,25 @@ def processAPICall():
     c = cdsapi.Client()
 
     c.retrieve(dataName,requestdict,downloadpath)
+    
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root", 
+        password="root",
+        database="GERT"
+    )
+    
+    mycursor = mydb.cursor()
+    cursor.execute("SELECT MAX(SearchID) AS maximum FROM SavedSearhces")
+    result = cursor.fetchall()
+    maximum=0
+    for i in result:
+        maximum= float(i[0])
+    SaveID=maximum+1
+    
+    mycursor.execute("INSERT INTO SavedSearches (SearchID, Name, OwnerID, Filename) VALUES (SaveID, fileName, session['uid'], SaveName);")
+    mydb.commit()
+    
     
     return("Data Requested Downloaded")
 
