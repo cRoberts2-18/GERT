@@ -136,18 +136,9 @@
 	return e.latlng;
 		
     }
-    	function getBounds(){
-		map.on('click', onMapClick());
-		firstclick = true
-		if(firstclick == true){
-			let xy1 = onMapClick()
-		}
-		else{
-			let xy2 = onMapClick();
-			alert( xy1 + xy2);
-		}
     
-    map.on('click', getBounds() );
+	  
+    map.on('click', onMapClick() );
     
     $(function() {
       $("#SignOut").click(function () {
