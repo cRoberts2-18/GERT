@@ -57,8 +57,31 @@ def saved():
 @app.route('/view/', methods = ['GET','POST'])
 def view():
     if session.get('LoggedIn')==True:
-        data=request.args.get('ID',None)
-        return render_template('view.html', data=data)
+        ID=request.args.get('ID',None)
+        filename=""
+        
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root", 
+            password="root",
+            database="GERT"
+        )
+    
+        mycursor = mydb.cursor()
+        sql="SELECT * FROM SavedSearches WHERE SearchID=%s;"
+        value=[ID]
+        mycursor.execute(sql,value)
+        
+        myresult = mycursor.fetchall()
+        for row in myresult:
+            filename=row[3]
+        
+        
+        downloadpath="/home/ubuntu/data/"
+        downloadpath+=str(session['uid'])
+        downloadpath+=filename
+        
+        return render_template('view.html', data=downloadpath)
     else:
         return redirect(url_for("loginPage"))
     
