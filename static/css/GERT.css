@@ -389,7 +389,7 @@
 }
 
 .SaveTable thead tr{
-    background-color: 282b30;
+    background-color: #1f2124;
     color: white;
     text-align: left;
     border-bottom: thin solid white;
@@ -404,7 +404,7 @@
 }
 
 .SaveTable tbody tr:nth-of-type(even) {
-    background-color: black;
+    background-color: #383b40;
 }
 
 .SaveTable tbody tr:last-of-type {
