@@ -385,7 +385,7 @@
     margin-right: auto;
     border-collapse: collapse;
     margin: 25ox 0;
-    min-width:440px;
+    width:100%;
 }
 
 .SaveTable thead tr{
