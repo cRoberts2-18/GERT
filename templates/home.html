@@ -133,12 +133,12 @@
     
         function onMapClick(e) {
         notifyMessage("You clicked the map at " + e.latlng, "info");
-	return e.latlng;
+	
 		
     }
     
 	  
-    map.on('click', onMapClick() );
+    map.on('click', onMapClick(e) );
     
     $(function() {
       $("#SignOut").click(function () {
