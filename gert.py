@@ -169,7 +169,7 @@ def processAPICall():
     mydb.commit()
 
     
-    return(SaveID)
+    return(str(SaveID))
 
 @app.route('/logout/')
 def logout():
