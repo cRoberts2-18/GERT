@@ -57,14 +57,18 @@ def saved():
 @app.route('/view/', methods = ['GET','POST'])
 def view():
     if session.get('LoggedIn')==True:
-        searchID=request.values.get("SearchID")
-        data = searchID
-        return render_template('view.html', data=data)
+        
+        return render_template('view.html')
     else:
         return redirect(url_for("loginPage"))
     
-
-
+@app.route('/viewProcess/', methods = ['GET','POST'])
+def viewProcess():
+    searchID=request.values.get("SearchID")
+    data = searchID
+    return redirect(url_for('view', data=data))
+    
+    
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 def processLogin():
     stringRow = ""
