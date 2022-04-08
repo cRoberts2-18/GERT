@@ -2,13 +2,19 @@
 {% block content %}
 
 <div id="mySidebar" class="sidebar" style="width:400px; padding-top:5px;">
-  <input class="sidebutton" type="Button" id="Search" value="Search">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data">
-  <a>Below is the filepath that we will download from</a>
-  <a style="font-size:15px;">{{ data }}</a>
+  <input class="sidebutton" type="Button" id="Search" value="Search">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data"><br><br><br>
+  <a id="dataText">Below is the filepath that we will download from</a>
+  <a id="dataText" style="font-size:15px;">{{ data }}</a>
   
 </div>
 
+<script>
 
-
-
+  $(function() {
+		$("#Search").click(function () {
+      $("#dataText").attr("hidden","hidden");
+    });
+  });
+  
+</script>
 {% endblock %}
