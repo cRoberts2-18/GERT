@@ -381,7 +381,8 @@
 }
 
 .SaveTable{
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
     margin: 25ox 0;
     min-width:440px;
@@ -394,19 +395,19 @@
     border-bottom: thin solid white;
     
 }
-.styled-table th,
-.styled-table td {
+.SaveTable th,
+.SaveTable td {
     padding: 12px 15px;
 }
-.styled-table tbody tr {
+.SaveTable tbody tr {
     border-bottom: 1px solid #ffffff;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+.SaveTable tbody tr:nth-of-type(even) {
     background-color: black;
 }
 
-.styled-table tbody tr:last-of-type {
+.SaveTable tbody tr:last-of-type {
     border-bottom: 2px solid #ffffff;
 }
 
