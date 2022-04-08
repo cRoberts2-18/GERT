@@ -15,7 +15,7 @@
           <td>{{ res[0] }}</td>
           <td>{{ res[1] }}</td>
           <td>{{ res[3] }}</td>  
-          <td><button onclick="ViewModel()">View Model</button></td>
+          <td><button onclick="ViewModel({{ res[0] }})">View Model</button></td>
         </tr>
       {% endfor %}
     </tbody>
@@ -23,8 +23,8 @@
 
   <script>
     
-  function ViewModel(){ 
-    alert("SUUUUUUUUUU");
+  function ViewModel(file){ 
+    alert("Opening ",file);
 }
     
 </script>
