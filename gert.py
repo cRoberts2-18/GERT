@@ -57,7 +57,8 @@ def saved():
 @app.route('/view/')
 def view():
     if session.get('LoggedIn')==True:
-        return render_template('view.html')
+        data = {test:"test", test1:"Test"}
+        return render_template('view.html', data=data)
     else:
         return redirect(url_for("loginPage"))
     
