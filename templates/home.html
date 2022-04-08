@@ -88,7 +88,7 @@
       <p id="Mline2" hidden>You may either view this model now or save it to view later</p>
     </div>
     <div class="modal-footer">
-	<input class="sidebutton" style="background-color: #282b30;" type="Button" id="save" value="Save" onclick="close()">&emsp;<input class="sidebutton" style="background-color: #282b30;" type="button" id="View" value="View Data" onclick="view()">  
+	<input hidden class="sidebutton" style="background-color: #282b30;" type="Button" id="save" value="Save" onclick="close()">&emsp;<input hidden class="sidebutton" style="background-color: #282b30;" type="button" id="View" value="View Data" onclick="view()">  
     </div>
   </div>
 
@@ -296,7 +296,8 @@
 		$("#Header").text("Download Successful");
 		$("#Mline1").text("Your model has been downloaded successfully");
 		$("#Mline2").removeAttr('hidden');
-		$("#Footer").removeAttr('hidden');
+		$("#save").removeAttr('hidden');
+		$("#View").removeAttr('hidden');	
 		})   
 		.fail(function(msg){
 			$("#Header").text("Download Failed");
@@ -336,7 +337,8 @@ span.onclick = function() {
   document.getElementById("Header").innerHTML = "Downloading...";
   document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
   document.getElementById("Mline2").setAttribute("hidden", "hidden");
-  document.getElementById("Footer").setAttribute("hidden", "hidden");
+  document.getElementById("save").setAttribute("hidden", "hidden");
+  document.getElementById("View").setAttribute("hidden", "hidden");	
   
 }
 
@@ -347,13 +349,19 @@ window.onclick = function(event) {
     document.getElementById("Header").innerHTML = "Downloading...";
     document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
     document.getElementById("Mline2").setAttribute("hidden", "hidden");
-    document.getElementById("Footer").setAttribute("hidden", "hidden");
+    document.getElementById("save").setAttribute("hidden", "hidden");
+    document.getElementById("View").setAttribute("hidden", "hidden");	  
   }
   
 }
 	  
 function close(){
-	modal.style.display = "none";
+	document.getElementById("myModal").style.display = "none";
+	document.getElementById("Header").innerHTML = "Downloading...";
+    	document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
+    	document.getElementById("Mline2").setAttribute("hidden", "hidden");
+    	document.getElementById("save").setAttribute("hidden", "hidden");
+    	document.getElementById("View").setAttribute("hidden", "hidden");
 }
 	  
 	  
