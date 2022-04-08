@@ -88,7 +88,7 @@
       <p id="Mline2" hidden>You may either view this model now or save it to view later</p>
     </div>
     <div class="modal-footer">
-	<h2 id="Footer" style="text-align:center;" hidden> this is where the save and view buttons will go</h2>
+	<input class="sidebutton" style="background-color: #282b30;" type="Button" id="save" value="Save" onclick="close()">&emsp;<input class="sidebutton" style="background-color: #282b30;" type="button" id="View" value="View Data" onclick="view()">  
     </div>
   </div>
 
@@ -350,6 +350,10 @@ window.onclick = function(event) {
     document.getElementById("Footer").setAttribute("hidden", "hidden");
   }
   
+}
+	  
+function close(){
+	modal.style.display = "none";
 }
 	  
 	  
