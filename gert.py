@@ -167,11 +167,9 @@ def processAPICall():
     values=(SaveID,fileName,session['uid'],SaveName)
     mycursor.execute(sql, values)
     mydb.commit()
+
     
-    
-    
-    
-    return(saveID)
+    return(SaveID)
 
 @app.route('/logout/')
 def logout():
