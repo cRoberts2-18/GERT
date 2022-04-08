@@ -5,6 +5,8 @@
   <input class="sidebutton" type="Button" id="Search" value="Search" onclick="Search()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>
   <a id="dataText">Below is the filepath that we will download from</a>
   <a id="dataText2" style="font-size:15px;">{{ data }}</a>
+  <a id="searchText1" display;none;">Search go BRRRRRRRR</a>
+  <a id="searchText2" display;none;">Large sequence of search inputs</a>	
   
 </div>
 
@@ -13,8 +15,17 @@
 	function Search(){	  
 	  document.getElementById("dataText").style.display="none";
 	  document.getElementById("dataText2").style.display="none";
+	  document.getElementById("searchText").style.display="block";
+	  document.getElementById("searchText2").style.display="block";	
 	  
-	  }	  
+	  }	
+	function Search(){	  
+	  document.getElementById("dataText").style.display="block";
+	  document.getElementById("dataText2").style.display="block";
+	  document.getElementById("searchText").style.display="none";
+	  document.getElementById("searchText2").style.display="none";
+	  
+	  }	
   
   
 </script>
