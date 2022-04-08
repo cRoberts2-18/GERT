@@ -137,7 +137,7 @@
 		
     }
     	function getBounds(){
-		map.on('click', onMapClick);
+		map.on('click', onMapClick());
 		firstclick = true
 		if(firstclick == true){
 			let xy1 = onMapClick(e)
