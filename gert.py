@@ -31,6 +31,16 @@ def resetPassword():
 def loginPage():
     return render_template('login.html')
 
+@app.route('/saved/')
+def saved():
+    return("saved models goe here")
+
+
+@app.route('/view/')
+def view():
+    return("viewed data goes here")
+
+
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 def processLogin():
     stringRow = ""
