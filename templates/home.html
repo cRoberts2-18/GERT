@@ -133,10 +133,21 @@
     
         function onMapClick(e) {
         notifyMessage("You clicked the map at " + e.latlng, "info");
-	onmouseup = notifyMessage(e.latlng, "info");
+	return e.latlng;
+		
     }
+    	function getBounds(){
+		map.on('click', onMapClick);
+		firstclick = true
+		if(firstclick == true){
+			let xy1 = onMapClick(e)
+		}
+		else{
+			let xy2 = onMapClick(e);
+			alert( xy1 + xy2);
+		}
     
-    map.on('click', onMapClick);
+    map.on('click', getBounds() );
     
     $(function() {
       $("#SignOut").click(function () {
