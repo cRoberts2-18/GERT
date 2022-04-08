@@ -95,19 +95,16 @@
 </div>
   
   <script>
-
+var ID;
+	  
 function savesearch(){
-	alert("test");
-	document.getElementById("myModal").style.display = "none";
-	document.getElementById("Header").innerHTML = "Downloading...";
-    	document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
+	document.getElementById("Header").innerHTML = "Save Successful";
+    	document.getElementById("Mline1").innerHTML = "Your model has been saved";
     	document.getElementById("Mline2").setAttribute("hidden", "hidden");
-    	document.getElementById("save").setAttribute("hidden", "hidden");
-    	document.getElementById("View").setAttribute("hidden", "hidden");
 }
 
 function view(){
-	alert("?");
+	window.location.href="{{ url_for('view', ID='placeholder') }}".replace("placeholder",ID);	
 }
 	  
 	  
@@ -310,6 +307,7 @@ var expanded = false;
       			
    		})
 		.done(function(msg) {
+		ID=msg
 		$("#Header").text("Download Successful");
 		$("#Mline1").text("Your model has been downloaded successfully");
 		$("#Mline2").removeAttr('hidden');
