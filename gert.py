@@ -171,7 +171,7 @@ def processAPICall():
     
     
     
-    return("Data Requested Downloaded")
+    return(saveID)
 
 @app.route('/logout/')
 def logout():
