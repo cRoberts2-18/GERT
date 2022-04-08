@@ -1,8 +1,42 @@
 {% extends "layout.html" %}
 {% block content %}
+<table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Search ID</th>
+        <th>Search NAme</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.age }}</td>
+          <td><button onclick="ViewModel()">View Model</button></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
 
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          {searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          null],
+      });
+    });
 
-
+<script>
+  function ViewModel(){ alert("SUUUUUUUUUU");}
+    
+</script>
 
 
 {% endblock %}
