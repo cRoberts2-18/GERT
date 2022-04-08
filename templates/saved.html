@@ -22,29 +22,9 @@
   </table>
 
   <script>
-  var jqueryLoad;
-
-$().ready(function(){
-    jqueryLoad = function(ID)
-    {
-        $.ajax({
-      method: "POST",
-      url: "{{ url_for('viewProcess')}}",
-      data: {SearchID:ID}
-      
-    })
-      .done(function(msg) {
-        
-      })   
-      .fail(function(msg){
-        
-      });
-    }
-})
-
 
 function ViewModel(file){ 
-    jqueryLoad(file);    
+    window.location.href("{{ url_for('view', ID='placeholder') }}".replace("placeholder",file));    
 }
     
 </script>
