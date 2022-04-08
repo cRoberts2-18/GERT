@@ -27,7 +27,18 @@
 $().ready(function(){
     jqueryLoad = function(ID)
     {
-        alert(ID);
+        $.ajax({
+      method: "POST",
+      url: "{{ url_for('view')}}",
+      data: {SearchID:ID}
+      
+    })
+      .done(function(msg) {
+        alert(msg);
+      })   
+      .fail(function(msg){
+        alert(msg);
+      });
     }
 })
 
