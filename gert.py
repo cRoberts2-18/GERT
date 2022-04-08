@@ -47,12 +47,20 @@ def saved():
     
     myresult = mycursor.fetchall()
     
-    return render_template('saved.html',result=myresult)
+    if session.get('LoggedIn')==True:
+        return render_template('saved.html',result=myresult)
+    else:
+        return redirect(url_for("loginPage"))
+    
 
 
 @app.route('/view/')
 def view():
-    return render_template('view.html')
+    if session.get('LoggedIn')==True:
+        return render_template('view.html')
+    else:
+        return redirect(url_for("loginPage"))
+    
 
 
 @app.route('/processLogin/', methods = ['GET', 'POST'])
