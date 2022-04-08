@@ -33,7 +33,21 @@ def loginPage():
 
 @app.route('/saved/')
 def saved():
-    return render_template('saved.html')
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root", 
+        password="root",
+        database="GERT"
+    )
+    
+    mycursor = mydb.cursor()
+    sql="SELECT * FROM SavedSearches WHERE OwnerID=%s;"
+    values=(session['uid'])
+    mycursor.execute(sql, values)
+    
+    myresult = mycursor.fetchall()
+    
+    return render_template('saved.html',result=myresult)
 
 
 @app.route('/view/')
