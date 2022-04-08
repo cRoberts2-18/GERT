@@ -33,12 +33,12 @@ def loginPage():
 
 @app.route('/saved/')
 def saved():
-    return("saved models goe here")
+    return render_template('saved.html')
 
 
 @app.route('/view/')
 def view():
-    return("viewed data goes here")
+    return render_template('view.html')
 
 
 @app.route('/processLogin/', methods = ['GET', 'POST'])
