@@ -131,14 +131,15 @@
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     }).addTo(map);
     
-        function onMapClick(e) {
-        notifyMessage("You clicked the map at " + e.latlng, "info");
-	
-		
-    }
     
-	  
-    map.on('click', onMapClick );
+    function onMapClickFirst(e) {
+        notifyMessage("You clicked the map at " + e.latlng, "info");
+	xy1 = e.latlng;
+    }
+    var boundingBox = L.rectangle([[20, 20],[60,60], {color: "#ff7800", weight: 1});
+	map.addLayer(boundingBox);
+    
+    map.on('click', onMapClickFirst);
     
     $(function() {
       $("#SignOut").click(function () {
