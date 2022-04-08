@@ -41,9 +41,8 @@ def saved():
     )
     
     mycursor = mydb.cursor()
-    sql="SELECT * FROM SavedSearches WHERE OwnerID=%s;"
-    values=(session['uid'])
-    mycursor.execute(sql, values)
+    sql="SELECT * FROM SavedSearches WHERE OwnerID=",session['uid'],";"
+    mycursor.execute(sql)
     
     myresult = mycursor.fetchall()
     
