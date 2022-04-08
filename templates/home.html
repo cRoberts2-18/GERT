@@ -95,8 +95,19 @@
 </div>
   
   <script>
-    var expanded = false;
 
+function close(){
+	alert("test");
+	document.getElementById("myModal").style.display = "none";
+	document.getElementById("Header").innerHTML = "Downloading...";
+    	document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
+    	document.getElementById("Mline2").setAttribute("hidden", "hidden");
+    	document.getElementById("save").setAttribute("hidden", "hidden");
+    	document.getElementById("View").setAttribute("hidden", "hidden");
+}
+	  
+var expanded = false;
+	  
     function showCheckboxes() {
   	var checkboxes = document.getElementById("checkboxes");
   	if (!expanded) {
@@ -355,14 +366,6 @@ window.onclick = function(event) {
   
 }
 	  
-function close(){
-	document.getElementById("myModal").style.display = "none";
-	document.getElementById("Header").innerHTML = "Downloading...";
-    	document.getElementById("Mline1").innerHTML = "Please wait while your model is downloaded";
-    	document.getElementById("Mline2").setAttribute("hidden", "hidden");
-    	document.getElementById("save").setAttribute("hidden", "hidden");
-    	document.getElementById("View").setAttribute("hidden", "hidden");
-}
 	  
 	  
 	  
