@@ -136,7 +136,7 @@
         notifyMessage("You clicked the map at " + e.latlng, "info");
 	xy1 = e.latlng;
     }
-    var boundingBox = L.rectangle([[20, 20],[60,60], {color: "#ff7800", weight: 1});
+    var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
 	map.addLayer(boundingBox);
     
     map.on('click', onMapClickFirst);
