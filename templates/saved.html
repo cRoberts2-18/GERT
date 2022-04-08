@@ -9,10 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      {% for user in users %}
+      {% for res in result %}
         <tr>
-          <td>{{ user.name }}</td>
-          <td>{{ user.age }}</td>
+          <td>{{ res[0] }}</td>
+          <td>{{ res[1] }}</td>
           <td><button onclick="ViewModel()">View Model</button></td>
         </tr>
       {% endfor %}
