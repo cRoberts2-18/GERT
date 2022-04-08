@@ -31,7 +31,7 @@ def resetPassword():
 def loginPage():
     return render_template('login.html')
 
-@app.route('/saved/')
+@app.route('/saved/', methods = ['GET','POST'])
 def saved():
     if session.get('LoggedIn')==True:
         mydb = mysql.connector.connect(
@@ -54,10 +54,11 @@ def saved():
     
 
 
-@app.route('/view/')
+@app.route('/view/', methods = ['GET','POST'])
 def view():
     if session.get('LoggedIn')==True:
-        data = {'test':"test", 'test1':"Test"}
+        searchID=request.values.get("SearchID")
+        data = searchID
         return render_template('view.html', data=data)
     else:
         return redirect(url_for("loginPage"))
