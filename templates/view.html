@@ -58,7 +58,7 @@ function onMapClickFirst(e) {
 	lat=parseFloat(e.latlng.wrap().lat);
 	lon=parseFloat(e.latlng.wrap().lng);
 	query="data.data(lat1=89.4,lat2=89.9,lon1=1.3,lon2=1.7)";
-	data= "{{ PLACEHOLDER }}".replace("PLACEHOLDER",query);
+	data= "{{ 'PLACEHOLDER' }}".replace("PLACEHOLDER",query);
         notifyMessage(data,"info");
 	xy1 = e.latlng.wrap();
     }
