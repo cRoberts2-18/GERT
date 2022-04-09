@@ -59,7 +59,7 @@ function onMapClickFirst(e) {
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
-        notifyMessage("{{ data.data(lat1='placeholder',lat2=89.9,lon1=1.3,lon2=1.7) }}".replace("placeholder",89.4);,"info");
+        notifyMessage("{{ data.data(lat1=89.4,lat2=89.9,lon1=1.3,lon2=1.7) }}".replace("placeholder",89.4);,"info");
 	xy1 = e.latlng.wrap();
     }
     var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
