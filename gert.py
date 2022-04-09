@@ -86,6 +86,12 @@ def view():
         return render_template('view.html', data=grb, download=downloadpath)
     else:
         return redirect(url_for("loginPage"))
+
+@app.route('/processMapClick/', methods = ['GET', 'POST'])
+def processMapClick():
+    
+    
+    return('false')
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
@@ -180,6 +186,8 @@ def logout():
 
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)
-    
+ 
+
