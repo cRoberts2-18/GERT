@@ -5,8 +5,9 @@
   <input class="sidebutton" type="Button" id="Search" value="Search" onclick="Search()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>
   <a id="dataText">Below is the filepath that we will download from</a>
   <a id="dataText2" style="font-size:15px;">{{ download }}</a>
-  <a id="searchText" style="display:none;">Search go BRRRRRRRR</a>
-  <a id="searchText2" style="display:none;">Large sequence of search inputs</a>	
+  <a id="searchText" style="display:none;">Displayed Below are the coordinates selected from the map</a>
+  <label id="LongLabel" for="long">Longitude:</label>&emsp;<input type="number" name="long" id="Long" value="0"><br>
+  <label id="LatLabel" for="lat">Latitude:</label>&emsp;<input type="number" name="lat" id="Lat" value="0"><br><br><br>
   
 </div>
 
@@ -35,14 +36,20 @@ String.prototype.allReplace = function(obj) {
 	  document.getElementById("dataText").style.display="none";
 	  document.getElementById("dataText2").style.display="none";
 	  document.getElementById("searchText").style.display="block";
-	  document.getElementById("searchText2").style.display="block";	
+	  document.getElementById("LongLabel").style.display="block";	
+	  document.getElementById("Long").style.display="block";
+	  document.getElementById("Lat").style.display="block";
+	  document.getElementById("LatLabel").style.display="block";	
 	  
 	  }	
 	function Data(){	  
 	  document.getElementById("dataText").style.display="block";
 	  document.getElementById("dataText2").style.display="block";
 	  document.getElementById("searchText").style.display="none";
-	  document.getElementById("searchText2").style.display="none";
+	  document.getElementById("LongLabel").style.display="none";	
+	  document.getElementById("Long").style.display="none";
+	  document.getElementById("Lat").style.display="none";
+	  document.getElementById("LatLabel").style.display="none";
 	  
 	  }	
 
@@ -66,8 +73,7 @@ function onMapClickFirst(e) {
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
-        notifyMessage('{{ data.data(lat1=99999,lat2=88888,lon1=77777,lon2=66666) }}'.allReplace({"99999":lat1,"88888":lat2, "77777":lon1, "66666":lon2}),"info");
-	
+        notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	
 		
 	xy1 = e.latlng.wrap();
