@@ -66,9 +66,8 @@ function onMapClickFirst(e) {
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
-	data='data(lat1=99999,lat2=88888,lon1=77777,lon2=66666)'.allReplace({"99999":lat1,"88888":lat2, "77777":lon1, "66666":lon2})
-        notifyMessage("{{ data.data()[0][0] }}","info");
-	console.log("lol");
+        notifyMessage('{{ data.data(lat1=99999,lat2=88888,lon1=77777,lon2=66666) }}'.allReplace({"99999":lat1,"88888":lat2, "77777":lon1, "66666":lon2}),"info");
+	
 	
 		
 	xy1 = e.latlng.wrap();
