@@ -10,10 +10,7 @@
   
 </div>
 
-<div class="map">
-	<br><br>
-	<h2 style="text-align:center;">{{ data }}</h2>	
-</div>
+<div id="map" class='map'></div>
 
 <script>
 
@@ -31,7 +28,28 @@
 	  document.getElementById("searchText2").style.display="none";
 	  
 	  }	
-  
+
+	 var map = L.map('map',{
+        center: [52.770775, -1.2043467],
+        zoom: 5,
+        zoomControl: false
+	    
+    });
+    L.control.zoom({position: 'topright'}).addTo(map);
+    
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map);
+    
+    
+    function onMapClickFirst(e) {
+        notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
+	xy1 = e.latlng.wrap();
+    }
+    var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
+	map.addLayer(boundingBox);
+    
+    map.on('click', onMapClickFirst);
   
 </script>
 {% endblock %}
