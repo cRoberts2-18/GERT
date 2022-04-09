@@ -43,7 +43,7 @@
     
     
     function onMapClickFirst(e) {
-        notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
+        notifyMessage("{{ data }}");
 	xy1 = e.latlng.wrap();
     }
     var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
