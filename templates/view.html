@@ -69,10 +69,10 @@ String.prototype.allReplace = function(obj) {
    
 
 function onMapClickFirst(e) {
-	lat2=parseFloat(e.latlng.wrap().lat);
-	lon1=parseFloat(e.latlng.wrap().lng);
-	lat1=lat2-0.4;
-	lon2=lon1+0.4;
+	lat=parseFloat(e.latlng.wrap().lat);
+	lon=parseFloat(e.latlng.wrap().lng);
+	document.getElementById("Lat").value=lat;
+	document.getElementById("Long").value=lat;
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	
 		
