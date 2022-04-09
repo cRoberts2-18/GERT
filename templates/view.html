@@ -52,29 +52,9 @@
     }).addTo(map);
     
     
-    
-mapstuff=null;  
-$(function() {
-  function MapProcess(){
-    $.ajax({
-      method: "POST",
-      url: "{{ url_for('processMapClick')}}",
-      data: {}
-      
-    })
-      .done(function(msg) {
-       return msg;
-      })   
-      .fail(function(msg){
-        alert("Error");
-      });
-    }
-mapstuff=MapProcess;
-    
-}); 
+   
 
 function onMapClickFirst(e) {
-	test=mapstuff();
 	lat=parseFloat(e.latlng.wrap().lat);
 	lon=parseFloat(e.latlng.wrap().lng);    
         notifyMessage(test,"info");
