@@ -59,8 +59,8 @@ function onMapClickFirst(e) {
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
-	query="data.data(lat1="+lat1+",lat2="+lat2+",lon1="+lon1+",lon2="+lon2+")";
-	data= "{{ 'query' }}".replace("query",query);
+	query="lat1="+lat1+",lat2="+lat2+",lon1="+lon1+",lon2="+lon2;
+	data= "{{ data.data('query') }}".replace("query",query);
         notifyMessage(data,"info");
 	xy1 = e.latlng.wrap();
     }
