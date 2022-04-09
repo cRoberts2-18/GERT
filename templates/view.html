@@ -58,8 +58,9 @@ function onMapClickFirst(e) {
 	lat2=parseFloat(e.latlng.wrap().lat);
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
-	lon2=String(lon1+0.4;
-	data= "{{ data.data(lat1='PLACELAT1',lat2='PLACELAT2',lon1='PLACELON1',lon2='PLACELON2') }}".allReplace({"PLACELAT1":89.4,"PLACELAT1":89.9,"PLACELON1":1.3,"PLACELON2":1.7);
+	lon2=lon1+0.4;
+	query="data.data(lat1="+lat1+",lat2="+lat2+",lon1="+lon1+",lon2="+lon2+")";
+	data= "{{ 'query' }}".replace("query",query);
         notifyMessage(data,"info");
 	xy1 = e.latlng.wrap();
     }
