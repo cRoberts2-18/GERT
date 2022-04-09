@@ -55,9 +55,11 @@
    
 
 function onMapClickFirst(e) {
-	lat=parseFloat(e.latlng.wrap().lat);
-	lon=parseFloat(e.latlng.wrap().lng);
-	data= "{{ data.data(lat1='PLACELAT1',lat2='PLACELAT2',lon1='PLACELON1',lon2='PLACELON2') }}".allReplace({"PLACELAT1":lat-0.4,"PLACELAT1":lat,"PLACELON1":lon,"PLACELON2":lon+0.4});
+	lat2=parseFloat(e.latlng.wrap().lat);
+	lon1=parseFloat(e.latlng.wrap().lng);
+	lat1=lat2-0.4;
+	lon2=lon1+0.4;
+	data= "{{ data.data(lat1='PLACELAT1',lat2='PLACELAT2',lon1='PLACELON1',lon2='PLACELON2') }}".allReplace({"PLACELAT1":lat1,"PLACELAT1":lat2,"PLACELON1":lon1,"PLACELON2":lon2);
         notifyMessage(data,"info");
 	xy1 = e.latlng.wrap();
     }
