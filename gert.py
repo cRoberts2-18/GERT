@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import cdsapi
+import pygrib
 import mysql.connector
 
 app= Flask(__name__)
@@ -80,8 +81,9 @@ def view():
         downloadpath="/home/ubuntu/data/"
         downloadpath+=str(session['uid'])
         downloadpath+=filename
-        
-        return render_template('view.html', data=downloadpath)
+        grbs=pygrib.open(downloadpath)
+        grb=grbs.read(1)[0)
+        return render_template('view.html', data=grb)
     else:
         return redirect(url_for("loginPage"))
     
