@@ -147,8 +147,8 @@ var expanded = false;
     
     
     function onMapClickFirst(e) {
-        notifyMessage("You clicked the map at " + e.latlng, "info");
-	xy1 = e.latlng;
+        notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
+	xy1 = e.latlng.wrap();
     }
     var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
 	map.addLayer(boundingBox);
