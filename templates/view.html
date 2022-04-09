@@ -53,8 +53,8 @@
     
     
     function onMapClickFirst(e) {
-	lat=e.latlng.wrap().lat();
-	lon=e.latlng.wrap().lng();    
+	lat=e.latlng.wrap().lat;
+	lon=e.latlng.wrap().lng;    
         notifyMessage("{{ data.data(lat1=PLACELAT1,lat2=PLACELAT2,lon1=PLACELON1,lon2=PLACELON1)[0][0][0] }}".allReplace({"PLACELAT1":lat-0.4,"PLACELAT2":lat,"PLACELON1":lon-0.4,"PLACELON2":lon}),"info");
 	xy1 = e.latlng.wrap();
     }
