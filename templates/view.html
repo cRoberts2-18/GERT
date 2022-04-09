@@ -67,8 +67,7 @@ function onMapClickFirst(e) {
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
 	try{
-	data='{{ try:
-			data.data(lat1='99999',lat2='88888',lon1='77777',lon2='66666') }}'.allReplace({"99999":lat1,"88888":lat2, "77777":lon1, "66666":lon2})
+	data='{{ data.data(lat1='99999',lat2='88888',lon1='77777',lon2='66666') }}'.allReplace({"99999":lat1,"88888":lat2, "77777":lon1, "66666":lon2})
         notifyMessage("{{ data }}".replace("placeholder",data),"info");
 	}
 	catch{
