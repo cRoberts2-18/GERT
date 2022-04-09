@@ -59,7 +59,7 @@ function onMapClickFirst(e) {
 	lon1=parseFloat(e.latlng.wrap().lng);
 	lat1=lat2-0.4;
 	lon2=lon1+0.4;
-	data= "{{ data.data(lat1='LAT1',lat2=89.9,lon1=1.3,lon2=1.7) }}".replace("LAT1",89.4);
+	data= "{{ data.data(lat1='LAT1',lat2=89.9,lon1=1.3,lon2=1.7) }}".replace("LAT1","89.4");
         notifyMessage(data,"info");
 	xy1 = e.latlng.wrap();
     }
