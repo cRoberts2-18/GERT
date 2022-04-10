@@ -95,11 +95,33 @@ def searchData():
     long2=float(request.values.get('long2'))+180
     path=request.values.get('path')
     SearchID=request.values.get('ID')
+    no2=0
+    so2=0
+    co=0
+    ch4=0
     
+    mydb = mysql.connector.connect(
+            host="localhost",
+            user="root", 
+            password="root",
+            database="GERT"
+        )
+    
+    mycursor = mydb.cursor()
+    sql="SELECT * FROM SavedSearches WHERE SearchID=%s;"
+    value=[str(SearchID)]
+    mycursor.execute(sql,value)
+    
+    myresult = mycursor.fetchall()
+    for row in myresult:
+        no2=row[4]
+        so2=row[5]
+        co=row[6]
+        ch4=row[7]
     grbs=pygrib.open(path)
     
-        
-    return str(SearchID)
+    temp=str(no2)+str(so2)+str(co)+str(ch4)    
+    return str(temp)
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
