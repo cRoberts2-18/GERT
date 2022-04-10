@@ -133,7 +133,7 @@ def searchData():
         coData=grbs.select(name="Total column Carbon monoxide")[0].data()[0][0][0]
     
     if ch4==1:
-        ch4Data=grbs.select(name="Total column Methane")[0].data()[0][0][0]
+        ch4Data=grbs.select(name="Total column methane")[0].data()[0][0][0]
     
     
     temp=str(no2Data)+str(so2Data)+str(coData)+str(ch4Data)    
