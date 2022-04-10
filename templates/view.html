@@ -79,7 +79,6 @@ function onMapClickFirst(e) {
 	boxBounds = [xy1, xy2];
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	boxClickCounter++;
-	notifyMessage(boxClickCounter, "info");
 	if (boxClickCounter == 3) {
 		xy1 = [0,0];
 		xy2 = [0,0];
