@@ -89,8 +89,8 @@ def view():
 
 @app.route('/searchData/', methods = ['GET', 'POST'])
 def searchData():
-    lat=request.values.get('lat')
-    long=request.values.get('long')
+    lat=float(request.values.get('lat'))
+    long=float(request.values.get('long'))
     path=request.values.get('path')
     grbs=pygrib.open(path)
     grb=grbs.read(1)[0]
