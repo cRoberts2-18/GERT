@@ -101,19 +101,26 @@ def searchData():
         grb=grbs.read()[0]
         #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
         teststring+=str(grb)
+    except:
+        print("")
     try:
         grb=grbs.read()[1]
         #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
         teststring+=str(grb)
+    except:
+        print("")
     try:
         grb=grbs.read()[2]
         data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
         teststring+=str(grb)
+    except:
+        print("")
     try:
         grb=grbs.read()[3]
         #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
         teststring+=str(grb)
-    
+    except:
+        print("")
     
     
     return str(teststring)
