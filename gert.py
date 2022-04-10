@@ -83,15 +83,20 @@ def view():
         downloadpath+=filename
         grbs=pygrib.open(downloadpath)
         grb=grbs.read(1)[0]
-        return render_template('view.html', data=grb, download=downloadpath)
+        return render_template('view.html', download=downloadpath)
     else:
         return redirect(url_for("loginPage"))
 
-@app.route('/processMapClick/', methods = ['GET', 'POST'])
-def processMapClick():
+@app.route('/searchData/', methods = ['GET', 'POST'])
+def searchData():
+    lat=request.values.get('lat')
+    long=request.values.get('long')
+    path=request.values.get('path')
+    grbs=pygrib.open(downloadpath)
+    grb=grbs.read(1)[0]
+    data=grb.data(lat1=lat-0.4,lat2=lat,lng1=long,lng2=long+0.4)
     
-    
-    return('false')
+    return data
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
