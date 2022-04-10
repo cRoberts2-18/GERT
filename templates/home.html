@@ -147,17 +147,10 @@ var expanded = false;
     
 	  
     var testBoundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
-	  map.addLayer(testBoundingBox);
-	
-	  var xy1 = [52.8, -1.266];
-	  var xy2 = [52.74, -1.18];
-	  var boxBounds = [xy1, xy2];
-    function onMapClickFirst(e) {
+
+   
+function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
-	xy1 = xy2;
-	xy2 = e.latlng.wrap();
-	boxBounds = [xy1, xy2];
-	testBoundingBox.setBounds(boxBounds);
     }
     
     map.on('click', onMapClickFirst);
