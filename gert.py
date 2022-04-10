@@ -98,7 +98,7 @@ def searchData():
     grb=grbs.read(1)[0]
     data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
     
-    return str(data)
+    return str(grb.data())
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
