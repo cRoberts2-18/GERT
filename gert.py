@@ -93,60 +93,13 @@ def searchData():
     long1=float(request.values.get('long'))+180
     lat2=float(request.values.get('lat2'))
     long2=float(request.values.get('long2'))+180
-    stringtest="place"
     path=request.values.get('path')
+    SearchID=request.values.get('ID')
+    
     grbs=pygrib.open(path)
-    try:
-        grb=grbs.read(4)
-        grb0=grb[0]
-        grb1=grb[1]
-        grb2=grb[2]
-        grb3=grb[3]
-        data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        data1=""
-        data2=""
-        data3=""
-        if grb0!=grb1:
-            data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        if grb0!=grb2:
-            data2=grb2.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        if grb0!=grb3:
-            data3=grb3.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-
-        stringtest="1: "+str(grb0)+" 2: "+str(grb1)+" 3: "+str(grb2)+" 4: "+str(grb3)
-    except:
-        try:
-            grb=grbs.read(3)
-            grb0=grb[0]
-            grb1=grb[1]
-            grb2=grb[2]
-            data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-            data1=""
-            data2=""
-            if grb0!=grb1:
-                data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-            if grb0!=grb2:
-                data2=grb2.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-          
-            stringtest="1: "+str(grb0)+" 2: "+str(grb1)+" 3: "+str(grb2)
-        except:
-            try:
-                grb=grbs.read(2)
-                grb0=grb[0]
-                grb1=grb[1]
-                data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-                data1=""
-                if grb0!=grb1:
-                    data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-                stringtest="1: "+str(grb0)+" 2: "+str(grb1)
-            except:
-                grb=grbs.read(1)
-                grb0=grb[0]
-                grb1=grb[1]
-                data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-                stringtest="1: "+str(grb0)
+    
         
-    return str(stringtest)
+    return str(SearchID)
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
