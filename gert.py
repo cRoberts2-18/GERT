@@ -99,7 +99,10 @@ def searchData():
     so2=0
     co=0
     ch4=0
-    
+    no2Data=""
+    so2Data=""
+    coData=""
+    ch4Data=""
     mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -120,7 +123,20 @@ def searchData():
         ch4=row[7]
     grbs=pygrib.open(path)
     
-    temp=str(no2)+str(so2)+str(co)+str(ch4)    
+    if no2==1:
+        no2Data=grbs.select(name="Total column Nitrogen Dioxide")[0].data()[0][0][0]
+    
+    if so2==1:
+        so2Data=grbs.select(name="Total column Sulphur Dioxide")[0].data()[0][0][0]
+    
+    if co==1:
+        coData=grbs.select(name="Total column Carbon Monoxide")[0].data()[0][0][0]
+    
+    if ch4==1:
+        ch4Data=grbs.select(name="Total column Methane")[0].data()[0][0][0]
+    
+    
+    temp=str(no2Data)+str(so2Data)+str(coData)+str(ch4Data)    
     return str(temp)
     
     
