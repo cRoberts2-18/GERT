@@ -3,8 +3,10 @@
 
 <div id="mySidebar" class="sidebar" style="width:400px; padding-top:20px;">
   <input class="sidebutton" type="Button" id="Search" value="Search" onclick="Search()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>
-  <a id="dataText">Below is the filepath that we will download from</a>
-  <a id="dataText2" style="font-size:15px;">{{ download }}</a>
+  <a id="dataText0">Data</a>
+  <a id="dataText1" style="font-size:15px;"></a>
+  <a id="dataText2" style="font-size:15px;"></a>
+  <a id="dataText3" style="font-size:15px;"></a>	
   <a id="searchText" style="display:none; text-align:center;">Coordinates Selected </a>
   <label id="LongLabel" for="long" style="display:none;">Longitude 1: </label><input class="number" type="number" name="long" id="Long" value="-1.266" style="display:none;" readonly><br>
   <label id="LatLabel" for="lat" style="display:none;">Latitude 1: </label><input class="number" type="number" name="lat" id="Lat" value="52.9" style="display:none;" readonly><br><br>
@@ -29,8 +31,10 @@ let boxClickCounter = 0;
 	
 	
 	function Search(){	  
-	  document.getElementById("dataText").style.display="none";
+	  document.getElementById("dataText0").style.display="none";
+	  document.getElementById("dataText1").style.display="none";
 	  document.getElementById("dataText2").style.display="none";
+	  document.getElementById("dataText3").style.display="none";	
 	  document.getElementById("searchText").style.display="block";
 	  document.getElementById("LongLabel").style.display="block";	
 	  document.getElementById("Long").style.display="block";
@@ -44,8 +48,10 @@ let boxClickCounter = 0;
 	  
 	  }	
 	function Data(){	  
-	  document.getElementById("dataText").style.display="block";
+	  document.getElementById("dataText0").style.display="block";
+	  document.getElementById("dataText1").style.display="block";
 	  document.getElementById("dataText2").style.display="block";
+	  document.getElementById("dataText3").style.display="block";
 	  document.getElementById("searchText").style.display="none";
 	  document.getElementById("LongLabel").style.display="none";	
 	  document.getElementById("Long").style.display="none";
@@ -151,7 +157,11 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			$("#dataText2").text(msg);
+			const dataArray=msg.split(",")
+			for (let i = 0; i < dataArray.length; i++){
+				var id = "dataText"+i;
+				document.getElementById(id).innerHTML=dataArray[i];
+			}
 				
 		})   
 		.fail(function(msg){
