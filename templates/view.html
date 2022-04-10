@@ -115,10 +115,10 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			var $PLACElat = $("#Lat").val(); 
-    			var $PLACElong = $("#Long").val();
-			var $PLACElat2 = $("#Lat2").val(); 
-    			var $PLACElong2 = $("#Lon2").val();
+			var $PLACElat = parseFloat($("#Lat").val()); 
+    			var $PLACElong = parseFloat($("#Long").val());
+			var $PLACElat2 = parseFloat($("#Lat2").val()); 
+    			var $PLACElong2 = parseFloat($("#Lon2").val());
 			var $lat=0;
 			var $long=0;
 			var $lat2=0;
