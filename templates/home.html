@@ -145,10 +145,14 @@ var expanded = false;
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     }).addTo(map);
     
-    
+    var testBoundingBox = L.rectangle([[0,0],[10,10]], {color: "#ff00dd", weight: 1});
+	  map.addLayer(testBoundingBox);
+	  
     function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
-	xy1 = e.latlng.wrap();
+	xy1 = xy2;
+	xy2 = e.latlng.wrap();
+	testBoundingBox.setBounds(xy1,xy2);
     }
     var boundingBox = L.rectangle([[20, 20],[60,60]], {color: "#ff7800", weight: 1});
 	map.addLayer(boundingBox);
