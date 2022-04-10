@@ -77,16 +77,17 @@ function onMapClickFirst(e) {
 	xy1 = xy2;
 	xy2 = e.latlng.wrap();
 	boxBounds = [xy1, xy2];
-	boundingBox.setBounds(boxBounds);
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	boxClickCounter++;
 	notifyMessage(boxClickCounter, "info");
 	if (boxClickCounter == 3) {
 		xy1 = [0,0];
 		xy2 = [0,0];
-		boundingBox.opacity = 0;
-		boundingBox.fillOpacity = 0;
 		boxClickCounter = 0;
+		boxBounds = [xy1, xy2];
+		boundingBox.setBounds(boxBounds);
+	}
+	if (boxClickCounter == 2) {
 		boxBounds = [xy1, xy2];
 		boundingBox.setBounds(boxBounds);
 	}
