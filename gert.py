@@ -124,19 +124,19 @@ def searchData():
     grbs=pygrib.open(path)
     
     if no2==1:
-        no2Data=grbs.select(name="Total column Nitrogen dioxide")[0].data()[0][0][0]
+        no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data()[0][0][0])+"<br>"
     
     if so2==1:
-        so2Data=grbs.select(name="Total column Sulphur dioxide")[0].data()[0][0][0]
+        so2Data="Sulphur Dioxide: "str(grbs.select(name="Total column Sulphur dioxide")[0].data()[0][0][0])+"<br>"
     
     if co==1:
-        coData=grbs.select(name="Total column Carbon monoxide")[0].data()[0][0][0]
+        coData="Carbon Monoxide: "+str(grbs.select(name="Total column Carbon monoxide")[0].data()[0][0][0])+"<br>"
     
     if ch4==1:
-        ch4Data=grbs.select(name="Total column methane")[0].data()[0][0][0]
+        ch4Data="Methane: "+str(grbs.select(name="Total column methane")[0].data()[0][0][0])+"<br>"
     
     
-    temp=str(no2Data)+str(so2Data)+str(coData)+str(ch4Data)    
+    temp=no2Data+so2Data+coData+ch4Data    
     return str(temp)
     
     
