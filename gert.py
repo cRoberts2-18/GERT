@@ -92,7 +92,7 @@ def searchData():
     lat2=float(request.values.get('lat'))
     long1=float(request.values.get('long'))
     lat1=lat2-0.4
-    long2=long2+0.4
+    long2=long1+0.4
     path=request.values.get('path')
     grbs=pygrib.open(path)
     grb=grbs.read(1)[0]
