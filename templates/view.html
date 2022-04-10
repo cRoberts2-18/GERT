@@ -60,8 +60,8 @@
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     }).addTo(map);
     
-    var BoundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
-	  map.addLayer(BoundingBox);
+    var boundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
+	  map.addLayer(boundingBox);
 	
 	  var xy1 = [52.8, -1.266];
 	  var xy2 = [52.74, -1.18];
@@ -77,14 +77,15 @@ function onMapClickFirst(e) {
 	xy1 = xy2;
 	xy2 = e.latlng.wrap();
 	boxBounds = [xy1, xy2];
-	BoundingBox.setBounds(boxBounds);
+	boundingBox.setBounds(boxBounds);
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	boxClickCounter += 1;
+	notifyMessage(boxClickCounter, "info");
 	if (boxClickCounter = 3) {
 		xy1 = [0,0];
 		xy2 = [0,0];
-		BoundingBox.opacity = 0;
-		BoundingBox.fillOpacity = 0;
+		boundingBox.opacity = 0;
+		boundingBox.fillOpacity = 0;
 		boxClickCounter = 0;
 	}
     }
