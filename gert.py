@@ -90,7 +90,7 @@ def view():
 @app.route('/searchData/', methods = ['GET', 'POST'])
 def searchData():
     lat2=float(request.values.get('lat'))
-    long1=float(request.values.get('long'))
+    long1=float(request.values.get('long'))+180
     lat1=lat2-0.4
     long2=long1+0.4
     path=request.values.get('path')
@@ -98,7 +98,7 @@ def searchData():
     grb=grbs.read(1)[0]
     data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
     
-    return str(grb.data())
+    return str()
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
