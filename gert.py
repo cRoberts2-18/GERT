@@ -82,7 +82,7 @@ def view():
         downloadpath+=str(session['uid'])
         downloadpath+=filename
         grbs=pygrib.open(downloadpath)
-        grb=grbs.read(1)[1]
+        grb=grbs.read(1)[0]
         return render_template('view.html', download=downloadpath)
     else:
         return redirect(url_for("loginPage"))
@@ -96,7 +96,7 @@ def searchData():
     
     path=request.values.get('path')
     grbs=pygrib.open(path)
-    grb=grbs.read()[0]
+    grb=grbs.read(2)[0]
     data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
     
     return str(grb)
