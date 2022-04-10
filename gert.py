@@ -82,7 +82,7 @@ def view():
         downloadpath+=str(session['uid'])
         downloadpath+=filename
         grbs=pygrib.open(downloadpath)
-        grb=grbs.read(1)
+        grb=grbs.read()
         return render_template('view.html', download=downloadpath)
     else:
         return redirect(url_for("loginPage"))
