@@ -176,6 +176,10 @@ def processLogin():
 
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
+    no2=0
+    so2=0
+    co=0
+    ch4=0
     dataName = request.values.get('datastoreName')
     datepicker1 = request.values.get('datepicker1')
     datepicker2 = request.values.get('datepicker2')
@@ -200,12 +204,16 @@ def processAPICall():
     variables=[]
     if carbonmonoxide=="true":
         variables.append("total_column_carbon_monoxide")
+        co=1
     if nitrogendioxide=="true":
         variables.append("total_column_nitrogen_dioxide")
+        no2=1
     if sulphurdioxide=="true":
         variables.append("total_column_sulphur_dioxide")
+        so2=1
     if methane=="true":
         variables.append("total_column_methane")
+        ch4=1
     
     requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables ,'leadtime_hour': leadtimeHour, 'type': 'forecast',}
     
@@ -226,8 +234,8 @@ def processAPICall():
     for i in result:
         maximum= float(i[0])
     SaveID=maximum+1
-    sql="INSERT INTO SavedSearches (SearchID, Name, OwnerID, Filename) VALUES (%s,%s,%s,%s);"
-    values=(SaveID,fileName,session['uid'],SaveName)
+    sql="INSERT INTO SavedSearches (SearchID, Name, OwnerID, Filename, NH2, SO2, CO, CH4) VALUES (%s,%s,%s,%s,%s,%s,%s,%s);"
+    values=(SaveID,fileName,session['uid'],SaveName,nh2,so2,co,ch4)
     mycursor.execute(sql, values)
     mydb.commit()
 
