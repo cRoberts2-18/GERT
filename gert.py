@@ -235,7 +235,7 @@ def processAPICall():
         maximum= float(i[0])
     SaveID=maximum+1
     sql="INSERT INTO SavedSearches (SearchID, Name, OwnerID, Filename, NH2, SO2, CO, CH4) VALUES (%s,%s,%s,%s,%s,%s,%s,%s);"
-    values=(SaveID,fileName,session['uid'],SaveName,nh2,so2,co,ch4)
+    values=(SaveID,fileName,session['uid'],SaveName,no2,so2,co,ch4)
     mycursor.execute(sql, values)
     mydb.commit()
 
