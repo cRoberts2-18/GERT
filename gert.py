@@ -136,8 +136,8 @@ def searchData():
         ch4Data="Methane: "+str(grbs.select(name="Total column methane")[0].data()[0][0][0])
     
     
-    temp=no2Data+so2Data+coData+ch4Data    
-    return str(temp)
+    data=no2Data+","+so2Data+","+coData+","+ch4Data    
+    return data
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
