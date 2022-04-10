@@ -139,6 +139,8 @@ $(function() {
 				$long2=$PLACElong;
 			}
 			
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
     	   	$.ajax({
