@@ -146,12 +146,12 @@ var expanded = false;
     }).addTo(map);
     
 	  
-    var testBoundingBox = L.rectangle([[52.8, -1.3], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
+    var testBoundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
 	  map.addLayer(testBoundingBox);
 	
-	  var boxBounds = [[52.8, -1.3], [52.74, -1.18]];
-	  var xy1 = [52.8, -1.3];
+	  var xy1 = [52.8, -1.266];
 	  var xy2 = [52.74, -1.18];
+	  var boxBounds = [xy1, xy2];
     function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	xy1 = xy2;
