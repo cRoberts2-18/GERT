@@ -127,7 +127,7 @@ def searchData():
         no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data()[0][0][0])+"<br>"
     
     if so2==1:
-        so2Data="Sulphur Dioxide: "str(grbs.select(name="Total column Sulphur dioxide")[0].data()[0][0][0])+"<br>"
+        so2Data="Sulphur Dioxide: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data()[0][0][0])+"<br>"
     
     if co==1:
         coData="Carbon Monoxide: "+str(grbs.select(name="Total column Carbon monoxide")[0].data()[0][0][0])+"<br>"
