@@ -160,7 +160,7 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			const dataArray=msg.split(",")
+			const dataArray=msg.split("!")
 			for (let i = 0; i < dataArray.length; i++){
 				var id = "dataText"+i;
 				document.getElementById(id).innerHTML=dataArray[i];
