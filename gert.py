@@ -113,7 +113,7 @@ def searchData():
         if grb0!=grb3:
             data3=grb3.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
 
-        stringtest="1: "+str(data0)+" 2: "+str(data1)+" 3: "+str(data2)+" 4: "+str(data3)
+        stringtest="1: "+str(grb0)+" 2: "+str(grb1)+" 3: "+str(grb2)+" 4: "+str(grb3)
     except:
         try:
             grb=grbs.read(3)
@@ -128,7 +128,7 @@ def searchData():
             if grb0!=grb2:
                 data2=grb2.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
           
-            stringtest="1: "+str(data0)+" 2: "+str(data1)+" 3: "+str(data2)
+            stringtest="1: "+str(grb0)+" 2: "+str(grb1)+" 3: "+str(grb2)
         except:
             try:
                 grb=grbs.read(2)
@@ -138,13 +138,13 @@ def searchData():
                 data1=""
                 if grb0!=grb1:
                     data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-                stringtest="1: "+str(data0)+" 2: "+str(data1)
+                stringtest="1: "+str(grb0)+" 2: "+str(grb1)
             except:
                 grb=grbs.read(1)
                 grb0=grb[0]
                 grb1=grb[1]
                 data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-                stringtest="1: "+str(data0)
+                stringtest="1: "+str(grb0)
         
     return str(stringtest)
     
