@@ -81,7 +81,7 @@ function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	boxClickCounter++;
 	notifyMessage(boxClickCounter, "info");
-	if (boxClickCounter = 3) {
+	if (boxClickCounter == 3) {
 		xy1 = [0,0];
 		xy2 = [0,0];
 		boundingBox.opacity = 0;
