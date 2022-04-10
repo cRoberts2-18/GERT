@@ -8,7 +8,7 @@
   <a id="searchText" style="display:none;">Displayed Below are the coordinates selected from the map</a>
   <label id="LongLabel" for="long" style="display:none;">Longitude: </label><input type="number" name="long" id="Long" value="0" style="display:none;" readonly><br>
   <label id="LatLabel" for="lat" style="display:none;">Latitude: </label><input type="number" name="lat" id="Lat" value="0" style="display:none;" readonly><br><br>
-  <input class="buttonstyle" type=button id = "GetData" value = "Get Location Data">
+  <input class="buttonstyle" type="button" style="display:none;" id = "GetData" value = "Get Location Data">
   
 </div>
 
@@ -16,13 +16,6 @@
 
 <script>
 	
-String.prototype.allReplace = function(obj) {
-    var retStr = this;
-    for (var x in obj) {
-        retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
-    }
-    return retStr;
-};
 		  
     function notifyMessage(msg,styles){
                  $.notify(msg,{
@@ -40,7 +33,8 @@ String.prototype.allReplace = function(obj) {
 	  document.getElementById("LongLabel").style.display="block";	
 	  document.getElementById("Long").style.display="block";
 	  document.getElementById("Lat").style.display="block";
-	  document.getElementById("LatLabel").style.display="block";	
+	  document.getElementById("LatLabel").style.display="block";
+	  document.getElementById("GetData").style.display="block";	
 	  
 	  }	
 	function Data(){	  
@@ -51,7 +45,7 @@ String.prototype.allReplace = function(obj) {
 	  document.getElementById("Long").style.display="none";
 	  document.getElementById("Lat").style.display="none";
 	  document.getElementById("LatLabel").style.display="none";
-	  
+	  document.getElementById("GetData").style.display="none";
 	  }	
 
 	 var map = L.map('map',{
@@ -87,8 +81,8 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			var $lat = $("#datastoreName").val(); 
-    			var $long = $("#datepicker1").val(); 
+			var $lat = $("#Lat").val(); 
+    			var $long = $("#Long").val(); 
 			var $path = {{ download }};
     	   	$.ajax({
     			method: "POST",
