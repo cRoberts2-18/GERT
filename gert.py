@@ -96,34 +96,12 @@ def searchData():
     
     path=request.values.get('path')
     grbs=pygrib.open(path)
-    teststring=""
-    try:
-        grb=grbs.read()[0]
-        #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        teststring+=str(grb)
-    except:
-        print("0")
-    try:
-        grb1=grbs.read()[1]
-        #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        teststring+=str(grb1)
-    except:
-        print("1")
-    try:
-        grb2=grbs.read()[2]
-        #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        teststring+=str(grb2)
-    except:
-        print("2")
-    try:
-        grb3=grbs.read()[3]
-        #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
-        teststring+=str(grb3)
-    except:
-        print("3")
+    grb=grbs.read()
+    data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
+   
     
     
-    return str(teststring)
+    return str(data)
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
