@@ -97,7 +97,7 @@ def searchData():
     path=request.values.get('path')
     grbs=pygrib.open(path)
     try:
-        grb=grbs.read(4)
+        grb=grbs.read(3)
         grb0=grb[0]
         grb1=grb[1]
         grb2=grb[2]
@@ -116,7 +116,7 @@ def searchData():
         stringtest="1: "+str(data0)+" 2: "+str(data1)+" 3: "+str(data2)+" 4: "+str(data3)
     except:
         try:
-            grb=grbs.read(3)
+            grb=grbs.read(2)
             grb0=grb[0]
             grb1=grb[1]
             grb2=grb[2]
@@ -131,7 +131,7 @@ def searchData():
             stringtest="1: "+str(data0)+" 2: "+str(data1)+" 3: "+str(data2)
         except:
             try:
-                grb=grbs.read(2)
+                grb=grbs.read(1)
                 grb0=grb[0]
                 grb1=grb[1]
                 data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
@@ -140,7 +140,7 @@ def searchData():
                     data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
                 stringtest="1: "+str(data0)+" 2: "+str(data1)
             except:
-                grb=grbs.read(1)
+                grb=grbs.read(0)
                 grb0=grb[0]
                 grb1=grb[1]
                 data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
