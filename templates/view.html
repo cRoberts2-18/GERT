@@ -82,8 +82,6 @@ let boxClickCounter = 0;
 function onMapClickFirst(e) {
 	lat=parseFloat(e.latlng.wrap().lat);
 	lon=parseFloat(e.latlng.wrap().lng);
-	document.getElementById("Lat").value=lat;
-	document.getElementById("Long").value=lon;
 	xy1 = xy2;
 	xy2 = e.latlng.wrap();
 	boxBounds = [xy1, xy2];
@@ -107,8 +105,6 @@ function onMapClickFirst(e) {
 		document.getElementById("Long2").value=lon;
 	}
 	if (boxClickCounter == 1) {
-		boxBounds = [xy1, xy2];
-		boundingBox.setBounds(boxBounds);
 		document.getElementById("Lat").value=lat;
 		document.getElementById("Long").value=lon;
 	}
