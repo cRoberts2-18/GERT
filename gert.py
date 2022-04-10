@@ -140,7 +140,7 @@ def searchData():
                     data1=grb1.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
                 stringtest="1: "+str(data0)+" 2: "+str(data1)
             except:
-                grb=grbs.read(2)
+                grb=grbs.read(1)
                 grb0=grb[0]
                 grb1=grb[1]
                 data0=grb0.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
