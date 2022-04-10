@@ -115,13 +115,36 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			var $lat = $("#Lat").val(); 
-    			var $long = $("#Long").val(); 
+			var $PLACElat = $("#Lat").val(); 
+    			var $PLACElong = $("#Long").val();
+			var $PLACElat2 = $("#Lat2").val(); 
+    			var $PLACElong2 = $("#Lon2").val();
+			var $lat;
+			var $long;
+			var $lat2;
+			var $long2;
+			if($PLACElat<$PLACElat2){
+				$lat=$PLACElat;
+				$lat2=$PLACElat2;
+			}else{
+				$lat=$PLACElat2;
+				$lat2=$PLACElat;
+			}
+			
+			if($PLACElong<$PLACElong2){
+				$long=$PLACElong;
+				$long2=$PLACElong2;
+			}else{
+				$long=$PLACElong2;
+				$long2=$PLACElong;
+			}
+			
+			
 			var $path = "{{ download }}";
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('searchData')}}",
-			data: {"lat":$lat,"long":$long,"path":$path}
+			data: {"lat":$lat, "lat2":$lat2, "long":$long, "long2":$long2, "path":$path}
       			
    		})
 		.done(function(msg) {
