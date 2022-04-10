@@ -83,7 +83,7 @@ $(function() {
 		$("#GetData").click(function () {
 			var $lat = $("#Lat").val(); 
     			var $long = $("#Long").val(); 
-			var $path = {{ download }};
+			var $path = "{{ download }}";
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('searchData')}}",
