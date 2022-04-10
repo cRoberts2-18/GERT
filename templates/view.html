@@ -139,12 +139,12 @@ $(function() {
 				$long2=$PLACElong;
 			}
 			
-			
+			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('searchData')}}",
-			data: {"lat":$lat, "lat2":$lat2, "long":$long, "long2":$long2, "path":$path}
+			data: {"lat":$lat, "lat2":$lat2, "long":$long, "long2":$long2, "path":$path, "ID":$ID}
       			
    		})
 		.done(function(msg) {
