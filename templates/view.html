@@ -3,7 +3,8 @@
 
 <div id="mySidebar" class="sidebar" style="width:400px; padding-top:20px;">
   <input class="sidebutton" type="Button" id="Search" value="Search" onclick="Search()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>
-  <a id="dataText0">Data</a>
+  <a id="dataText">Data</a>
+  <a id="dataText0" style="font-size:15px;"></a>
   <a id="dataText1" style="font-size:15px;"></a>
   <a id="dataText2" style="font-size:15px;"></a>
   <a id="dataText3" style="font-size:15px;"></a>	
@@ -31,6 +32,7 @@ let boxClickCounter = 0;
 	
 	
 	function Search(){	  
+	  document.getElementById("dataText").style.display="none";
 	  document.getElementById("dataText0").style.display="none";
 	  document.getElementById("dataText1").style.display="none";
 	  document.getElementById("dataText2").style.display="none";
@@ -48,6 +50,7 @@ let boxClickCounter = 0;
 	  
 	  }	
 	function Data(){	  
+	  document.getElementById("dataText").style.display="block";
 	  document.getElementById("dataText0").style.display="block";
 	  document.getElementById("dataText1").style.display="block";
 	  document.getElementById("dataText2").style.display="block";
