@@ -111,7 +111,7 @@ def searchData():
     if grb0!=grb3:
         data3=grb3.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0][0][0]
     
-    stringtest=str(data0)+"\n"+str(data1)+"\n"+str(data2)+"\n"+str(data3)
+    stringtest="1: "+str(data0)+" 2: "+str(data1)+" 3: "+str(data2)+" 4: "+str(data3)
     
     return str(stringtest)
     
