@@ -150,6 +150,8 @@ var expanded = false;
 	  map.addLayer(testBoundingBox);
 	
 	  var boxBounds = [[0, 0], [15, 15]];
+	  var xy1 = 0;
+	  var xy2 = 0;
     function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	xy1 = xy2;
