@@ -15,7 +15,7 @@
 <div id="map" class='map'></div>
 
 <script>
-	
+let boxClickCounter = 0;	
 		  
     function notifyMessage(msg,styles){
                  $.notify(msg,{
@@ -67,7 +67,7 @@
 	  var xy2 = [52.74, -1.18];
 	  var boxBounds = [xy1, xy2];   
 
-	var boxClickCounter = 0;
+	
 
 function onMapClickFirst(e) {
 	lat=parseFloat(e.latlng.wrap().lat);
