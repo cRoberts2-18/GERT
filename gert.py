@@ -98,7 +98,7 @@ def searchData():
     grbs=pygrib.open(path)
     teststring=""
     try:
-        grb=grbs.read()[0]
+        grb=grbs.read()[1]
         #data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)
         teststring+=str(grb)
     except:
