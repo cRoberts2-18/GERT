@@ -149,9 +149,9 @@ var expanded = false;
     var testBoundingBox = L.rectangle([[0,0],[0,0]], {color: "#ff00dd", weight: 1});
 	  map.addLayer(testBoundingBox);
 	
-	  var boxBounds = [[52.4, 1.2], [0, 0]];
-	  var xy1 = [0,0];
-	  var xy2 = [0,0];
+	  var boxBounds = [[52.4, 1.2], [52.8, 1.2]];
+	  var xy1 = [52.4, 1.2];
+	  var xy2 = [52.8, 1.6];
     function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
 	xy1 = xy2;
