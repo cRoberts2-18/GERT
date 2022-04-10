@@ -96,7 +96,7 @@ def searchData():
     
     path=request.values.get('path')
     grbs=pygrib.open(path)
-    grb=grbs.read(4)[1]
+    grb=grbs.read(4)[2]
     data=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0][0][0]
     
     return str(data)
