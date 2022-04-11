@@ -145,7 +145,7 @@ $(function() {
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
 				var split=splitData[i].split("] [");
-				if (typeof split[1] !== 'undefined'){
+				if (typeof split !== 'undefined'){
 					splitData2=split;
 				}
 				table+="<td>"+splitData2[i]+"</td>";	
