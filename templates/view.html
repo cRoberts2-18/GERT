@@ -163,7 +163,8 @@ $(function() {
 			const dataArray=msg.split("!")
 			for (let i = 0; i < dataArray.length; i++){
 				var id = "dataText"+i;
-				document.getElementById(id).innerHTML="<table id=\"data\" class=\"SaveTable\"><thead><tr><th>"+dataArray[i];+"</th></tr></thead></table>"
+				var split=dataArray[i].split(":");
+				document.getElementById(id).innerHTML="<table id=\"data\" class=\"SaveTable\"><thead><tr><th>"+split[0];+"</th></tr></thead><tbody><tr><td>"+split[1]+"</td></tr></tbody></table>"
 			}
 				
 		})   
