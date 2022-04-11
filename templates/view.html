@@ -148,7 +148,7 @@ $(function() {
 				splitData2[i]=new Array(2);
 				splitData[i]=splitData[i].replace("[[","");
 				splitData[i]=splitData[i].replace("]]","");
-				splitData[i]=splitData[i].replace("] [","!");
+				splitData[i]=splitData[i].replace(" ","!");
 				alert(splitData[i][0]);
 				var split1=splitData[i].split("!");
 				for (let j = 0; j < split1.length; j++){
