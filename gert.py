@@ -122,7 +122,7 @@ def searchData():
         co=row[6]
         ch4=row[7]
     grbs=pygrib.open(path)
-    grb=grbs.read();
+    grb=grbs.read(0);
     lat=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2);
     long=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2);
     if no2==1:
