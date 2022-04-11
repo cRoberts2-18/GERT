@@ -169,7 +169,7 @@
     .sidebar {
       height: 100%; /* 100% Full-height */
       width: 0; /* 0 width - change this with JavaScript */
-      position: absolute; /* Stay in place */
+      position: fixed; /* Stay in place */
       top: 102px;
       left: 0;
       z-index:100;
