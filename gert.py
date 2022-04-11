@@ -163,7 +163,7 @@ def searchData():
         else:
             data+="!"+coData
     if ch4==1:
-        if first=0:
+        if first==0:
             data+=ch4Data
             first=1
         else:
