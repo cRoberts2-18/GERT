@@ -183,7 +183,9 @@ $(function() {
 					}
 					if(writeline==true)
 						for (let j = 0; j < splitData3[0].length; j++){
+							if(typeof splitData3[h][j][i] !=='undefined'){
 							table+="<td>"+splitData3[h][j][i]+"</td>";
+							}	
 						}
 					table+="</tr>";
 				}
