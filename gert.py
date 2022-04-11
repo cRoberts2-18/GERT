@@ -124,7 +124,7 @@ def searchData():
         co=row[6]
         ch4=row[7]
     grbs=pygrib.open(path)
-    
+    data=""
     if no2==1:
         no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
@@ -146,7 +146,18 @@ def searchData():
         longData="Longitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
     
-    data=latData+"!"+longData+"!"+no2Data+"!"+so2Data+"!"+coData+"!"+ch4Data  
+    data=latData+"!"+longData+"!"
+    if no2==1:
+        data+=no2Data
+    
+    if so2==1:
+        data+=so2Data
+    
+    if co==1:
+        data+=coData
+    
+    if ch4==1:
+        data+=ch4Data    
     return data
     
     
