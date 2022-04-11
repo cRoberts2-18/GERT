@@ -6,7 +6,7 @@
     }
     
     #body{
-        padding-top: 100px;
+        padding-top: 120px;
     }
     #header{
         position:fixed;
@@ -23,7 +23,8 @@
     header{
         background-color: #282b30;
         z-index: 100000000000;
-        
+        position:fixed;
+        width:100%;
         
     }
     .right{
