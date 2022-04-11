@@ -171,15 +171,12 @@ $(function() {
 				}
 			}
 			console.log(splitData3);
-			for (let h=0; h<splitData3[0].length; h++){
+			for (let h=0; h<splitData3.length; h++){
 				for (let i = 0; i < splitData3[0][0].length; i++){
 					var writeline=true;
 					table+="<tr>";
 					for (let j = 0; j < splitData3[0].length; j++){
-						console.log(h);
-						console.log(j);
-						console.log(i);
-						
+												
 						if (typeof splitData3[h][j][i] =='undefined'||splitData3[h][j][i] == ""){
 							writeline=false;
 							console.log("?");
