@@ -177,7 +177,7 @@ $(function() {
 				var writeline=true;
 				table+="<tr>";
 				for (let j = 0; j < splitData3.length; j++){
-					if (typeof splitData3[j][i] == 'undefined'){
+					if (typeof splitData3[j][i] == 'undefined' || splitData3[j][i] == ""){
 						writeline=false
 					}
 				}
