@@ -142,7 +142,6 @@ $(function() {
 					splitData[i]=split[1]
 				}
 			}
-			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
 				splitData2[i]=new Array(2);
 				splitData[i]=splitData[i].replaceAll(" [","!");
@@ -155,6 +154,15 @@ $(function() {
 					}
 				
 				}
+			}
+			table+="</tr></thead><tbody>"
+			for (let i = 0; i < splitData2[0].length; i++){
+				table+="<tr>";
+				for (let j = 0; j < splitData2.length; i++){
+					table+="<td>"+splitData2[j][i]+"</td>"
+				}
+				table+="</tr>";
+			
 			}
 			
 			
