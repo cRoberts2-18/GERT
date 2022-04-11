@@ -144,10 +144,8 @@ $(function() {
 			}
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
-				table+="<tr>"
 				splitData2[i]=new Array(2);
 				splitData[i]=splitData[i].replaceAll(" [","!");
-				//alert(splitData[i])
 				var split1=splitData[i].split("!");
 				for (let j = 1; j < split1.length; j++){
 					if (typeof split1[j] !== 'undefined'){
@@ -158,7 +156,6 @@ $(function() {
 					}
 				
 				}
-				table+="</tr>";	
 			}
 			
 			
