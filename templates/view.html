@@ -149,9 +149,11 @@ $(function() {
 					splitData[i]=splitData[i].replaceAll(" [","!");
 					var split1=splitData[i].split("!");
 					for (let j = 1; j < split1.length; j++){
-						split1[j]=split1[j].replaceAll("[","");
-						split1[j]=split1[j].replaceAll("]","");
-						splitData2[i][j-1]=split1[j];
+						if (typeof split[1] !== 'undefined'){
+							split1[j]=split1[j].replaceAll("[","");
+							split1[j]=split1[j].replaceAll("]","");
+							splitData2[i][j-1]=split1[j];
+						}
 					}
 				}
 			}
