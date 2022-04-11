@@ -4,6 +4,9 @@
     padding: 0;
     margin: 0;
     }
+    #content {
+        margin-top: 100px;
+    }
     body {
         background-color: #282b30;
         color: #FFFFFF;
@@ -11,7 +14,6 @@
     }
     header{
         background-color: #282b30;
-        padding-bottom: 5px;
         z-index: 100000000000;
         position:fixed;
         width:100%;
