@@ -13,7 +13,7 @@
         background-color: #282b30;
         padding-bottom: 5px;
         z-index: 100000000000;
-        position:fixed
+        position:fixed;
     }
     .right{
         text-align:right;
