@@ -5,9 +5,14 @@
     margin: 0;
     }
     
-#body{
+    #body{
         padding-top: 100px;
     }
+    #header{
+        position:fixed;
+        width:100%;
+    }
+
 
     body {
         background-color: #282b30;
@@ -18,8 +23,7 @@
     header{
         background-color: #282b30;
         z-index: 100000000000;
-        position:fixed;
-        width:100%;
+        
         
     }
     .right{
