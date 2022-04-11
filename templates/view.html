@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-x: scroll;">
+<div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden;">
   <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>	
   <a id="searchText" style="text-align:center;">Coordinates Selected </a>
   <label id="LongLabel" for="long">Longitude 1: </label><br><input class="number" type="number" name="long" id="Long" value="-1.266" readonly><br>
@@ -13,7 +13,7 @@
 </div>
 
 <div id="map" class='map'></div>
-<div id="Data"></div>
+<div id="Data" class="sidebar" style="width:100%; z-index=90; padding-top:20px; overflow-y: scroll; background-color:#282b30;"></div>
 	
 <script>
 let boxClickCounter = 0;	
