@@ -158,9 +158,9 @@ $(function() {
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData2[0].length; i++){
 				table+="<tr>";
-				alert(splitData2[0].length);
-				//for (let j = 0; j < splitData2.length; i++){	
-				//}
+				for (let j = 0; j < splitData2.length; j++){
+					table+="<td>"+splitData2[j][i]+"</td>"
+				}
 				table+="</tr>";
 			
 			}
