@@ -159,7 +159,9 @@ $(function() {
 			for (let i = 0; i < splitData2[0].length; i++){
 				table+="<tr>";
 				for (let j = 0; j < splitData2.length; j++){
+					if (typeof splitData2[j][i] !== 'undefined'){
 					table+="<td>"+splitData2[j][i]+"</td>"
+					}
 				}
 				table+="</tr>";
 			
