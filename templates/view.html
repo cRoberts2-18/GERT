@@ -150,10 +150,11 @@ $(function() {
 				for (let j = 0; j < split.length; j++){
 					if (typeof split[j] !== 'undefined'){
 						splitData2[i][j]=split[j];
-						table+="<td>"+splitData2[i][j]+"</td>";
+						
 					}
 				
 				}
+				table+="<td>"+splitData2[i][0]+"</td>";
 				table+="</tr>";	
 			}
 			
