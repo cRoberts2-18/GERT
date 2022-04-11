@@ -145,19 +145,29 @@ def searchData():
         latData="Latitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
-    
+    first=0
     data=latData+"!"+longData+"!"
     if no2==1:
         data+=no2Data
-    
+        first=1
     if so2==1:
-        data+=so2Data
-    
+        if first==0:
+            data+=so2Data
+            first=1
+        else:
+            data+="!"+so2Data
     if co==1:
-        data+=coData
-    
+        if first==0:
+            data+=coData
+            first=1
+        else:
+            data+="!"+coData
     if ch4==1:
-        data+=ch4Data    
+        if first=0:
+            data+=ch4Data
+            first=1
+        else:
+            data+="!"+ch4Data
     return data
     
     
