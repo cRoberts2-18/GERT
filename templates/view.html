@@ -131,7 +131,8 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			var splitData=[]
+			var splitData=[];
+			var splitData2=[];
 			const dataArray=msg.split("!")
 			var table="<table id=\"data\" class=\"SaveTable\" style=\"float:right;\"><thead><tr>";
 			for (let i = 0; i < dataArray.length; i++){
@@ -143,10 +144,17 @@ $(function() {
 			}
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
-				if (typeof splitData[1] !== 'undefined'){
-					table+="<td>"+splitData[i]+"</td>";
-				}
+				var split=splitData[].split("] [");
+				for(let j = 0; j < split.length; j++){
+					split[j]=split[j].replace("[[","");
+					split[j]=split[j].replace("]]","");
+				} 
+				table+="<td>"+splitData[i]+"</td>";	
 			}
+			
+			
+			
+			
 			document.getElementById("Data").innerHTML=table;
 			document.getElementById("mySidebar").style.height="3000px";
 		})   
