@@ -151,6 +151,8 @@ $(function() {
 				var split1=splitData[i].split("!");
 				for (let j = 1; j < split1.length; j++){
 					if (typeof split1[j] !== 'undefined'){
+						split1[j]=split1[j].replaceAll("[","");
+						split1[j]=split1[j].replaceAll("]","");
 						splitData2[i][j]=split1[j];
 						table+="<td>"+splitData2[i][j]+"</td>";
 					}
