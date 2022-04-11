@@ -122,9 +122,11 @@ def searchData():
         co=row[6]
         ch4=row[7]
     grbs=pygrib.open(path)
-    
+    grb=grbs.read();
+    lat=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2);
+    long=grb.data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2);
     if no2==1:
-        no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+        no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
     
     if so2==1:
         so2Data="Sulphur Dioxide: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
