@@ -5,15 +5,6 @@
     margin: 0;
     }
     
-    #body{
-        padding-top: 100px;
-    }
-    #header{
-        position:fixed;
-        width:100%;
-    }
-
-
     body {
         background-color: #282b30;
         color: #FFFFFF;
