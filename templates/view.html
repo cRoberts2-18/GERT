@@ -166,13 +166,14 @@ $(function() {
 					}
 					if(typeof splitData2[j][i] !== 'undefined'){
 						var split2=splitData2[j][i].split(" ");
+						console.log(split2);
 						for (let k = 1; k < split1.length; k++){
 							splitData3[j][k-1]=split2[k];
 						}	
 					}
 				}
 			}
-			console.log(splitData2[0][1]);
+			
 			for (let i = 0; i < splitData3[0].length; i++){
 				var writeline=true;
 				table+="<tr>";
