@@ -13,7 +13,8 @@
 </div>
 
 <div id="map" class='map'></div>
-
+<div id="Data"></div>
+	
 <script>
 let boxClickCounter = 0;	
 
@@ -29,10 +30,12 @@ let boxClickCounter = 0;
 	
 	
 	function Data(){	  
-	  
+	  document.getElementById("map").style.display("none");
+	  document.getElementById("Data").style.display("block");	
 	  }
 	function Map(){	  
-	  
+	  document.getElementById("map").style.display("block");
+	  document.getElementById("Data").style.display("none");
 	  }
 
 	 var map = L.map('map',{
@@ -144,7 +147,7 @@ $(function() {
 					table+="<td>"+split[1]+"</td>";
 				}
 			}
-			document.getElementById("dataText0").innerHTML=table	
+			document.getElementById("Data").innerHTML=table	
 		})   
 		.fail(function(msg){
 			alert(msg);
