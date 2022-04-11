@@ -133,11 +133,11 @@ $(function() {
 			var $lat2=0;
 			var $long2=0;
 			if($PLACElat<$PLACElat2){
-				$lat=$PLACElat;
-				$lat2=$PLACElat2;
+				$lat=$PLACElat-0.2;
+				$lat2=$PLACElat2+0.2;
 			}else{
-				$lat=$PLACElat2;
-				$lat2=$PLACElat;
+				$lat=$PLACElat2-0.2;
+				$lat2=$PLACElat+0.2;
 			}
 			
 			if($PLACElong<$PLACElong2){
