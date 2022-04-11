@@ -3,24 +3,16 @@
     border: 0;
     padding: 0;
     margin: 0;
+    background-color: #282b30;
     }
     
-    #body{
-        padding-top: 120px;
-    }
-    #header{
-        position:fixed;
-        width:100%;
-    }
-
-
-    body {
+  #body {
         background-color: #282b30;
         color: #FFFFFF;
         
         
     }
-    header{
+    #header{
         background-color: #282b30;
         z-index: 100000000000;
         position:fixed;
