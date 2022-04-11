@@ -161,17 +161,16 @@ $(function() {
 			for (let i = 0; i < splitData2[0].length; i++){
 				splitData3[i]=new Array(2)
 				for (let j = 0; j < splitData2.length; j++){
-					console.log("====================");
 					splitData3[i][j]=new Array(2);
 					if(typeof splitData2[j][i] !== 'undefined'){
 						var split2=splitData2[j][i].split(" ");
-						console.log(split2);
 						for (let k = 1; k < split1.length; k++){
 							splitData3[i][j][k-1]=split2[k];
 						}	
 					}
 				}
 			}
+			console.log(splitData3);
 			for (let h=0; h<splitData3[0].length; h++){
 				for (let i = 0; i < splitData3[0][0].length; i++){
 					var writeline=true;
