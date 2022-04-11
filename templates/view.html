@@ -141,18 +141,20 @@ $(function() {
 				if (typeof split[1] !== 'undefined'){
 					table+="<th>"+split[0]+"</th>";
 					splitData[i]=split[1]
-				}
 			}
 			for (let i = 0; i < splitData.length; i++){
-				splitData2[i]=new Array(2);	
+				splitData2[i]=new Array(2);
+				if(typeof splitData[i] !== 'undefined'){	
 					splitData[i]=splitData[i].replaceAll(" [","!");
 					var split1=splitData[i].split("!");
 					for (let j = 1; j < split1.length; j++){
-							split1[j]=split1[j].replaceAll("[","");
-							split1[j]=split1[j].replaceAll("]","");
-							splitData2[i][j-1]=split1[j];
+						split1[j]=split1[j].replaceAll("[","");
+						split1[j]=split1[j].replaceAll("]","");
+						splitData2[i][j-1]=split1[j];
+						
 					}
 				}
+			}
 			table+="</tr></thead><tbody>"
 			
 			for (let i = 0; i < splitData2[0].length; i++){
@@ -165,10 +167,7 @@ $(function() {
 						
 						var split2=splitData2[j][i].split(" ");
 						for (let k = 1; k < split1.length; k++){
-							if (typeof split1[k] !== 'undefined'){
-								splitData3[j][k-1]=split2[k];
-							}
-
+							splitData3[j][k-1]=split2[k];
 						}	
 					}
 				}
