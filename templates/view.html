@@ -23,12 +23,7 @@
 
 <script>
 let boxClickCounter = 0;	
-var 0;
-var 1;
-var 2;
-var 3;
-var 4;
-var 5;
+
 
     function notifyMessage(msg,styles){
                  $.notify(msg,{
@@ -175,9 +170,8 @@ $(function() {
 			const dataArray=msg.split("!")
 			var table="";
 			for (let i = 0; i < dataArray.length; i++){
-				window[i]=dataArray[i];
 				var id = "dataText"+i;
-				var split=window[i].split(":");
+				var split=dataArray.split(":");
 				if (typeof split[1] !== 'undefined'){
 					document.getElementById(id).innerHTML="<table id=\"data\" class=\"SaveTable\"><thead><tr><th>"+split[0]+"</th></tr></thead><tbody><tr><td>"+split[1]+"</td></tr></tbody></table>";
 				}
