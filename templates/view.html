@@ -168,15 +168,22 @@ $(function() {
 		.done(function(msg) {
 			Data();
 			const dataArray=msg.split("!")
-			var table="";
+			var table="<table id=\"data\" class=\"SaveTable\"><thead><tr>";
 			for (let i = 0; i < dataArray.length; i++){
 				var id = "dataText"+i;
 				var split=dataArray[i].split(":");
 				if (typeof split[1] !== 'undefined'){
-					document.getElementById(id).innerHTML="<table id=\"data\" class=\"SaveTable\"><thead><tr><th>"+split[0]+"</th></tr></thead><tbody><tr><td>"+split[1]+"</td></tr></tbody></table>";
+					table+="<th>"+split[0]+"</th>";
 				}
 			}
-			
+			table+="</tr></thead><tbody>"
+			for (let i = 0; i < dataArray.length; i++){
+				var id = "dataText"+i;
+				var split=dataArray[i].split(":");
+				if (typeof split[1] !== 'undefined'){
+					table+="<td>"+split[1]+"</td>";
+				}
+			}
 				
 		})   
 		.fail(function(msg){
