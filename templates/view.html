@@ -170,14 +170,14 @@ $(function() {
 					}
 				}
 			}
-			console.log(splitData3);
+			console.log(splitData);
 			for (let h=0; h<splitData3.length; h++){
 				for (let i = 0; i < splitData3[0][0].length; i++){
 					var writeline=true;
 					table+="<tr>";
 					for (let j = 0; j < splitData3[0].length; j++){
 												
-						if (typeof splitData3[h][j][i] =='undefined' && splitData3[h][j][i].length>0 ||splitData3[h][j][i] == ""){
+						if (typeof splitData3[h][j][i] =='undefined' ||splitData3[h][j][i] == ""){
 							writeline=false;
 						}
 					}
