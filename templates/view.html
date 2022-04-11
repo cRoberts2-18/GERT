@@ -144,6 +144,7 @@ $(function() {
 			}
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
+				splitData2[i]=new Array(2);
 				var split=splitData[i].split("] [");
 				for (let j = 0; j < split.length; j++){
 					if (typeof split[j] !== 'undefined'){
