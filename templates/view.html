@@ -167,11 +167,13 @@ $(function() {
 						var split2=splitData2[j][i].split(" ");
 						for (let k = 1; k < split2.length; k++){
 							splitData3[i][j][k-1]=split2[k];
-							console.log(split2[k])
+							
+							
 						}	
 					}
 				}
 			}
+			console.log(split2);
 			console.log(splitData3);
 			for (let h=0; h<splitData3.length; h++){
 				for (let i = 0; i < splitData3[0][0].length; i++){
