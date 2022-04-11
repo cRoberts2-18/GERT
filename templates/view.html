@@ -132,7 +132,7 @@ $(function() {
 		.done(function(msg) {
 			Data();
 			var splitData=[];
-			var splitData2=[];
+			var splitData2=new array(2);
 			const dataArray=msg.split("!")
 			var table="<table id=\"data\" class=\"SaveTable\" style=\"float:right;\"><thead><tr>";
 			for (let i = 0; i < dataArray.length; i++){
@@ -145,8 +145,11 @@ $(function() {
 			table+="</tr></thead><tbody>"
 			for (let i = 0; i < splitData.length; i++){
 				var split=splitData[i].split("] [");
-				if (typeof split !== 'undefined'){
-					splitData2=split;
+				for (let j = 0; j < split.length; j++){
+					if (typeof split[j] !== 'undefined'){
+						splitData2[i][j]=split[j];
+					}
+				
 				}
 				table+="<td>"+splitData2[i]+"</td>";	
 			}
