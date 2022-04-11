@@ -165,7 +165,6 @@ $(function() {
 						splitData3[j]=new Array(2);
 					}
 					if(typeof splitData2[j][i] !== 'undefined'){
-						
 						var split2=splitData2[j][i].split(" ");
 						for (let k = 1; k < split1.length; k++){
 							splitData3[j][k-1]=split2[k];
@@ -173,7 +172,7 @@ $(function() {
 					}
 				}
 			}
-			console.log(splitData3);
+			console.log(splitData2[0][0]);
 			for (let i = 0; i < splitData3[0].length; i++){
 				var writeline=true;
 				table+="<tr>";
