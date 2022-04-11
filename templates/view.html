@@ -153,7 +153,7 @@ $(function() {
 		.done(function(msg) {
 			Data();
 			const dataArray=msg.split("!")
-			var table="<table id=\"data\" class=\"SaveTable\" style=\"margin:0px;\"><thead><tr>";
+			var table="<table id=\"data\" class=\"SaveTable\" style=\"text-align:left;\"><thead><tr>";
 			for (let i = 0; i < dataArray.length; i++){
 				var split=dataArray[i].split(":");
 				if (typeof split[1] !== 'undefined'){
