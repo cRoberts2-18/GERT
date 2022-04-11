@@ -147,7 +147,8 @@ $(function() {
 					table+="<td>"+split[1]+"</td>";
 				}
 			}
-			document.getElementById("Data").innerHTML=table	
+			document.getElementById("Data").innerHTML=table;
+			document.getElementById("mySidebar").style.height=100%;
 		})   
 		.fail(function(msg){
 			alert(msg);
