@@ -160,7 +160,6 @@ $(function() {
 			for (let i = 0; i < splitData2[0].length; i++){
 				
 				for (let j = 0; j < splitData2.length; j++){
-					if(typeof splitData2[j][i] !== 'undefined'){
 						if(i==0){
 							splitData3[j]=new Array(2);
 						}
@@ -168,9 +167,7 @@ $(function() {
 						for (let k = 1; k < split1.length; k++){
 							if (typeof split1[k] !== 'undefined'){
 								splitData3[j][k-1]=split2[k];
-							}
-
-						}	
+							}	
 					}
 				}
 			}
@@ -182,12 +179,6 @@ $(function() {
 				table+="</tr>";
 			
 			}
-			
-			
-			
-			
-			
-			
 			
 			document.getElementById("Data").innerHTML=table;
 			document.getElementById("mySidebar").style.height="3000px";
