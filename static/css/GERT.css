@@ -17,7 +17,8 @@
     header{
         background-color: #282b30;
         z-index: 100000000000;
-        position: fixed
+        position: fixed;
+        width: 100%;
                
         
     }
@@ -443,4 +444,8 @@
     background-color: #1f2124;
     
 
+}
+.container{
+    position:absolute;
+    top:120px;
 }
