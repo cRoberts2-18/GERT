@@ -174,12 +174,17 @@ $(function() {
 				}
 			}
 			for (let i = 0; i < splitData3[0].length; i++){
+				var writeline=true;
 				table+="<tr>";
 				for (let j = 0; j < splitData3.length; j++){
 					if (typeof splitData3[j][i] !== 'undefined'){
-						table+="<td>"+splitData3[j][i]+"</td>";
+						writeline=false
 					}
 				}
+				if(writeline==true)
+					for (let j = 0; j < splitData3.length; j++){
+						table+="<td>"+splitData3[j][i]+"</td>";
+					}
 				table+="</tr>";
 			
 			}
