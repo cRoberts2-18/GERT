@@ -144,19 +144,15 @@ $(function() {
 				}
 			}
 			for (let i = 0; i < splitData.length; i++){
-				splitData2[i]=new Array(2);
-				if(typeof splitData[i] !== 'undefined'){	
+				splitData2[i]=new Array(2);	
 					splitData[i]=splitData[i].replaceAll(" [","!");
 					var split1=splitData[i].split("!");
 					for (let j = 1; j < split1.length; j++){
-						if (typeof split[1] !== 'undefined'){
 							split1[j]=split1[j].replaceAll("[","");
 							split1[j]=split1[j].replaceAll("]","");
 							splitData2[i][j-1]=split1[j];
-						}
 					}
 				}
-			}
 			table+="</tr></thead><tbody>"
 			
 			for (let i = 0; i < splitData2[0].length; i++){
