@@ -18,3 +18,9 @@ gert.py api call now takes from the gert home page mostly. so the dataset you ha
 
 The API function calls, we have changed carbon dioxide to methane as that was not possible before. Things that need adding to this function leadtime hours to have 1 - ~130 ish im sure theres a way to do this. The exat number of options we need is on the dataset website. A way to input area if they wish default is -90 +90 180 -180. Validation of the form. Also a confirm message and a success message ( when its fully downloaded) - i may do this now
 A way they can see that they have done this data. A way to get specific data at specific times and area ( what patrick was doing) this uses py girb. using cams lib from MUNDI to display the data. Then its just sort of backend stuff like saving their faves and being able to look at the data they have saved.
+
+# Cal update as of 14th April
+search system works for a single time (currently earliest in the databaae) below is a to do list:
+1) add analytic functionality (look into Google charts)
+2) allow searches by date
+these are the main two points. this will leave us with a deliverable system then any other polish will be good
