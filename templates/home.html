@@ -298,6 +298,7 @@ function onMapClickFirst(e) {
 			var $leadtimeHour = $("#leadtimeHour").val();
 			var $fileName = $("#fileName").val();
 			var $fileFormat = $("#fileFormat").val();
+			alert($datepicker1);
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('processAPICall')}}",
