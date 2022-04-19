@@ -34,7 +34,7 @@
   <script>
 
 function ViewModel(file, start, end){ 
-    window.location.href=(("{{ url_for('view', ID='placeholder',start='placeholder1',end='placeholder2') }}".replace("placeholder",file)).replace("placeholder1",start)).replace("placeholder2",end);    
+    window.location.href=(("{{ url_for('view', ID='placeholder',start='placeholder1',end='placeholder2') }}".replace("placeholder",file)).replace("placeholder1",String(start))).replace("placeholder2",String(end));    
 }
     
 </script>
