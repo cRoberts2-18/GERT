@@ -24,6 +24,8 @@ const urlParams = new URLSearchParams(queryString);
 	
 var start = urlParams.get('start');
 var end = urlParams.get('end');
+console.log(end);
+console.log(start);
 document.getElementById("datepicker1").max = end;
 document.getElementById("datepicker1").min = start;	
 document.getElementById("datepicker2").max = end;
