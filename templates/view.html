@@ -23,7 +23,7 @@ let boxClickCounter = 0;
 	
 function setLimits(){
 	let params = (new URL(document.location)).searchParams;
-	var test = params.getAll();
+	var test = params.getAll('ID');
 	var start = params.get('ID1');
 	var end = params.get('ID2');
 
