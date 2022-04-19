@@ -139,9 +139,11 @@ $(function() {
 			
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
-			console.log(urlParams);
+			
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
+			console.log($ID);
+			
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('searchData')}}",
