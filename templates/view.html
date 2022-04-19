@@ -19,7 +19,7 @@
 	
 <script>
 let boxClickCounter = 0;	
-let params = (window.location.href).searchParams;
+let params = (new URL(window.location.href)).searchParams;
 	
 var start = params.get('start');
 var end = params.get('end');
