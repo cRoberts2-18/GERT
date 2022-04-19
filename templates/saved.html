@@ -25,7 +25,7 @@
           <td>{% if res[5]==1 %}Yes{% else %}No{% endif %}</td>
           <td>{% if res[6]==1 %}Yes{% else %}No{% endif %}</td>
           <td>{% if res[7]==1 %}Yes{% else %}No{% endif %}</td>  
-          <td><button class="buttonstyle" id="{{ res[0] }}" onclick="ViewModel({{ res[0] }},String.raw\`{{ res[8] }}\`,String.raw\`{{ res[9] }})\`">View Model</button></td>
+          <td><button class="buttonstyle" id="{{ res[0] }}" onclick="ViewModel({{ res[0] }},String.raw`{{ res[8] }}`,String.raw`{{ res[9] }})`">View Model</button></td>
         </tr>
       {% endfor %}
     </tbody>
