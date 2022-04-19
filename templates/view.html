@@ -19,10 +19,10 @@
 	
 <script>
 let boxClickCounter = 0;	
-let params = new URLSearchParams(window.location.search);
+let params = new URLSearchParams(location.search);
 	
-var start = window.location.search.get('start');
-var end = window.location.search.search('end');
+var start = params.get('start');
+var end = params.get('end');
 
 	
 console.log(params);	
