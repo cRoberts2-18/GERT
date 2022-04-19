@@ -21,8 +21,8 @@
 let boxClickCounter = 0;	
 let params = new URLSearchParams(window.location.search);
 	
-var start = params.get('start');
-var end = params.get('end');
+var start = window.location.search('start');
+var end = window.location.search('end');
 
 	
 console.log(params);	
