@@ -25,7 +25,7 @@
           <td>{% if res[5]==1 %}Yes{% else %}No{% endif %}</td>
           <td>{% if res[6]==1 %}Yes{% else %}No{% endif %}</td>
           <td>{% if res[7]==1 %}Yes{% else %}No{% endif %}</td>  
-          <td><button class="buttonstyle" id="{{ res[0] }}" onclick="ViewModel({{ res[0] }})">View Model</button></td>
+          <td><button class="buttonstyle" id="{{ res[0] }}" onclick="ViewModel({{ res[0] }},{{ res[8] }},{{ res[9] }})">View Model</button></td>
         </tr>
       {% endfor %}
     </tbody>
@@ -33,8 +33,8 @@
 
   <script>
 
-function ViewModel(file){ 
-    window.location.href="{{ url_for('view', ID='placeholder') }}".replace("placeholder",file);    
+function ViewModel(file, start, end){ 
+    window.location.href=(("{{ url_for('view', ID='placeholder',start='start',end='end') }}".replace("placeholder",file)).replace("end",end)).replace("start",start);    
 }
     
 </script>
