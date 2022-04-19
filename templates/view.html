@@ -23,7 +23,7 @@ let boxClickCounter = 0;
 	
 function setLimits(){
 	const queryString = window.location.search;
-	const params = new URLSearchParams(queryString);
+	const params = new URLSearchParams(queryString.searchParams);
 
 
 	var start = params.get('start');
