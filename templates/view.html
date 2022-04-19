@@ -24,10 +24,10 @@ const urlParams = new URLSearchParams(queryString);
 	
 var start = urlParams.get('start');
 var end = urlParams.get('end');
-document.getElementByID("datepicker1").max = end;
-document.getElementByID("datepicker1").min = start;	
-document.getElementByID("datepicker2").max = end;
-document.getElementByID("datepicker2").min = start;	
+document.getElementById("datepicker1").max = end;
+document.getElementById("datepicker1").min = start;	
+document.getElementById("datepicker2").max = end;
+document.getElementById("datepicker2").min = start;	
 	
 
     function notifyMessage(msg,styles){
