@@ -20,22 +20,23 @@
 <script>
 let boxClickCounter = 0;	
 
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-			
 	
-var start = params.get('start');
-var end = params.get('end');
+function setLimits(){
+	const queryString = window.location.search;
+	const params = new URLSearchParams(queryString);
 
-	
-console.log(params);	
-console.log(end);
-console.log(start);
-document.getElementById("datepicker1").max = end;
-document.getElementById("datepicker1").min = start;	
-document.getElementById("datepicker2").max = end;
-document.getElementById("datepicker2").min = start;	
-	
+
+	var start = params.get('start');
+	var end = params.get('end');
+
+	console.log(params);	
+	console.log(end);
+	console.log(start);
+	document.getElementById("datepicker1").max = end;
+	document.getElementById("datepicker1").min = start;	
+	document.getElementById("datepicker2").max = end;
+	document.getElementById("datepicker2").min = start;	
+}
 
     function notifyMessage(msg,styles){
                  $.notify(msg,{
@@ -232,6 +233,6 @@ $(function() {
  
 	});	
 	
-	
+setLimits()	
 </script>
 {% endblock %}
