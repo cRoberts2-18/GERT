@@ -163,7 +163,7 @@ $(function() {
 			var $count=0;
 			while($dictIndex!=($endIndex+1)){
 				const dataArray=msg[$dictIndex].split("!");
-				if(count==0){
+				if($count==0){
 				var table="<table id=\""+$dictIndex+"\" class=\"SaveTable\" style=\"float:right;\"><thead><tr>";
 				}else{
 				var table="<table id=\""+$dictIndex+"\" class=\"SaveTable\" style=\"float:right; display:hidden;\"><thead><tr>";
