@@ -63,7 +63,7 @@
 	<input type="text" id="fileName" placeholder="Filename" name="fileName"><br><br>
 	
 	<input class="buttonstyle" type=button id = "makeCall" value = "Make API Request">
-	
+	<input class="buttonstyle" type=button id = "showMap" value = "showMap">
     	
    
   </div>
@@ -370,7 +370,24 @@ window.onclick = function(event) {
   
 }
 	  
-	  
+$(function() {
+		$("#showMap").click(function () {
+			
+    	   	$.ajax({
+    			method: "POST",
+      			url: "{{ url_for('showMap')}}",
+			data: {},
+      			
+   		})
+		.done(function(msg) {
+			
+		})   
+		.fail(function(msg){
+			
+		});
+		});
+ 
+	});
 	  
 	  
     </script>
