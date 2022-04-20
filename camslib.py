@@ -31,9 +31,6 @@ from IPython.display import display, clear_output
 from owslib.wcs import WebCoverageService
 from owslib.wms import WebMapService
 
-from ecmwfapi import ECMWFDataServer
-import ecmwfapi
-
 from IPython.display import Image
 import glob
 
@@ -63,193 +60,11 @@ color_display_direction = ["Left to right", "Right to left"]
 
 data_parameters = ["Nitrogen dioxyde", "Ozone", "Sulfur dioxyde", "Particulate Matter <2.5 um", "Particulate Matter <10 um" ]
 
-SAVE_FOLDER_IMAGES = "/home/jovyan/work/cams_data/cams_ecmwfapi/images_data/"
-SAVE_FOLDER_GIF = "/home/jovyan/work/cams_data/cams_ecmwfapi/"
 
 
-# ----------------------------------------------------------------
-#  CAMS ECMWFAPI notebook functions:
-# ----------------------------------------------------------------
-
-def setup_dir():
-    """This function gets the destination folder path"""
-    output_dir = path.join(os.environ['HOME'], 'work/cams_data/cams_ecmwfapi/images_data/')
-
-    return output_dir
 
 
-def setup(output_dir):
-    """This function creates the folder output_dir if it doesn't exist"""
 
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    output_filename = path.join(output_dir, 'output.grib')
-
-    return output_filename
-
-
-def configure_ecmwfapi():
-    """This function allows to log onto the ecmwfapi service"""
-
-    ecmwfapi_email_widget = widgets.Text(
-        value='',
-        placeholder='Enter your email to log in ECMWF',
-        description='Your Email',
-        disabled=False
-    )
-
-    ecmwfapi_key_widget = widgets.Text(
-        value='',
-        placeholder='Enter your ECMWF Key',
-        description='Your Key',
-        disabled=False
-    )
-
-    button_widget = widgets.Button(
-        description='Validate',
-        disabled=False,
-        button_style='',
-        tooltip='Click me',
-    )
-
-    output_widget = widgets.Output(
-    )
-
-    display(ecmwfapi_email_widget)
-    display(ecmwfapi_key_widget)
-    display(button_widget)
-    display(output_widget)
-
-    def click_configure_ecmwfapi(b):
-        with output_widget:
-            ecmwf_email = ecmwfapi_email_widget.value
-            ecmwf_key = ecmwfapi_key_widget.value
-            print('Your ECMWF login email is : ' + ecmwf_email + ', and your ECMWF Key is : ' + ecmwf_key)
-            content = f'{{\n    "url"   : "https://api.ecmwf.int/v1",\n    "key"   : "{ecmwf_key}",\n    "email" : "{ecmwf_email}"\n}}'
-            # write content to $HOME/.ecmwfapirc
-            with open(path.join(os.environ["HOME"], '.ecmwfapirc'), 'w') as f:
-                f.write(content)
-
-    button_widget.on_click(click_configure_ecmwfapi)
-
-
-def request_ecmwfapi(output_filename):
-    """This function creates a request to the ECMWFAPI service with parameters asked in the GUI
-    and generates the output.grib file containing resulting data.
-
-    Parameters
-    ----------
-    output_filename: string
-        folder where the output.grib file will be stored
-    """
-
-    data_parameter_widget = widgets.Dropdown(
-        options=data_parameters,
-        description='Data selection',
-    )
-
-    start_date_widget = widgets.DatePicker(
-        description='Starting Date',
-        value=datetime.date.today() - datetime.timedelta(45),
-        disabled=False
-    )
-
-    current_date_widget = widgets.DatePicker(
-        description='Final date',
-        value=datetime.date.today() - datetime.timedelta(15),
-        disabled=False)
-
-    hour_06 = widgets.Checkbox(
-        value=False,
-        description='06:00:00',
-        disabled=False,
-        indent=True
-    )
-
-    hour_12 = widgets.Checkbox(
-        value=False,
-        description='12:00:00',
-        disabled=False,
-        indent=True
-    )
-
-    hour_18 = widgets.Checkbox(
-        value=False,
-        description='18:00:00',
-        disabled=False,
-        indent=True
-    )
-
-    label_hour = widgets.VBox([widgets.Label(value="Select one or many hours below :"), hour_06, hour_12, hour_18])
-    button = widgets.Button(description='Validate')
-    out = widgets.Output()
-
-    display(data_parameter_widget)
-    display(start_date_widget)
-    display(current_date_widget)
-    display(label_hour)
-    display(button)
-    display(out)
-
-    def click_ecmwfapi_request(b):
-        with out:
-            time_6 = ""
-            time_12 = ""
-            time_18 = ""
-            if hour_06.value == True:
-                time_6 = "/06:00:00"
-            if hour_12.value == True:
-                time_12 = "/12:00:00"
-            if hour_18.value == True:
-                time_18 = "/18:00:00"
-
-            time_param = time_6 + time_12 + time_18
-
-            server = ecmwfapi.ECMWFDataServer()
-            server.retrieve({
-                "class": "mc",
-                "dataset": "cams_nrealtime",
-                "date": str(start_date_widget.value) + "/to/" + str(current_date_widget.value),
-                "expver": "0001",
-                "levtype": "sfc",
-                "param": parameter_value(data_parameter_widget.value),
-                "step": "0",
-                "stream": "oper",
-                "time": "00:00:00" + time_param,
-                "type": "an",
-                "target": output_filename,
-            })
-
-    button.on_click(click_ecmwfapi_request)
-
-
-def parameter_value(atmosphere_data_parameter):
-    """This function returns the parameter value corresponding to the athmosphere gaz value selected in the GUI.
-
-    Parameters
-    ----------
-    atmosphere_data_parameter: string
-        Atmosphere data parameter selected.
-
-    Returns
-    -------
-    data_param: string
-        The data parameter value used in the ECMWFAPI request
-    """
-
-    if atmosphere_data_parameter == "Nitrogen dioxyde":
-        data_param = "125.210"
-    elif atmosphere_data_parameter == "Ozone":
-        data_param = "206.210"
-    elif atmosphere_data_parameter == "Sulfur dioxyde":
-        data_param = "126.210"
-    elif atmosphere_data_parameter == "Particulate Matter <2.5 um":
-        data_param = "73.210"
-    elif atmosphere_data_parameter == "Particulate Matter <10 um":
-        data_param = "74.210"
-
-    return data_param
 
 
 def get_projection_map(output_dir, output_filename):
@@ -400,12 +215,7 @@ def download_images(output_filename, output_dir, projection, color_map, image_ti
         # get the longitudes and the latitudes
         latitudes, longitudes = grb.latlons()
 
-        # Emptying the folder which contains precedent img
-        if not os.path.exists("/home/jovyan/work/cams_data/cams_ecmwfapi/images_data/"):
-            os.makedirs("/home/jovyan/work/cams_data/cams_ecmwfapi/images_data/")
-        files = glob.glob(f'{"/home/jovyan/work/cams_data/cams_ecmwfapi/images_data/"}[!output.grib]*')
-        for f in files:
-            os.remove(f)
+        
 
         cpt = 1
 
@@ -518,11 +328,11 @@ def display_GIF_images(output_dir, gif_filename):
     imageio.mimsave(f'{SAVE_FOLDER_GIF}{gif_filename}.gif', images, duration=0.3)
     clear_output(wait=True)
     print("GIF File Generated")
-    display(HTML('<img src="{}">'.format('../../work/cams_data/cams_ecmwfapi/' + gif_filename + '.gif')))
+    
 
 
 def display_gif_folder():
-    """ This function allows to display GIF files presents in the cams_ecmwfapi folder
+    """ This function allows to display GIF files presents in the cams_ folder
     """
 
     accepted_extensions = ["gif"]
@@ -539,7 +349,7 @@ def display_gif_folder():
             clear_output(wait=True)
             print('Your "' + display_file_widget.value + '" is being displayed !')
             print("")
-            display(HTML('<img src="{}">'.format('../../work/cams_data/cams_ecmwfapi/' + display_file_widget.value)))
+            
 
     button_dis.on_click(click_display)
 
