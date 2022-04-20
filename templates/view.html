@@ -112,6 +112,8 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
+			var $date1 = $("#datepicker1").val();
+			var $date2 = $("#datepicker2").val();
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
 			var $PLACElat2 = parseFloat($("#Lat2").val()); 
