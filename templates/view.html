@@ -178,7 +178,7 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			
+			console.log(msg)
 			var splitData=[];
 			var splitData2=new Array(2);
 			var splitData3=new Array(2);
@@ -229,8 +229,7 @@ $(function() {
 						}
 					}
 				}
-				console.log(split2);
-				console.log(splitData3);
+				
 				for (let h=0; h<splitData3.length; h++){
 					for (let i = 0; i < splitData3[0][0].length; i++){
 						var writeline=true;
