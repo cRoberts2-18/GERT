@@ -215,7 +215,10 @@ def searchData():
                 except:
                     print("")
         count+=1
-        dataDict[dates[i]]=data
+        try:
+            dataDict[dates[i]]=data
+        except:
+            print("")
     return dataDict
     
     
