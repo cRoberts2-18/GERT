@@ -110,6 +110,7 @@ def searchData():
     ch4Data=""
     latData=""
     longData=""
+    date=[]
     mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -153,30 +154,34 @@ def searchData():
         ch4Data="Methane: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
-     
-    first=0
-    data=latData+"!"+longData+"!"
-    if no2==1:
-        data+=no2Data
-        first=1
-    if so2==1:
-        if first==0:
-            data+=so2Data
+    
+    
+    
+    for i in range(len(dates))
+        first=0
+        data[i]=latData+"!"+longData+"!"
+
+        if no2==1:
+            data[i]+=no2Data
             first=1
-        else:
-            data+="!"+so2Data
-    if co==1:
-        if first==0:
-            data+=coData
-            first=1
-        else:
-            data+="!"+coData
-    if ch4==1:
-        if first==0:
-            data+=ch4Data
-            first=1
-        else:
-            data+="!"+ch4Data
+        if so2==1:
+            if first==0:
+                data[i]+=so2Data
+                first=1
+            else:
+                data[i]+="!"+so2Data
+        if co==1:
+            if first==0:
+                data[i]+=coData
+                first=1
+            else:
+                data[i]+="!"+coData
+        if ch4==1:
+            if first==0:
+                data[i]+=ch4Data
+                first=1
+            else:
+                data[i]+="!"+ch4Data
     return data
     
     
