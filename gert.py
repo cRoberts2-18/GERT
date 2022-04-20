@@ -36,7 +36,7 @@ def loginPage():
 
 @app.route('/showMap/')
 def showMap():
-    get_projection_map(output_dir, output_filename)
+    camslib.get_projection_map(output_dir, output_filename)
     
 @app.route('/saved/', methods = ['GET','POST'])
 def saved():
