@@ -159,7 +159,7 @@ $(function() {
 			var splitData2=new Array(2);
 			var splitData3=new Array(2);
 			console.log(msg);
-			var $dictIndex=String($date1).replaceAll("-","");
+			var $dictIndex=parseInt(String($date1).replaceAll("-",""));
 			const dataArray=msg[$dictIndex].split("!");
 			var table="<table id=\"data\" class=\"SaveTable\" style=\"float:right;\"><thead><tr>";
 			for (let i = 0; i < dataArray.length; i++){
