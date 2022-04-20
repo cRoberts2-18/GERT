@@ -80,7 +80,7 @@ function setLimits(){
 
 function onMapClickFirst(e) {
 	lat=parseFloat(e.latlng.wrap().lat);
-	lon=parseFloat(e.latlng.wrap().lng);
+	lon=parseFloat(e.latlng.wrap().lng)+180;
 	xy1 = xy2;
 	xy2 = e.latlng.wrap();
 	boxBounds = [xy1, xy2];
