@@ -168,32 +168,52 @@ def searchData():
     
     
     count=0
-    for i in range(len(dates)):
-        
+    for i in range(len(dates)+1):
         first=0
         data=latData+"!"+longData+"!"
 
         if no2==1:
-            data+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            try:
+                data+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            except:
+                print("")
             first=1
         if so2==1:
             if first==0:
-                data+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
                 first=1
             else:
-                data+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
         if co==1:
             if first==0:
-                data+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
                 first=1
             else:
-                data+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
         if ch4==1:
             if first==0:
-                data+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
                 first=1
             else:
-                data+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                try:
+                    data+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                except:
+                    print("")
         count+=1
         dataDict[dates[i]]=data
     return dataDict
