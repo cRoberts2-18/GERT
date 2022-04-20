@@ -125,7 +125,7 @@ $(function() {
 			
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
-			$("#tablepicker").val($date1);
+			document.getElementById("tablepicker").value = document.getElementById("tablepicker").min;
 			
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
