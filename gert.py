@@ -114,7 +114,7 @@ def searchData():
     ch4Dates=[]
     latData=""
     longData=""
-    dataList=[]
+    dataDict={}
     mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -187,8 +187,8 @@ def searchData():
             else:
                 data+="!"+"Methane: "+str(ch4Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         count+=1
-        dataList.append(data)
-    return dataList
+        dataDict[dates[i]]=data
+    return dataDict
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
