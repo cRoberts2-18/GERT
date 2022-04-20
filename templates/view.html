@@ -160,7 +160,7 @@ $(function() {
 			var splitData3=new Array(2);
 			var $dictIndex=parseInt(String($date1).replaceAll("-",""));
 			var $endIndex=parseInt(String($date2).replaceAll("-",""));
-			count=0;
+			var $count=0;
 			while($dictIndex!=($endIndex+1)){
 				const dataArray=msg[$dictIndex].split("!");
 				if(count==0){
@@ -229,6 +229,8 @@ $(function() {
 				table+="</table>"
 				document.getElementById("Data").innerHTML+=table;
 				document.getElementById("mySidebar").style.height="3000px";
+				$count+=1;
+				$dictIndex+=1;
 				}
 			
 			
