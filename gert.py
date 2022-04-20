@@ -34,7 +34,7 @@ def loginPage():
     return render_template('login.html')
 
 
-@app.route('/showMap/')
+@app.route('/showMap/', methods = ['GET','POST'])
 def showMap():
     camslib.get_projection_map("", "")
     return("hello")
