@@ -165,26 +165,26 @@ def searchData():
         data.append(latData+"!"+longData+"!")
 
         if no2==1:
-            data[len(data)]+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            data[len(data)-1]+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
             first=1
         if so2==1:
             if first==0:
-                data[len(data)]+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)]+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if co==1:
             if first==0:
-                data[len(data)]+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)]+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if ch4==1:
             if first==0:
-                data[len(data)]+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)]+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data[len(data)-1]+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         count+=1
     return data
     
