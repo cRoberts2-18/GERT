@@ -114,7 +114,7 @@ def searchData():
     ch4Dates=[]
     latData=""
     longData=""
-    data=[]
+    dataList=[]
     mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -161,32 +161,34 @@ def searchData():
     
     count=0
     for i in range(len(dates)):
+        
         first=0
-        data.append(latData+"!"+longData+"!")
+        data=latData+"!"+longData+"!"
 
         if no2==1:
-            data[len(data)-1]+="Nitrogen Dioxide: "#+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            data+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
             first=1
         if so2==1:
             if first==0:
-                data[len(data)-1]+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)-1]+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if co==1:
             if first==0:
-                data[len(data)-1]+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)-1]+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if ch4==1:
             if first==0:
-                data[len(data)-1]+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data[len(data)-1]+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         count+=1
-    return data
+        dataList.append(data)
+    return dataList
     
     
 @app.route('/processLogin/', methods = ['GET', 'POST'])
