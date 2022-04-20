@@ -33,6 +33,11 @@ def resetPassword():
 def loginPage():
     return render_template('login.html')
 
+
+@app.route('/showMap/')
+def showmap():
+    get_projection_map(output_dir, output_filename)
+    
 @app.route('/saved/', methods = ['GET','POST'])
 def saved():
     if session.get('LoggedIn')==True:
