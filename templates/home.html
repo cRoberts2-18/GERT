@@ -370,24 +370,24 @@ window.onclick = function(event) {
   
 }
 	  
-$(function() {
-		$("#showMap").click(function () {
-			
-    	   	$.ajax({
-    			method: "POST",
-      			url: "{{ url_for('showMap')}}",
-			data: {},
-      			
-   		})
-		.done(function(msg) {
-			
-		})   
-		.fail(function(msg){
-			
+	$(function() {
+			$("#showMap").click(function () {
+
+			$.ajax({
+				method: "POST",
+				url: "{{ url_for('showMap')}}",
+				data: {},
+
+			})
+			.done(function(msg) {
+				alert(msg)
+			})   
+			.fail(function(msg){
+				alert(msg)
+			});
+			});
+
 		});
-		});
- 
-	});
 	  
 	  
     </script>
