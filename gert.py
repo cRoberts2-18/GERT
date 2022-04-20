@@ -114,7 +114,7 @@ def searchData():
     ch4Dates=[]
     latData=""
     longData=""
-    date=[]
+    data=[]
     mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -134,7 +134,6 @@ def searchData():
         co=row[6]
         ch4=row[7]
     grbs=pygrib.open(path)
-    data=""
     if no2==1:
         no2Dates=grbs.select(name="Total column Nitrogen dioxide", date = (dates))
         no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
