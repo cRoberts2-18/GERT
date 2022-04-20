@@ -95,6 +95,11 @@ def searchData():
     long2=float(request.values.get('long2'))
     path=request.values.get('path')
     SearchID=request.values.get('ID')
+    date1=str(request.values.get('date1'))
+    date2=str(request.values.get('date2'))
+    date1=int(date1.replace("-",""))
+    date2=int(date2.replace("-",""))
+    dates=list(range(date1,date2+1))
     no2=0
     so2=0
     co=0
@@ -126,21 +131,25 @@ def searchData():
     grbs=pygrib.open(path)
     data=""
     if no2==1:
+        no2Dates=grbs.select(name="Total column Nitrogen dioxide", date = (dates))
         no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
         
     if so2==1:
+        so2Dates=grbs.select(name="Total column Sulphur dioxide", date = (dates))
         so2Data="Sulphur Dioxide: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
     if co==1:
+        coDates=grbs.select(name="Total column Carbon monoxide", date = (dates))
         coData="Carbon Monoxide: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
     if ch4==1:
+        ch4Dates=grbs.select(name="Total column methane", date = (dates))
         ch4Data="Methane: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
