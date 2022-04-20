@@ -114,12 +114,11 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			var start = params.get('amp;ID1');
-			var end = params.get('amp;ID2');
-			document.getElementById("tablepicker").max = end;
-			document.getElementById("tablepicker").min = start;
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
+			
+			document.getElementById("tablepicker").max = $date2;
+			document.getElementById("tablepicker").min = $date1;
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
 			var $PLACElat2 = parseFloat($("#Lat2").val()); 
