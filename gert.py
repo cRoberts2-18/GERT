@@ -107,7 +107,7 @@ def searchData():
     date2=str(request.values.get('date2'))
     date1=int(date1.replace("-",""))
     date2=int(date2.replace("-",""))
-    dates=list(range(date1,date2+1))
+    dates=list(range(date1,date2+2))
     no2=0
     so2=0
     co=0
