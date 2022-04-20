@@ -31,9 +31,11 @@ function setLimits(){
 	console.log(end);
 	console.log(start);
 	document.getElementById("datepicker1").max = end;
-	document.getElementById("datepicker1").min = start;	
+	document.getElementById("datepicker1").min = start;
+	document.getElementById("datepicker1").value = start;
 	document.getElementById("datepicker2").max = end;
-	document.getElementById("datepicker2").min = start;	
+	document.getElementById("datepicker2").min = start;
+	document.getElementById("datepicker2").value = end;
 }
 
     function notifyMessage(msg,styles){
