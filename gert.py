@@ -165,7 +165,7 @@ def searchData():
         data.append(latData+"!"+longData+"!")
 
         if no2==1:
-            data[len(data)-1]+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            data[len(data)-1]+="Nitrogen Dioxide: "#+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
             first=1
         if so2==1:
             if first==0:
