@@ -161,7 +161,7 @@ def searchData():
     
     
     
-    for i in range(len(dates))
+    for i in range(len(dates)):
         first=0
         data[i]=latData+"!"+longData+"!"
 
