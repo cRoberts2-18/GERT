@@ -133,11 +133,11 @@ $(function() {
 			}
 			
 			if($PLACElong<$PLACElong2){
-				$long=$PLACElong;
-				$long2=$PLACElong2;
+				$long=$PLACElong-0.2;
+				$long2=$PLACElong2+0.2;
 			}else{
-				$long=$PLACElong2;
-				$long2=$PLACElong;
+				$long=$PLACElong2-0.2;
+				$long2=$PLACElong+0.2;
 			}
 			
 			const queryString = window.location.search;
