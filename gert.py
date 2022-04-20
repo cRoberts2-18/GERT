@@ -108,6 +108,10 @@ def searchData():
     so2Data=""
     coData=""
     ch4Data=""
+    no2Dates=[]
+    so2Dates=[]
+    coDates=[]
+    ch4Dates=[]
     latData=""
     longData=""
     date=[]
@@ -162,26 +166,26 @@ def searchData():
         data[i]=latData+"!"+longData+"!"
 
         if no2==1:
-            data[i]+=no2Data
+            data[i]+=no2Dates[i]
             first=1
         if so2==1:
             if first==0:
-                data[i]+=so2Data
+                data[i]+=so2Dates[i]
                 first=1
             else:
-                data[i]+="!"+so2Data
+                data[i]+="!"+so2Dates[i]
         if co==1:
             if first==0:
-                data[i]+=coData
+                data[i]+=coDates[i]
                 first=1
             else:
-                data[i]+="!"+coData
+                data[i]+="!"+coDates[i]
         if ch4==1:
             if first==0:
-                data[i]+=ch4Data
+                data[i]+=ch4Dates[i]
                 first=1
             else:
-                data[i]+="!"+ch4Data
+                data[i]+="!"+ch4Dates[i]
     return data
     
     
