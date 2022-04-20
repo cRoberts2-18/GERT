@@ -164,6 +164,8 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
+			document.getElementById("Data").innerHTML="<br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\"><br><br>"
+			
 			var splitData=[];
 			var splitData2=new Array(2);
 			var splitData3=new Array(2);
