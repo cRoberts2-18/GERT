@@ -163,7 +163,7 @@ def searchData():
     
     for i in range(len(dates)):
         first=0
-        data[i]=latData+"!"+longData+"!"
+        data.append(latData+"!"+longData+"!")
 
         if no2==1:
             data[i]+=no2Dates[i]
