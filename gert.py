@@ -165,26 +165,26 @@ def searchData():
         data.append(latData+"!"+longData+"!")
 
         if no2==1:
-            data[i]+=no2Dates[i]
+            data[i]+=no2Dates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
             first=1
         if so2==1:
             if first==0:
-                data[i]+=so2Dates[i]
+                data[i]+=so2Dates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
                 first=1
             else:
-                data[i]+="!"+so2Dates[i]
+                data[i]+="!"+so2Dates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
         if co==1:
             if first==0:
-                data[i]+=coDates[i]
+                data[i]+=coDates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
                 first=1
             else:
-                data[i]+="!"+coDates[i]
+                data[i]+="!"+coDates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
         if ch4==1:
             if first==0:
-                data[i]+=ch4Dates[i]
+                data[i]+=ch4Dates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
                 first=1
             else:
-                data[i]+="!"+ch4Dates[i]
+                data[i]+="!"+ch4Dates[i].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0]
     return data
     
     
