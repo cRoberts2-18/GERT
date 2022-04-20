@@ -15,11 +15,15 @@
 </div>
 
 <div id="map" class='map'></div>
-<div id="Data"><input type="date" id="tablepicker" style="float:right;"><br><br></div>
+<div id="Data"><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br></div>
 	
 <script>
 let boxClickCounter = 0;	
 
+function handler(e){
+	alert(e.target.value);
+}
+	
 	
 function setLimits(){
 	let params = (new URL(document.location)).searchParams;
