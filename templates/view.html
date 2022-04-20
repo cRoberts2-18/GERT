@@ -21,7 +21,19 @@
 let boxClickCounter = 0;	
 
 function handler(e){
-	alert(e.target.value);
+	var id = parseInt(String(e.target.value).replaceAll("-",""));
+	var min= parseInt(String(document.getElementById("tablepicker").min).replaceAll("-",""));
+	var max= parseInt(String(document.getElementById("tablepicker").max).replaceAll("-",""));
+	for(let i=min;i<=max;i++){
+		if(i==id){
+			document.getElementById(id).style.display="block";
+		}
+		else{
+			try{
+				document.getElementById(i).style.display="none";
+			}catch(err){}
+		}
+	}
 }
 	
 	
