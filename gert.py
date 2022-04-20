@@ -166,26 +166,26 @@ def searchData():
         data=latData+"!"+longData+"!"
 
         if no2==1:
-            data+="Nitrogen Dioxide: "+str(no2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+            data+="Nitrogen Dioxide: "+str(no2Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
             first=1
         if so2==1:
             if first==0:
-                data+="Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Sulphur Dioxide: "+str(so2Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data+="!"+"Sulphur Dioxide: "+str(so2Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Sulphur Dioxide: "+str(so2Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if co==1:
             if first==0:
-                data+="Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Carbon Monoxide: "+str(coDates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data+="!"+"Carbon Monoxide: "+str(coDates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Carbon Monoxide: "+str(coDates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         if ch4==1:
             if first==0:
-                data+="Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="Methane: "+str(ch4Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
                 first=1
             else:
-                data+="!"+"Methane: "+str(ch4Dates[count].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
+                data+="!"+"Methane: "+str(ch4Dates[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         count+=1
         dataList.append(data)
     return dataList
