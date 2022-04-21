@@ -137,14 +137,12 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			document.getElementById("Data").innerHTML="<br><input class=\"buttonstyle\" type=\"button\" style=\"float:right;\" onclick=\"testButton();\" value=\"test\"><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\"><br><br>"
-			
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
-			
+			document.getElementById("Data").innerHTML="<br><input class=\"buttonstyle\" type=\"button\" style=\"float:right;\" onclick=\"testButton();\" value=\"test\"><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br>"
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
-			document.getElementById("tablepicker").value = $date1;
+			
 			
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
