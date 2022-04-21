@@ -23,7 +23,7 @@
 	
 <script>
 let boxClickCounter = 0;	
-
+var dataSet=[];
 
 	
 	
@@ -301,7 +301,6 @@ $(function() {
 
 	
 function testButton(){
-	const dataSet=[];
 	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
 	var table=document.getElementById(date);
 	var rowLen = table.rows.length;
