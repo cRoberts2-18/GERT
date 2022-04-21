@@ -315,6 +315,13 @@ def processAPICall():
     
     return(str(SaveID))
 
+@app.route('/getGif/')
+def getGif():
+    path=request.values.get('path')
+    SearchID=request.values.get('ID')
+    return(path + searchID)
+    
+
 @app.route('/logout/')
 def logout():
     session.clear()
