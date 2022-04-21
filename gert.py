@@ -315,7 +315,7 @@ def processAPICall():
     
     return(str(SaveID))
 
-@app.route('/getGif/')
+@app.route('/getGif/', methods = ['GET', 'POST'])
 def getGif():
     path=request.values.get('path')
     SearchID=request.values.get('ID')
