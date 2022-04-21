@@ -261,8 +261,23 @@ $(function() {
 				$count+=1;
 				$dictIndex+=1;
 			}
-			
-			
+			var date=parseInt(String($date1).replaceAll("-",""));
+			var dateEnd=parseInt(String($date2).replaceAll("-",""));
+			while(date<=dateEnd){
+				var table=document.getElementById(date);
+				var rowLen = table.rows.length;
+				var colLen = table.rows[0].cells.length;
+				for(let i=1; i<rowLen;i++){
+					var dataDict={};
+					dataDict['date']=date;
+					for(let j=0; j<colLen;j++){
+						dataDict[table.rows[0].cells[j].innerHTML]=table.rows[i].cells[j].innerHTML;
+					}
+					dataSet.push(dataDict);
+				}
+				console.log(dataSet);
+				date+=1	
+			}
 			
 			
 		})   
@@ -301,19 +316,7 @@ $(function() {
 
 	
 function testButton(){
-	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
-	var table=document.getElementById(date);
-	var rowLen = table.rows.length;
-	var colLen = table.rows[0].cells.length;
-	for(let i=1; i<rowLen;i++){
-		var dataDict={};
-		dataDict['date']=date;
-		for(let j=0; j<colLen;j++){
-			dataDict[table.rows[0].cells[j].innerHTML]=table.rows[i].cells[j].innerHTML;
-		}
-		dataSet.push(dataDict);
-	}
-	console.log(dataSet);
+	
 	}	
 	
 	
