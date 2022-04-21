@@ -301,6 +301,7 @@ $(function() {
 
 	
 function testButton(){
+	const dataSet=[];
 	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
 	var table=document.getElementById(date);
 	var rowLen = table.rows.length;
@@ -310,9 +311,9 @@ function testButton(){
 		for(let j=0; j<colLen;j++)
 			dataDict[table.rows[0].cells[j].innerHTML]=table.rows[i].cells[j].innerHTML;
 		}
-		//DataSet.push(dataDict);
+		dataSet.push(dataDict);
 	}
-	//console.log(DataSet);
+	console.log(dataSet);
 	
 	
 setLimits()	
