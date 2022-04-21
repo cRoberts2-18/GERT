@@ -12,7 +12,8 @@
 
 <script>
 console.log("{{ data }}");
-var dict=JSON.parse("{{ data }}") 
+var stringDict="{{ data }}".replaceAll("&#34;","\"")
+var dict=JSON.parse(stringDict) 
 console.log(dict);
 </script>
 
