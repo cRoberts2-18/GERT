@@ -303,6 +303,8 @@ function testButton(){
 	var table=document.getElementById(date);
 	var rowLen = table.rows.length;
 	var colLen = table.rows[0].cells.length;
+	console.log(rowLen);
+	console.log(colLen);
 	for(let i=0; i<rowLen;i++){
 		for(let j=0; j<colLen;j++)
 		console.log(table.rows[i].cells[j]);
