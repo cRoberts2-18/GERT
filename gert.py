@@ -67,7 +67,7 @@ def analytics():
     if session.get('LoggedIn')==True:
         data="TEST"
     
-        return render_template('Analytics.html.html',data=data)
+        return redirect(url_for('Analytics.html.html',data=data))
     else:
         return redirect(url_for("loginPage"))
     
