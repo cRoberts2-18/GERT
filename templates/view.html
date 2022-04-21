@@ -21,7 +21,7 @@
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
-
+<div id="chart"></div>
 	
 <script>
 let boxClickCounter = 0;	
@@ -75,11 +75,38 @@ function setLimits(){
 	
 	function Data(){	  
 	  document.getElementById("map").style.display="none";
-	  document.getElementById("Data").style.display="block";	
+	  document.getElementById("Data").style.display="block";
+	  document.getElementById("chart").style.display="none";	
 	  }
 	function Map(){	  
 	  document.getElementById("map").style.display="block";
 	  document.getElementById("Data").style.display="none";
+	  document.getElementById("chart").style.display="none";	
+	  }
+	function charts(){	  
+	  document.getElementById("map").style.display="none";
+	  document.getElementById("Data").style.display="none";
+	  document.getElementById("chart").style.display="block";
+	  
+	  var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Date');
+          data.addColumn('number', 'Methane');
+	  var lat=0;
+	  var lon=0;
+          for(let i=0; i<dataSet.length();i++){
+	  	if(i==0){
+			lat=dataSet[i]['Latitude'];
+			lon=dataSet[i]['Longitude'];
+		}
+		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
+			data.addRow([dataSet[i]['date'],dataSet[i]['Methane']])
+		}
+	  }
+	  var options = {'height':500};
+	  var chart = new google.visualization.LineChart(document.getElementById('chart'));
+          chart.draw(data,options);
+	  
+		
 	  }
 
 	 var map = L.map('map',{
@@ -136,16 +163,6 @@ function onMapClickFirst(e) {
     
     map.on('click', onMapClickFirst);
 
-$(document).on('click', '#Analytics', function () {
-			$.ajax({
-    			method: "POST",
-      			url: "{{ url_for('analyticSetup')}}",
-			data: {"dict":JSON.stringify(dataSet),"place":"place"}
-   			}).done(function(msg) {
-			window.location="{{ url_for('analytics') }}"
-		});   	
-});
-
 	
 	
 	
@@ -153,7 +170,7 @@ $(function() {
 		$("#GetData").click(function () {
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
-			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input class=\"buttonstyle\" style=\"float:right;\" type=\"button\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
+			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input class=\"buttonstyle\" style=\"float:right;\" type=\"button\" onclick=\"charts()\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
 			
