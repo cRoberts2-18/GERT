@@ -52,8 +52,7 @@ function setLimits(){
 	var end = params.get('amp;ID2');
 
 		
-	console.log(end);
-	console.log(start);
+	
 	document.getElementById("datepicker1").max = end;
 	document.getElementById("datepicker1").min = start;
 	document.getElementById("datepicker1").value = start;
@@ -176,7 +175,7 @@ $(function() {
 			
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
-			console.log($ID);
+			
 			
     	   	$.ajax({
     			method: "POST",
@@ -186,7 +185,7 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			console.log(msg)
+			
 			var splitData=[];
 			var splitData2=new Array(2);
 			var splitData3=new Array(2);
@@ -282,7 +281,7 @@ $(function() {
 			
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
-			console.log($ID);
+			
 			
     	   	$.ajax({
     			method: "POST",
@@ -304,10 +303,11 @@ $(function() {
 function testButton(){
 	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
 	var table=document.getElementById(date);
-	var rowLen = table.rows.length
-	var colLen = table.rows[0].cells.length
-	console.log(rowLen);
-	console.log(colLen);
+	var rowLen = table.rows.length;
+	var colLen = table.rows[0].cells.length;
+	for(let i=0; i<rowLen;i++){
+		console.log(table.rows[i].innerHTML);
+	}
 
 
 }
