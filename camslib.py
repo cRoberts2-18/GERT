@@ -239,7 +239,7 @@ def download_images(output_filename, output_dir, projection, color_map, image_ti
                       loc='left')
             plt.savefig(path.join(output_dir, f'{grb.messagenumber}'))
             plt.close()
-            print("\r #Image - " + str(cpt) + "/" + str(np.size(grbs.select())) + " downloaded")
+            
             cpt += 1
             clear_output(wait=True)
 
