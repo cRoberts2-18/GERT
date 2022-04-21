@@ -321,7 +321,7 @@ def display_GIF_images(output_dir, gif_filename):
     for i in range(4):
         images.append(np.array(last_image))
 
-    imageio.mimsave(f'{SAVE_FOLDER_GIF}{gif_filename}.gif', images, duration=0.3)
+    imageio.mimsave(f'output_dir+/gif/{gif_filename}.gif', images, duration=0.3)
     clear_output(wait=True)
     print("GIF File Generated")
     
