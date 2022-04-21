@@ -75,7 +75,6 @@ def analyticSetup():
 def analytics():
     if session.get('LoggedIn')==True:
         data=session['dict']
-        session.pop('dict',None)
         return render_template('Analytics.html',data=data)
     else:
         return redirect(url_for("loginPage"))
