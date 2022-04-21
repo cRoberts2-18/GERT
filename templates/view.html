@@ -281,7 +281,7 @@ $(function() {
 			
     	   	$.ajax({
     			method: "POST",
-      			url: "{{ url_for('searchData')}}",
+      			url: "{{ url_for('getGif')}}",
 			data: {"path":$path, "ID":$ID}
       			
    		})
