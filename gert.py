@@ -62,8 +62,8 @@ def saved():
         return redirect(url_for("loginPage"))
     
     
-@app.route('/analyticsOpen/', methods = ['GET','POST'])
-def analyticsOpen():
+@app.route('/analytics/', methods = ['GET','POST'])
+def analytics():
     if session.get('LoggedIn')==True:
         data="TEST"
     
