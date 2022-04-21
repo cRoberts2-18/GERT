@@ -255,9 +255,8 @@ $(function() {
 					}
 				}
 				table+="</table>"
-				if(table.includes("<tr></tr>")==false){
-					document.getElementById("Data").innerHTML+=table;
-				}
+				table=table.replaceAll("<tr></tr>","");
+				document.getElementById("Data").innerHTML+=table;
 				document.getElementById("mySidebar").style.height="3000px";
 				$count+=1;
 				$dictIndex+=1;
