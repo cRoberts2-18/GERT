@@ -17,11 +17,14 @@
 </div>
 
 <div id="map" class='map'></div>
-<div id="Data"><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br></div>
+<div id="Data"><br><input type="button" style="float:right;" onclick="testButton()" value="test"><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br></div>
 	
 <script>
 let boxClickCounter = 0;	
 
+
+	
+	
 function handler(e){
 	var id = parseInt(String(e.target.value).replaceAll("-",""));
 	var min= parseInt(String(document.getElementById("tablepicker").min).replaceAll("-",""));
@@ -140,7 +143,7 @@ $(function() {
 			
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
-			document.getElementById("tablepicker").value = document.getElementById("tablepicker").min;
+			document.getElementById("tablepicker").value = $date1;
 			
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
@@ -294,6 +297,19 @@ $(function() {
 		});
  
 	});	
+
+	
+function testButton(){
+	var date=String(document.getElementById("tablepicker").value).ReplaceAll("-","");
+	var table=document.getElementById(date);
+	var rowLen = table.rows.length
+	var colLen = table.rows[0].cells.length
+	console.log(rowLen);
+	console.log(colLen);
+
+
+}
+	
 	
 setLimits()	
 </script>
