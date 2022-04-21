@@ -260,7 +260,8 @@ $(function() {
 				document.getElementById("mySidebar").style.height="3000px";
 				$count+=1;
 				$dictIndex+=1;
-				}
+			}
+			
 			
 			
 			
@@ -300,20 +301,18 @@ $(function() {
 
 	
 function testButton(){
+	var DataSet=[];
 	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
 	var table=document.getElementById(date);
 	var rowLen = table.rows.length;
 	var colLen = table.rows[0].cells.length;
-	console.log(rowLen);
-	console.log(colLen);
 	for(let i=0; i<rowLen;i++){
-		console.log(i);
+		var dataDict={}
 		for(let j=0; j<colLen;j++)
-		console.log(table.rows[i].cells[j]);
+			dataDict[table.rows[0].cells[j].innerHTML]=table.rows[i].cells[j].innerHTML;
+		}
+		DataSet.push(dataDict);
 	}
-
-
-}
 	
 	
 setLimits()	
