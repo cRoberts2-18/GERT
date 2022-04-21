@@ -141,7 +141,7 @@ $(document).on('click', '#Analytics', function () {
     			method: "POST",
       			url: "{{ url_for('analyticSetup')}}",
 			data: {"Data":dataSet}
-   			}).success(function(msg) {
+   			}).done(function(msg) {
 			window.location="{{ url_for('analytics') }}"
 		});   	
 });
