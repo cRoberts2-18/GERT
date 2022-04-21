@@ -140,9 +140,11 @@ $(document).on('click', '#Analytics', function () {
 			alert("TEST");
 			$.ajax({
     			method: "POST",
-      			url: "{{ url_for('analytics')}}",
+      			url: "{{ url_for('analyticSetup')}}",
 			data: {"Data":dataSet}
-   			});	
+   			}).done(function(msg) {
+			window.location="{{ url_for(analytics) }}"
+		});   	
 });
 
 	
