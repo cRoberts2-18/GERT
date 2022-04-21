@@ -319,7 +319,7 @@ def processAPICall():
 def getGif():
     path=request.values.get('path')
     SearchID=request.values.get('ID')
-    camslib.download_images(path, "/home/ubuntu/data/", "AFRICA", "gist_ncar", "", /home/ubuntu/data/ssss)
+    camslib.download_images(path, "/home/ubuntu/data/", "AFRICA", "gist_ncar", "", "/home/ubuntu/data/ssss.gif")
     return(path + SearchID)
     
 
