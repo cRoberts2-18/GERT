@@ -63,24 +63,6 @@ def saved():
     else:
         return redirect(url_for("loginPage"))
     
-    
-@app.route('/analyticSetup/', methods = ['GET','POST'])
-def analyticSetup():
-    if session.get('LoggedIn')==True:
-        session['data']=request.values.get('dict')
-        return redirect(url_for('analytics'))
-    else:
-        return redirect(url_for("loginPage"))
-
-    
-@app.route('/analytics/', methods = ['GET','POST'])
-def analytics():
-    if session.get('LoggedIn')==True:
-        data = [json.loads(idx.replace("'", '"')) for idx in session['data']]
-        return render_template('Analytics.html',data=data)
-    else:
-        return redirect(url_for("loginPage"))
-        
 
 
 
