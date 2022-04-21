@@ -321,7 +321,7 @@ $(function() {
 		$("#Analytics").click(function () {
 			$.ajax({
     			method: "POST",
-      			url: "{{ url_for('Analytics')}}",
+      			url: "{{ url_for('analytics')}}",
 			data: {"Data":dataSet}
       			
    			});	
