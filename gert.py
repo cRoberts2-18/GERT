@@ -3,7 +3,7 @@ import cdsapi
 import pygrib
 import mysql.connector
 import camslib
-
+import json
 
 
 app= Flask(__name__)
@@ -67,8 +67,8 @@ def saved():
 @app.route('/analyticSetup/', methods = ['GET','POST'])
 def analyticSetup():
     if session.get('LoggedIn')==True:
-        data=request.values.get('dict')
-        return redirect(url_for('analytics',data=data))
+        session['data']=request.values.get('dict')
+        return redirect(url_for('analytics'))
     else:
         return redirect(url_for("loginPage"))
 
@@ -76,7 +76,8 @@ def analyticSetup():
 @app.route('/analytics/', methods = ['GET','POST'])
 def analytics():
     if session.get('LoggedIn')==True:
-        return render_template('Analytics.html')
+        data = [json.loads(idx.replace("'", '"')) for idx in session['data']]
+        return render_template('Analytics.html',data=data)
     else:
         return redirect(url_for("loginPage"))
         
