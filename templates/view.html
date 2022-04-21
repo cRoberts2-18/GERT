@@ -10,7 +10,9 @@
   <label id="LatLabel2" for="lat2">Latitude 2: </label><br><input class="number" type="number" name="lat2" id="Lat2" value="52.74" readonly><br><br>
   <label for="datepicker1">Date Start:   </label>&emsp;&emsp;<label for="datapicker2">   Date End:</label><br>
   <input type="date" id="datepicker1">&emsp;<input type="date" id="datepicker2"><br><br>	
-  <input class="buttonstyle" type="button" style=" margin:auto;" id = "GetData" value = "Get Location Data">
+  <input class="buttonstyle" type="button" style=" margin:auto;" id = "GetData" value = "Get Location Data"><br><br>
+  <input class="buttonstyle" type="button" style=" margin:auto;" id = "GetGif" value = "Get Gif Of Data"><br><br>
+
   
 </div>
 
@@ -259,6 +261,32 @@ $(function() {
 			
 			
 			
+		})   
+		.fail(function(msg){
+			alert(msg);
+		});
+		});
+ 
+	});	
+	
+$(function() {
+		$("#GetGif").click(function () {
+			
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			
+			var $ID = urlParams.get('ID');
+			var $path = "{{ download }}";
+			console.log($ID);
+			
+    	   	$.ajax({
+    			method: "POST",
+      			url: "{{ url_for('searchData')}}",
+			data: {"path":$path, "ID":$ID}
+      			
+   		})
+		.done(function(msg) {
+			alert(msg);
 		})   
 		.fail(function(msg){
 			alert(msg);
