@@ -142,7 +142,7 @@ $(document).on('click', '#Analytics', function () {
       			url: "{{ url_for('analyticSetup')}}",
 			data: {"dict":JSON.stringify(dataSet),"place":"place"}
    			}).done(function(msg) {
-			//window.location="{{ url_for('analytics') }}"
+			window.location="{{ url_for('analytics') }}"
 		});   	
 });
 
