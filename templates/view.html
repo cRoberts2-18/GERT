@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden; position:absolute;">
   <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>	
@@ -22,12 +22,31 @@
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
-<div id="chart"></div>
+<div id="chart"><canvas id="myChart"></canvas></div>
 	
 <script>
 
-// Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});	
+	
+
 	
 let boxClickCounter = 0;	
 var dataSet=[];
@@ -93,7 +112,7 @@ function setLimits(){
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="block";
 	  
-	  /*var data = new google.visualization.DataTable();
+	  var data = new google.visualization.DataTable();
           data.addColumn('string', 'Date');
           data.addColumn('number', 'Methane');
 	  var lat=0;
@@ -110,7 +129,7 @@ function setLimits(){
 	  var options = {'height':500};
 	  var chart = new google.visualization.LineChart(document.getElementById('chart'));
           chart.draw(data,options);
-	  */
+	  
 		
 	  }
 
