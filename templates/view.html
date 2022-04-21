@@ -1,5 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+</script>
+
 
 <div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden; position:absolute;">
   <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>	
