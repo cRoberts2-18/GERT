@@ -74,7 +74,8 @@ def analyticSetup():
 @app.route('/analytics/', methods = ['GET','POST'])
 def analytics():
     if session.get('LoggedIn')==True:
-        data=session['dict']
+        datastr=session['dict']
+        data=list(eval(datastr))
         return render_template('Analytics.html',data=data)
     else:
         return redirect(url_for("loginPage"))
