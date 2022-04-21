@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 <div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden; position:absolute;">
   <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>	
@@ -25,12 +25,7 @@
 <div id="chart"></div>
 	
 <script>
-	
-// Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
-
-
-	
+		
 let boxClickCounter = 0;	
 var dataSet=[];
 
@@ -95,7 +90,7 @@ function setLimits(){
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="block";
 	  
-	  var data = new google.visualization.DataTable();
+	  /*var data = new google.visualization.DataTable();
           data.addColumn('string', 'Date');
           data.addColumn('number', 'Methane');
 	  var lat=0;
@@ -112,7 +107,7 @@ function setLimits(){
 	  var options = {'height':500};
 	  var chart = new google.visualization.LineChart(document.getElementById('chart'));
           chart.draw(data,options);
-	  
+	  */
 		
 	  }
 
