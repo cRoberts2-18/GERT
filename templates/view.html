@@ -19,6 +19,7 @@
 <div id="map" class='map'></div>
 <div id="Data">
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
+	<input style="buttonstyle"type="button" style="float:right;" value="analytics" id="Analytics"><br><br>
 </div>
 
 	
@@ -152,7 +153,7 @@ $(function() {
 		$("#GetData").click(function () {
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
-			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br>"
+			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input style=\"buttonstyle\" type=\"button\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
 			
@@ -292,7 +293,7 @@ $(function() {
 				date+=1	
 			}
 			console.log(dataSet);
-			document.getElementById("Data").innerHTML+="<br><br><br><input stlye=\"buttonstyle\"type=\"button\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\">";
+			
 			
 			
 		})   
