@@ -62,8 +62,8 @@ def saved():
         return redirect(url_for("loginPage"))
     
     
-@app.route('/analytics/', methods = ['GET','POST'])
-def analytics():
+@app.route('/analyticSetup/', methods = ['GET','POST'])
+def analyticSetup():
     if session.get('LoggedIn')==True:
         session['dict']=request.values.get('Data')
         return render_template('Analytics.html')
