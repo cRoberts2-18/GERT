@@ -18,7 +18,7 @@
 
 <div id="map" class='map'></div>
 <div id="Data">
-	<br><input class="buttonstyle" type="button" style="float:right;" onclick="testButton();" value="test"><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
+	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 </div>
 	
 <script>
@@ -139,7 +139,7 @@ $(function() {
 		$("#GetData").click(function () {
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
-			document.getElementById("Data").innerHTML="<br><input class=\"buttonstyle\" type=\"button\" style=\"float:right;\" onclick=\"testButton();\" value=\"test\"><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br>"
+			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br>"
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
 			
@@ -183,7 +183,7 @@ $(function() {
    		})
 		.done(function(msg) {
 			Data();
-			
+			dataSet=[];
 			var splitData=[];
 			var splitData2=new Array(2);
 			var splitData3=new Array(2);
@@ -264,7 +264,6 @@ $(function() {
 			var date=parseInt(String($date1).replaceAll("-",""));
 			var dateEnd=parseInt(String($date2).replaceAll("-",""));
 			while(date<=dateEnd){
-				console.log("test")
 				var table=document.getElementById(date);
 				var rowLen = table.rows.length;
 				var colLen = table.rows[0].cells.length;
@@ -276,9 +275,10 @@ $(function() {
 					}
 					dataSet.push(dataDict);
 				}
-				console.log(dataSet);
+				
 				date+=1	
 			}
+			console.log(dataSet);
 			
 			
 		})   
@@ -316,9 +316,7 @@ $(function() {
 	});	
 
 	
-function testButton(){
-	
-	}	
+
 	
 	
 setLimits()	
