@@ -26,26 +26,6 @@
 	
 <script>
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});	
-	
 
 	
 let boxClickCounter = 0;	
@@ -111,24 +91,40 @@ function setLimits(){
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="block";
-	  
-	  var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Date');
-          data.addColumn('number', 'Methane');
 	  var lat=0;
 	  var lon=0;
-          for(let i=0; i<dataSet.length();i++){
+	  var labelsList=[];
+	  var dataList=[];	
+	  for(let i=0;i<dataSet.length;i++){
 	  	if(i==0){
-			lat=dataSet[i]['Latitude'];
-			lon=dataSet[i]['Longitude'];
+			lat=dataset[i]['Latitude'];
+			lon=dataset[i]['Longitude'];
 		}
-		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
-			data.addRow([dataSet[i]['date'],dataSet[i]['Methane']])
+		if(lat==dataset[i]['Latitude'] && lon==dataset[i]['Longitude']){
+			labelsList.push(dataset[i]['date']);
+			dataList.push(dataset[i]['Carbon Monoxide'])
 		}
+	  
 	  }
-	  var options = {'height':500};
-	  var chart = new google.visualization.LineChart(document.getElementById('chart'));
-          chart.draw(data,options);
+	  var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+    	data: {
+        labels: labelsList,
+        datasets: [{
+            label: 'CO chart',
+            backgroundColor: 'rgb(255, 255, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: dataList
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});	
 	  
 		
 	  }
