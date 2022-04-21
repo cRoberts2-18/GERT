@@ -319,7 +319,7 @@ def processAPICall():
 def getGif():
     path=request.values.get('path')
     SearchID=request.values.get('ID')
-    return(path + searchID)
+    return(path + SearchID)
     
 
 @app.route('/logout/')
