@@ -19,7 +19,7 @@
 <div id="map" class='map'></div>
 <div id="Data">
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
-	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="Analytics"><br><br>
+	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
 
 	
@@ -137,7 +137,7 @@ function onMapClickFirst(e) {
     map.on('click', onMapClickFirst);
 
 $(document).ready(function() {
-		$("#Analytics").click(function () {
+		$("#openAnalytics").click(function () {
 			alert("test");
 			
 		});
