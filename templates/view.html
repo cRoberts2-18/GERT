@@ -307,6 +307,7 @@ function testButton(){
 	var colLen = table.rows[0].cells.length;
 	for(let i=1; i<rowLen;i++){
 		var dataDict={};
+		dataDict['date']=date;
 		for(let j=0; j<colLen;j++){
 			dataDict[table.rows[0].cells[j].innerHTML]=table.rows[i].cells[j].innerHTML;
 		}
