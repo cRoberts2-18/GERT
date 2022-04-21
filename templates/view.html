@@ -140,7 +140,7 @@ $(document).on('click', '#Analytics', function () {
 			$.ajax({
     			method: "POST",
       			url: "{{ url_for('analyticSetup')}}",
-			data: {"dict":dataSet,"place":"place"}
+			data: {"dict":"dataSet","place":"place"}
    			}).done(function(msg) {
 			window.location="{{ url_for('analytics') }}"
 		});   	
