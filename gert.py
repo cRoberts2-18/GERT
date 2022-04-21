@@ -65,12 +65,21 @@ def saved():
 @app.route('/analytics/', methods = ['GET','POST'])
 def analytics():
     if session.get('LoggedIn')==True:
-        data="TEST"
+        session['dict']=request.values.get('Data')
+        return render_template('Analytics.html')
+    else:
+        return redirect(url_for("loginPage"))
+
     
+@app.route('/analytics/', methods = ['GET','POST'])
+def analytics():
+    if session.get('LoggedIn')==True:
+        data=session['dict']
+        session.pop('dict',none)
         return render_template('Analytics.html',data=data)
     else:
         return redirect(url_for("loginPage"))
-    
+        
 
 
 
