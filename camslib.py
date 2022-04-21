@@ -60,12 +60,8 @@ color_display_direction = ["Left to right", "Right to left"]
 
 data_parameters = ["Nitrogen dioxyde", "Ozone", "Sulfur dioxyde", "Particulate Matter <2.5 um", "Particulate Matter <10 um" ]
 
-
-
-
-
-
-
+SAVE_FOLDER_IMAGES = "/data/images$"
+SAVE_FOLDER_GIF = "/data/images$"
 
 def get_projection_map(output_dir, output_filename):
     """ This function allows to define what kind of projection map the user wants to display data
