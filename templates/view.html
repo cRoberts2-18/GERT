@@ -20,8 +20,7 @@
 <div id="Data">
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 </div>
-<div id="google">
-<h2 style="text-align:center">SUUUUUUUUUUU</h2></div>
+
 	
 <script>
 let boxClickCounter = 0;	
@@ -80,7 +79,6 @@ function setLimits(){
 	function Map(){	  
 	  document.getElementById("map").style.display="block";
 	  document.getElementById("Data").style.display="none";
-	  document.getElementById("google").style.display="none";
 	  }
 
 	 var map = L.map('map',{
@@ -319,10 +317,7 @@ $(function() {
  
 	});	
 
-function googleChart(){
-	document.getElementById("google").style.display="block";	
-
-}	
+	
 
 	
 	
