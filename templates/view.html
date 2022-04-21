@@ -18,8 +18,7 @@
 
 <div id="map" class='map'></div>
 <div id="Data">
-	<br><input class="buttonstyle" type="button" style="float:right;" onclick="testButton();" value="test"><br>
-	<input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
+	<br><input class="buttonstyle" type="button" style="float:right;" onclick="testButton();" value="test"><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 </div>
 	
 <script>
@@ -139,7 +138,7 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
-			document.getElementById("Data").innerHTML="<br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\"><br><br>"
+			document.getElementById("Data").innerHTML="<br><input class=\"buttonstyle\" type=\"button\" style=\"float:right;\" onclick=\"testButton();\" value=\"test\"><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\"><br><br>"
 			
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
