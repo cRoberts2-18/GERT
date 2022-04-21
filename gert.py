@@ -4,6 +4,8 @@ import pygrib
 import mysql.connector
 import camslib
 
+
+
 app= Flask(__name__)
 app.secret_key="GERTool31"
 
@@ -65,8 +67,8 @@ def saved():
 @app.route('/analyticSetup/', methods = ['GET','POST'])
 def analyticSetup():
     if session.get('LoggedIn')==True:
-        session['dict']=request.values.get('dict')
-        return render_template('Analytics.html')
+        data=request.values.get('dict')
+        return redirect(url_for('analytics',data=data))
     else:
         return redirect(url_for("loginPage"))
 
@@ -74,9 +76,7 @@ def analyticSetup():
 @app.route('/analytics/', methods = ['GET','POST'])
 def analytics():
     if session.get('LoggedIn')==True:
-        datastr=session['dict'].replace("&#34;","\"").replace("&#39;","'")
-        data=list(eval(datastr))
-        return render_template('Analytics.html',data=data)
+        return render_template('Analytics.html')
     else:
         return redirect(url_for("loginPage"))
         
