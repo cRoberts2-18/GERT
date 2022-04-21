@@ -304,7 +304,8 @@ function testButton(){
 	var rowLen = table.rows.length;
 	var colLen = table.rows[0].cells.length;
 	for(let i=0; i<rowLen;i++){
-		console.log(table.rows[i].innerHTML);
+		for(let j=0; j<rowLen;j++)
+		console.log(table.rows[i].cells[j].innerHTML);
 	}
 
 
