@@ -74,7 +74,7 @@ def analyticSetup():
 @app.route('/analytics/', methods = ['GET','POST'])
 def analytics():
     if session.get('LoggedIn')==True:
-        datastr=session['dict']
+        datastr=session['dict'].replace("&#34;","\"");
         data=list(eval(datastr))
         return render_template('Analytics.html',data=data)
     else:
