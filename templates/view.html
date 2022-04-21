@@ -302,7 +302,7 @@ $(function() {
 
 	
 function testButton(){
-	var date=String(document.getElementById("tablepicker").value).ReplaceAll("-","");
+	var date=String(document.getElementById("tablepicker").value).replaceAll("-","");
 	var table=document.getElementById(date);
 	var rowLen = table.rows.length
 	var colLen = table.rows[0].cells.length
