@@ -135,6 +135,18 @@ function onMapClickFirst(e) {
     
     map.on('click', onMapClickFirst);
 
+$(function() {
+		$("#Analytics").click(function () {
+			alert("test")
+			$.ajax({
+    			method: "POST",
+      			url: "{{ url_for('analytics')}}",
+			data: {"Data":dataSet}
+   			});	
+		});
+});
+	
+	
 	
 $(function() {
 		$("#GetData").click(function () {
@@ -280,7 +292,7 @@ $(function() {
 				date+=1	
 			}
 			console.log(dataSet);
-			document.getElementById("Data").innerHTML+="<br><br><br><input type=\"button\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\">";
+			document.getElementById("Data").innerHTML+="<br><br><br><input stlye=\"buttonstyle\"type=\"button\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\">";
 			
 			
 		})   
@@ -317,16 +329,7 @@ $(function() {
  
 	});	
 
-$(function() {
-		$("#Analytics").click(function () {
-			alert("test")
-			$.ajax({
-    			method: "POST",
-      			url: "{{ url_for('analytics')}}",
-			data: {"Data":dataSet}
-   			});	
-		});
-});
+
 
 	
 	
