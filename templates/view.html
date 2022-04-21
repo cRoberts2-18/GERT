@@ -137,8 +137,11 @@ function onMapClickFirst(e) {
     map.on('click', onMapClickFirst);
 
 $(document).on('click', '#Analytics', function () {
-			alert("test");
-			
+			$.ajax({
+    			method: "POST",
+      			url: "{{ url_for('analytics')}}",
+			data: {"Data":dataSet}
+   			});	
 });
 
 	
