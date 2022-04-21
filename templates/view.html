@@ -264,6 +264,7 @@ $(function() {
 			var date=parseInt(String($date1).replaceAll("-",""));
 			var dateEnd=parseInt(String($date2).replaceAll("-",""));
 			while(date<=dateEnd){
+				console.log("test")
 				var table=document.getElementById(date);
 				var rowLen = table.rows.length;
 				var colLen = table.rows[0].cells.length;
