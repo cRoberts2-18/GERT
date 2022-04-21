@@ -61,7 +61,7 @@ color_display_direction = ["Left to right", "Right to left"]
 data_parameters = ["Nitrogen dioxyde", "Ozone", "Sulfur dioxyde", "Particulate Matter <2.5 um", "Particulate Matter <10 um" ]
 
 SAVE_FOLDER_IMAGES = "/home/ubuntu/data/images/"
-SAVE_FOLDER_GIF = "/data/images/data/gif/"
+SAVE_FOLDER_GIF = "/home/ubuntu/data/gif/"
 
 def get_projection_map(output_dir, output_filename):
     """ This function allows to define what kind of projection map the user wants to display data
@@ -321,7 +321,7 @@ def display_GIF_images(output_dir, gif_filename):
     for i in range(4):
         images.append(np.array(last_image))
 
-    imageio.mimsave(f'output_dir+/gif/{gif_filename}.gif', images, duration=0.3)
+    imageio.mimsave(f'{SAVE_FOLDER_GIF}{gif_filename}.gif', images, duration=0.3)
     clear_output(wait=True)
     print("GIF File Generated")
     
