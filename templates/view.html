@@ -97,12 +97,12 @@ function setLimits(){
 	  var dataList=[];	
 	  for(let i=0;i<dataSet.length;i++){
 	  	if(i==0){
-			lat=dataset[i]['Latitude'];
-			lon=dataset[i]['Longitude'];
+			lat=dataSet[i]['Latitude'];
+			lon=dataSet[i]['Longitude'];
 		}
-		if(lat==dataset[i]['Latitude'] && lon==dataset[i]['Longitude']){
-			labelsList.push(dataset[i]['date']);
-			dataList.push(dataset[i]['Carbon Monoxide'])
+		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
+			labelsList.push(dataSet[i]['date']);
+			dataList.push(dataSet[i]['Carbon Monoxide'])
 		}
 	  
 	  }
