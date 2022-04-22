@@ -27,9 +27,21 @@
 <div id="gifForm" style="width:70%; float:right; display:none;">
 	<h1>Gif Options</h1>
 	<label for="colourStyle">Colour Map Style:</label><br>
-	<img src="{{ url_for('static', filename='colourmapSample.PNG') }}" alt="colourmap" width="40%"><br>
+	<img src="{{ url_for('static', filename='colourmapSample.PNG') }}" alt="colourmap" width="40%"><br><br>
 	<select name = "colourStyle" id="colourStyle" >
-            <option value = "gist_ncar" selected>gist_ncar</option>
+		<option value = "ocean" selected>ocean</option>
+		<option value = "gist_earth" selected>gist_earth</option>
+		<option value = "terrain" selected>terrain</option>
+		<option value = "gist_stern" selected>gist_stern</option>
+		<option value = "gnuplot" selected>gnuplot</option>
+		<option value = "gnuplot2" selected>gnuplot2</option>
+	    	<option value = "CMRmap" selected>CMRmap</option>
+            	<option value = "hsv" selected>hsv</option>
+		<option value = "jet" selected>jet</option>
+		<option value = "nipy_spectral" selected>nipy_spectral</option>
+		<option value = "gist_ncar" selected>gist_ncar</option>
+		<option value = "tab20b" selected>tab20b</option>
+		<option value = "tab20c" selected>tab20c</option>
         </select>
 	<br><br>
 	<label for="area">Gif Area:</label><br>
