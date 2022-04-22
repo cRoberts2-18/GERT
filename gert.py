@@ -5,12 +5,14 @@ import mysql.connector
 import camslib
 import json
 
-
+#intial setup for the flask system
 app= Flask(__name__)
 app.secret_key="GERTool31"
 
+#each app route method refers to either a page that can viewed or a backend function 
 @app.route('/')
 def home():
+    #this session variable is used to only allow a user access to the website if they are logged in
     if session.get('LoggedIn')==True:
         return render_template('home.html')
     else:
@@ -44,6 +46,7 @@ def showMap():
     
 @app.route('/saved/', methods = ['GET','POST'])
 def saved():
+    #upon opening the savedsearches page, an sql query is carried out to fund all searches saved by the currently logged in user. this is passed to the html documment as variable result
     if session.get('LoggedIn')==True:
         mydb = mysql.connector.connect(
             host="localhost",
@@ -71,7 +74,7 @@ def view():
     if session.get('LoggedIn')==True:
         ID=request.args.get('ID',None)
         filename=""
-        
+        #upon opening the viewpage, an sql query is used to find the selected search ID from the URL
         mydb = mysql.connector.connect(
             host="localhost",
             user="root", 
@@ -88,7 +91,7 @@ def view():
         for row in myresult:
             filename=row[3]
         
-        
+        #the download path for this file is then computed and passed to the webpage as download
         downloadpath="/home/ubuntu/data/"
         downloadpath+=str(session['uid'])
         downloadpath+=filename
@@ -98,8 +101,10 @@ def view():
     else:
         return redirect(url_for("loginPage"))
 
+#this is the function which carries out the search chosen by the user on the view data page
 @app.route('/searchData/', methods = ['GET', 'POST'])
 def searchData():
+    #variables are taken from the user input
     lat1=float(request.values.get('lat'))
     long1=float(request.values.get('long'))
     lat2=float(request.values.get('lat2'))
@@ -111,14 +116,11 @@ def searchData():
     date1=int(date1.replace("-",""))
     date2=int(date2.replace("-",""))
     dates=list(range(date1,date2+1))
+    #pre defining all used variables
     no2=0
     so2=0
     co=0
     ch4=0
-    no2Data=""
-    so2Data=""
-    coData=""
-    ch4Data=""
     no2Dates=[]
     so2Dates=[]
     coDates=[]
@@ -137,39 +139,37 @@ def searchData():
     sql="SELECT * FROM SavedSearches WHERE SearchID=%s;"
     value=[str(SearchID)]
     mycursor.execute(sql,value)
-    
+    # For the selected search we check the sql database to see which data pieces are saved in the selected file
     myresult = mycursor.fetchall()
     for row in myresult:
         no2=row[4]
         so2=row[5]
         co=row[6]
         ch4=row[7]
+    
+    #for each selected data type we get all data for the selected dates
     grbs=pygrib.open(path)
     if no2==1:
         no2Dates=grbs.select(name="Total column Nitrogen dioxide", date = (dates))
-        no2Data="Nitrogen Dioxide: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Nitrogen dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
         
     if so2==1:
         so2Dates=grbs.select(name="Total column Sulphur dioxide", date = (dates))
-        so2Data="Sulphur Dioxide: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Sulphur dioxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
     if co==1:
         coDates=grbs.select(name="Total column Carbon monoxide", date = (dates))
-        coData="Carbon Monoxide: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column Carbon monoxide")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
      
     if ch4==1:
         ch4Dates=grbs.select(name="Total column methane", date = (dates))
-        ch4Data="Methane: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[0])
         latData="Latitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[1])
         longData="Longitude: "+str(grbs.select(name="Total column methane")[0].data(lat1=lat1,lat2=lat2,lon1=long1,lon2=long2)[2])
     
-    
+    #for each day we create a string which has all selected data within it
     count=0
     for i in range(len(dates)):
         first=0
@@ -218,10 +218,12 @@ def searchData():
                 except:
                     print("")
         count+=1
+        #this data is then added to a dictionary with the id of the date that is had assinged to it
         try:
             dataDict[dates[i]]=data
         except:
             print("")
+    #pass the dictionary back to the html document for computation
     return dataDict
     
     
@@ -331,7 +333,7 @@ def getGif():
     camslib.download_images(path, "/home/ubuntu/data/", country, colour, "", SearchID + colour + country)
     return(SearchID + colour + country+".gif")
     
-
+#clears the users session logging them out
 @app.route('/logout/')
 def logout():
     session.clear()
