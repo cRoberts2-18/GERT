@@ -326,7 +326,7 @@ def getGif():
     path=request.values.get('path')
     SearchID=request.values.get('ID')
     ##camslib.download_images(path, "/home/ubuntu/data/", "AFRICA", "gist_ncar", "", "giffy3")
-    return(SearchID + "AFRICA" + "gist_ncar)
+    return(SearchID + "AFRICA" + "gist_ncar")
     
 
 @app.route('/logout/')
