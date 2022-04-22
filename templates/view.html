@@ -180,6 +180,14 @@ function setLimits(){
 		  	count+=1;
 		  }
 	  }
+	  var i, L = document.getElementById("Longitude").options.length - 1;
+   	  for(i = L; i >= 0; i--) {
+      		document.getElementById("Longitude").remove(i);
+   	  }
+	  var i, L = document.getElementById("Latitude").options.length - 1;
+   	  for(i = L; i >= 0; i--) {
+      		document.getElementById("Latitude").remove(i);
+   	  }	
 	  for(let i=0;i<count;i++){
 	  	var optLat = document.createElement('option');
     		optLat.value = dataSet[i]['Latitude'];
