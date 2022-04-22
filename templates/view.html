@@ -34,7 +34,17 @@
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
-<div id="chart" style="width:70%; float:right;"><canvas id="myChart"></canvas></div>
+<div id="chart" style="width:70%; float:right;">
+<form class="form" id="chartForm">Select chart options<br><br>
+<label for="username">Username:</label><input type="text" id="username" name="username" placeholder="Enter name" class = "box"><br>
+<label for="password">Password:</label><input type="password" id="password" name="password" placeholder="Enter password" class = "box"><br>
+<input class="buttonstyle" type=button id="Generate" value="Generate Chart" onclick="generate()">
+
+</form>
+	
+<canvas id="myChart" style="display:none;"></canvas>
+<input class="buttonstyle" type=button id="New" value="Generate New Chart" style="display:none;" onclick="newChart()">	
+</div>
 
 <div id="gifForm" style="width:70%; float:right; display:none;">
 	<h1>Gif Options</h1>
@@ -186,6 +196,16 @@ function setLimits(){
 	  
 		
 	  }
+	function generate(){
+		document.getElementById("myChart").style.display="block";
+	  	document.getElementById("New").style.display="block";
+	  	document.getElementById("Generate").style.display="none";
+	}
+	function newChart(){
+		document.getElementById("myChart").style.display="none";
+	  	document.getElementById("New").style.display="none";
+	  	document.getElementById("Generate").style.display="block";
+	}
 
 	 var map = L.map('map',{
         center: [52.770775, -1.2043467],
