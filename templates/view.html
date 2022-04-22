@@ -77,31 +77,12 @@
 	<h1>Chart Options</h1>
 	<label for="Longitude">Longitude:</label><br>
 	<select name = "Longitude" id="Longitude" >
-		<option value = "ocean" selected>ocean</option>
-		<option value = "gist_earth" selected>gist_earth</option>
-		<option value = "terrain" selected>terrain</option>
-		<option value = "gist_stern" selected>gist_stern</option>
-		<option value = "gnuplot" selected>gnuplot</option>
-		<option value = "gnuplot2" selected>gnuplot2</option>
-	    	<option value = "CMRmap" selected>CMRmap</option>
-            	<option value = "hsv" selected>hsv</option>
-		<option value = "jet" selected>jet</option>
-		<option value = "nipy_spectral" selected>nipy_spectral</option>
-		<option value = "tab20b" selected>tab20b</option>
-		<option value = "tab20c" selected>tab20c</option>
-		<option value = "gist_ncar" selected>gist_ncar</option>
+		
         </select>
 	<br><br>
 	<label for="Latitude">Latitude:</label><br>
 	<select name = "Latitude" id="Latitude" >
-		<option value = "AFRICA" selected>AFRICA</option>
-		<option value = "ASIA" selected>ASIA</option>
-		<option value = "OCEANA" selected>OCEANA</option>
-		<option value = "NORTH-AMERICA" selected>NORTH-AMERICA</option>
-		<option value = "SOUTH-AMERICA" selected>SOUTH-AMERICA</option>
-		<option value = "NORTH-POLE" selected>NORTH-POLE</option>
-		<option value = "SOUTH-POLE" selected>SOUTH-POLE</option>
-		<option value = "EUROPE" selected>EUROPE</option>
+		
         </select>
 	<br><br>
 	<input class="buttonstyle" type="button" style=" margin:auto;" id = "Generate" onclick="chartGenerate()" value = "Generate Chart">
@@ -189,6 +170,26 @@ function setLimits(){
 	  document.getElementById("chart").style.display="none";
 	  document.getElementById("chartForm").style.display="block";	
 	  document.getElementById("gifForm").style.display="none";
+	  var date="";
+	  var count=0;	
+	  for(let i=0;i<dataSet.length;i++){
+		  if(i==0){
+		  	date=dataSet[i]['date'];
+		  }
+		  if(date==dataSet[i]['date']){
+		  	count+=1;
+		  }
+	  }
+	  for(let i=0;i<count;i++){
+	  	var optLat = document.createElement('option');
+    		optLat.value = dataSet[i]['Latitude'];
+    		optLat.innerHTML = dataSet[i]['Latitude'];
+    		document.getElementById("Latitude").appendChild(optLat);
+		var optLon = document.createElement('option');
+    		optLon.value = dataSet[i]['Longitude'];
+    		optLon.innerHTML = dataSet[i]['Longitude'];
+    		document.getElementById("Longitude").appendChild(optLon);  
+	  }	
 	}
 	function chartGenerate(){
 	  document.getElementById("chart").style.display="block";
