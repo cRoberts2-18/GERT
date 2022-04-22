@@ -303,7 +303,7 @@ def display_GIF_images(output_dir, gif_filename):
     images = []
     accepted_extensions = ["png"]
     filenames = [fn for fn in os.listdir(SAVE_FOLDER_IMAGES) if fn.split(".")[-1] in accepted_extensions]
-    temp = [int(fn.split('.')[0]) for fn in filenames]
+    temp = [(fn.split('.')[0]) for fn in filenames]
     temp = sorted(temp)
     final_filenames = [f'{elt}.png' for elt in temp]
     k = len(final_filenames)
