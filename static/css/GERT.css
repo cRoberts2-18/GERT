@@ -458,7 +458,9 @@
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  margin-left: auto;
+  margin-top: auto;  
 }
 
 /* Modal Content */
