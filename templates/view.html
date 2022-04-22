@@ -25,7 +25,8 @@
       <h2 id="Header">Your Gif Of Data</h2>
     </div>
     <div class="modal2-body" style = "margin-left: auto; margin-right: auto;">
-      	<img src="{{ url_for('static', filename='10gist_ncarAFRICA.gif') }}" alt="gif" id = "gif" width="75%" style = "margin-left: auto; margin-right: auto;">
+	<img src="{{ url_for('static', filename='') }}" alt="gif" id = "gif" width="75%" style = "margin-left: auto; margin-right: auto;" style = "display:none;">
+	    <p id = "wait">Please Wait for Your gif to Create, This may take a while</p>
 </div></div></div>
 
 <div id="map" class='map'></div>
@@ -398,7 +399,7 @@ $(function() {
 	
 $(function() {
 		$("#GetGif").click(function () {
-			
+			$("#myGifModal").css('display','block');
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
 			
@@ -415,9 +416,11 @@ $(function() {
       			
    		})
 		.done(function(msg) {
+			text = document.getElementById("wait");
+			text.style.display("none");
 			image = document.getElementById('gif');
      			image.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
-			$("#myGifModal").css('display','block');
+			image.style.display("block");
 			
 		})   
 		.fail(function(msg){
