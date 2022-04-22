@@ -96,13 +96,14 @@
   
   <script>
 var ID;
-	  
+//this function changes the modeal to display that data has been saved once the user selects save on the modal	  
 function savesearch(){
 	document.getElementById("Header").innerHTML = "Save Successful";
     	document.getElementById("Mline1").innerHTML = "Your model has been saved";
     	document.getElementById("Mline2").setAttribute("hidden", "hidden");
 }
 
+//opens the view data page
 function view(){
 	window.location.href="{{ url_for('view', ID='placeholder') }}".replace("placeholder",ID);	
 }
@@ -110,7 +111,7 @@ function view(){
 	  
 	  
 var expanded = false;
-	  
+    //opens the checkbox on the select data tab of the sidebar	  
     function showCheckboxes() {
   	var checkboxes = document.getElementById("checkboxes");
   	if (!expanded) {
@@ -132,7 +133,7 @@ var expanded = false;
                  });
      }
         
-    
+    //attribute setup for the leaflet map
         var map = L.map('map',{
         center: [52.770775, -1.2043467],
         zoom: 5,
@@ -148,24 +149,13 @@ var expanded = false;
 	  
     var testBoundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
 
-   
+//displays the location clicked on the map   
 function onMapClickFirst(e) {
         notifyMessage("You clicked the map at " + e.latlng.wrap(), "info");
     }
     
     map.on('click', onMapClickFirst);
-    
-    $(function() {
-      $("#SignOut").click(function () {
-          $.ajax({
-              url: 'GERTLogout.php',
-              success: function(data) {
-                 window.location.href = 'GertLogin.php';
-                }
-    });
-    });
-    });
-	
+   //this sequence of onclicks changes the text of the dropdown for selecting variables	
 	$(function() {
       $("#one").click(function () {
 	      var $str = "";
@@ -282,7 +272,7 @@ function onMapClickFirst(e) {
 	  
 	  
 	  
-	  
+	//collects data and sends it to the backend gert.py file to make an api call for the chosen data  
 	$(function() {
 		$("#makeCall").click(function () {
 			$("#myModal").css('display','block');
@@ -307,6 +297,7 @@ function onMapClickFirst(e) {
       			
    		})
 		.done(function(msg) {
+		//once the data is downloaded the modal changed to display the success messages and view and save buttons 
 		ID=msg
 		$("#Header").text("Download Successful");
 		$("#Mline1").text("Your model has been downloaded successfully");
