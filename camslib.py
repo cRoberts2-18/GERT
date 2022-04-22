@@ -309,12 +309,13 @@ def display_GIF_images(output_dir, gif_filename):
     k = len(final_filenames)
     cpt = 1
     for file in final_filenames:
-        print("\r Image #" + str(cpt) + "/" + str(k))
-        image = Image.open(f"{SAVE_FOLDER_IMAGES}{file}")
-        image = image.convert('RGB')
-        images.append(np.array(image))
-        cpt += 1
-        clear_output(wait=True)
+        if(file.contains("Test")):
+            print("\r Image #" + str(cpt) + "/" + str(k))
+            image = Image.open(f"{SAVE_FOLDER_IMAGES}{file}")
+            image = image.convert('RGB')
+            images.append(np.array(image))
+            cpt += 1
+            clear_output(wait=True)
 
     # Repeating the last image x times to have a stop at the end of the GIF
     last_image = images[-1]
