@@ -21,6 +21,7 @@
                     
              });
   }
+  //this function takes the data from the singup form and posts it to the backend gert.py file to manage the database to add the 
 $(function() {
   $("#signUp").click(function () {
     var $email = $("#email").val();
@@ -35,6 +36,7 @@ $(function() {
     })
       .done(function(msg) {
         if(msg == "user created"){
+          //once the user account has been created the user is returned to the login page after a short delay
           notifyMessage(msg + "returning to login page","success")
           setTimeout(GoBack,1000);
         }
