@@ -26,7 +26,8 @@
 
 <div id="gifForm" style="width:70%; float:right;">
 	<h1>Gif Options</h1>
-	<label for="colourStyle">Colour Map Style:</label><br><br>
+	<label for="colourStyle">Colour Map Style:</label><br>
+	<img src="{{ url_for('static', filename='colourmapSample') }}" alt="colourmap" width="50%"><br>
 	<select name = "colourStyle" id="colourStyle" >
             <option value = "gist_ncar" selected>gist_ncar</option>
         </select>
