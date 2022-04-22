@@ -233,7 +233,7 @@ def download_images(output_filename, output_dir, projection, color_map, image_ti
 
             plt.title(str(image_title) + f' / {grb["parameterName"]} / date: {grb["dataDate"]} / hour: {grb["hour"]}',
                       loc='left')
-            plt.savefig(path.join(output_dir+"images/", f'{"Hello"+str(grb.messagenumber)}'))
+            plt.savefig(path.join(output_dir+"images/", f'{gif_filename+str(grb.messagenumber)}'))
             plt.close()
             
             cpt += 1
@@ -309,7 +309,7 @@ def display_GIF_images(output_dir, gif_filename):
     k = len(final_filenames)
     cpt = 1
     for file in final_filenames:
-        if 'Hello' in file:
+        if gif_filename in file:
             print("\r Image #" + str(cpt) + "/" + str(k))
             image = Image.open(f"{SAVE_FOLDER_IMAGES}{file}")
             image = image.convert('RGB')
