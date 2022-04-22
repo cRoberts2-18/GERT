@@ -406,7 +406,8 @@ $(function() {
 		.done(function(msg) {
 			alert(msg)
 			image = document.getElementById('gif');
-     			image.src = "{{ url_for('static', filename="+msg+") }}";
+     			image.src = "{{ url_for('static', filename="+$ID+$colour+$country+".gif) }}";
+			
 		})   
 		.fail(function(msg){
 			alert(msg);
