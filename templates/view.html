@@ -34,14 +34,14 @@
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
 	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
-<div id="chart" style="width:70%; float:right;">
+
 <form class="form" id="chartForm">Select chart options<br><br>
 <label for="username">Username:</label><input type="text" id="username" name="username" placeholder="Enter name" class = "box"><br>
 <label for="password">Password:</label><input type="password" id="password" name="password" placeholder="Enter password" class = "box"><br>
 <input class="buttonstyle" type=button id="Generate" value="Generate Chart" onclick="generate()">
 
 </form>
-	
+<div id="chart" style="width:70%; float:right;">	
 <canvas id="myChart" style="display:none;"></canvas>
 <input class="buttonstyle" type=button id="New" value="Generate New Chart" style="display:none;" onclick="newChart()">	
 </div>
@@ -141,24 +141,28 @@ function setLimits(){
 	  document.getElementById("Data").style.display="block";
 	  document.getElementById("chart").style.display="none";
 	  document.getElementById("gifForm").style.display="none";
+	  document.getElementById("chartForm").style.display="none";	
 	  }
 	function Map(){	  
 	  document.getElementById("map").style.display="block";
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="none";	
 	  document.getElementById("gifForm").style.display="none";
+	  document.getElementById("chartForm").style.display="none";	
 	  }
 	function gifs(){	  
 	  document.getElementById("gifForm").style.display="block";
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="none";	
+	  document.getElementById("chartForm").style.display="none";
 	  }
 	function charts(){	  
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="none";
-	  document.getElementById("chart").style.display="block";
+	  document.getElementById("chart").style.display="none";
 	  document.getElementById("gifForm").style.display="none";
+	  document.getElementById("chartForm").style.display="block";
 	  var lat=0;
 	  var lon=0;
 	  var labelsList=[];
@@ -197,14 +201,12 @@ function setLimits(){
 		
 	  }
 	function generate(){
-		document.getElementById("myChart").style.display="block";
-	  	document.getElementById("New").style.display="block";
-	  	document.getElementById("Generate").style.display="none";
+		document.getElementById("chart").style.display="block";
+	  	document.getElementById("chartForm").style.display="none";
 	}
 	function newChart(){
-		document.getElementById("myChart").style.display="none";
-	  	document.getElementById("New").style.display="none";
-	  	document.getElementById("Generate").style.display="block";
+		document.getElementById("chart").style.display="none";
+	  	document.getElementById("chartForm").style.display="block";
 	}
 
 	 var map = L.map('map',{
