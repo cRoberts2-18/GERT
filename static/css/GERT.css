@@ -467,8 +467,10 @@
 .modal2-content {
   position: fixed;
   background-color: #111;
-  width: 50%;
-  height: 50%;
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left:50%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
