@@ -214,12 +214,16 @@ function setLimits(){
 	  document.getElementById("chartForm").style.display="none";		
 	  var lat=document.getElementById("Latitude").value;
 	  var lon=document.getElementById("Longitude").value;
+	  var date1=parseInt(String(document.getElementById("dateChart1").value).replaceAll("-",""));
+	  var date2=parseInt(String(document.getElementById("dateChart2").value).replaceAll("-",""));    
 	  var labelsList=[];
 	  var dataList=[];	
 	  for(let i=0;i<dataSet.length;i++){
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
-			labelsList.push(dataSet[i]['date']);
-			dataList.push(dataSet[i]['Carbon Monoxide'])
+			if(date1<=dataSet[i]['date'] && date2>=dataSet[i]['date']){
+				labelsList.push(dataSet[i]['date']);
+				dataList.push(dataSet[i]['Carbon Monoxide'])
+			}
 		}
 	  
 	  }
