@@ -402,7 +402,8 @@ $(function() {
 			$("#myGifModal").css('display','block');
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
-			
+			gif = document.getElementById('gif');
+			gif.style.display = "none";
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
 			var $colour = $("#colourStyle").val();
@@ -418,9 +419,9 @@ $(function() {
 		.done(function(msg) {
 			text = document.getElementById("wait");
 			text.style.display = "none";
-			image = document.getElementById('gif');
-     			image.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
-			image.style.display = "block";
+			
+     			gif.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
+			gif.style.display = "block";
 			
 		})   
 		.fail(function(msg){
