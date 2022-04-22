@@ -96,13 +96,13 @@
       	<div class="overselect"></div>
     	</div>
     	<div id="checkboxes">
-      	<label for="CO">
+      	<label for="CO" id="COLabel">
         	<input type="checkbox" id="CO" />Carbon Monoxide</label>
-      	<label for="CH4">
+      	<label for="CH4" id="CH4Label">
         	<input type="checkbox" id="CH4" />Methane</label>
-      	<label for="NO2">
+      	<label for="NO2" id="NO2Label">
         	<input type="checkbox" id="NO2" />Nitrogen Dioxide</label>
-	<label for="SO2">
+	<label for="SO2" id="SO2Label">
         	<input type="checkbox" id="SO2" />Sulphur Dioxide</label>
     	</div>
   	</div>
@@ -319,16 +319,32 @@ function setLimits(){
 	  var keys=Object.keys(dataSet[0]);
 	  if(keys.includes("Carbon Monoxide")==false){
 	  	document.getElementById("CO").style.display="none";
-	  }else{document.getElementById("CO").style.display="block";}
+		document.getElementById("COLabel").style.display="none";  
+	  }else{
+		document.getElementById("CO").style.display="block";
+		document.getElementById("COLabel").style.display="block";  
+	  }
 	  if(keys.includes("Nitrogen Dioxide")==false){
 	  	document.getElementById("NO2").style.display="none";
-	  }else{document.getElementById("NO2").style.display="block";}
+		document.getElementById("NO2Label").style.display="none";  
+	  }else{
+		document.getElementById("NO2").style.display="block";
+		document.getElementById("NO2Label").style.display="block";
+	  }
 	  if(keys.includes("Sulphur Dioxide")==false){
 	  	document.getElementById("SO2").style.display="none";
-	  }else{document.getElementById("SO2").style.display="block";}
+		document.getElementById("SO2Label").style.display="none";  
+	  }else{
+		document.getElementById("SO2").style.display="block";
+		document.getElementById("SO2Label").style.display="block";  
+	       }
 	  if(keys.includes("Methane")==false){
 	  	document.getElementById("CH4").style.display="none";
-	  }else{document.getElementById("CH4").style.display="block";}	
+		document.getElementById("CH4Label").style.display="none";
+	  }else{
+		document.getElementById("CH4").style.display="block";
+		document.getElementById("CH4Label").style.display="block";
+	  }	
 	  for(let i=0;i<dataSet.length;i++){
 		  if(i==0){
 		  	date=dataSet[i]['date'];
