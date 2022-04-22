@@ -87,18 +87,159 @@
 	<br><br>
 	<label for="dateChart1">Date Start:   </label>&emsp;&emsp;<label for="dataChart2">   Date End:</label><br>
   	<input type="date" id="dateChart1">&emsp;<input type="date" id="dateChart2"><br><br>
+	<div class="multiselect">
+    	<div class="selectBox" onclick="showCheckboxes()">
+      		<select id="select">
+			<option>Select an option</option>
+      		</select>
+      	<div class="overSelect"></div>
+    	</div>
+    	<div id="checkboxes">
+      	<label for="one">
+        	<input type="checkbox" id="one" />Carbon Monoxide</label>
+      	<label for="two">
+        	<input type="checkbox" id="two" />Methane</label>
+      	<label for="three">
+        	<input type="checkbox" id="three" />Nitrogen Dioxide</label>
+	<label for="four">
+        	<input type="checkbox" id="four" />Sulphur Dioxide</label>
+    	</div>
+  	</div>
+	<br><br>
 	<input class="buttonstyle" type="button" style=" margin:auto;" id = "Generate" onclick="chartGenerate()" value = "Generate Chart">
 	<br><br>
 	
 </div>
 	
 <script>
-
-
-	
 let boxClickCounter = 0;	
 var dataSet=[];
 
+var expanded = false;
+    //opens the checkbox on the select data tab of the sidebar	  
+    function showCheckboxes() {
+  	var checkboxes = document.getElementById("checkboxes");
+  	if (!expanded) {
+   		checkboxes.style.display = "block";
+    		expanded = true;
+  	} else {
+    		checkboxes.style.display = "none";
+    		expanded = false;
+  	}
+     }
+	
+//this sequence of onclicks changes the text of the dropdown for selecting variables	
+	$(function() {
+      $("#one").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CH4 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  $(function() {
+      $("#two").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CH4 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  $(function() {
+      $("#three").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CH4 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
+
+	  $(function() {
+      $("#four").click(function () {
+	      var $str = "";
+	      if($("#one").is(":checked")){
+		      	$str=$str.concat("CO ");
+	      }	
+		      
+	      if($("#two").is(":checked")){
+		      	$str=$str.concat("CH4 ");
+	      }	
+		      
+	      if($("#three").is(":checked")){
+		      	$str=$str.concat("NO2 ");
+	      }	
+		      
+	      if($("#four").is(":checked")){
+		      	$str=$str.concat("SO2 ");
+	      }	
+	      if($str==""){
+	      var $str = "Select an option";
+	      }
+	      $("#select").find("option:selected").text($str);
+	      
+	      
+      		
+      });
+});  
 	
 	
 function handler(e){
