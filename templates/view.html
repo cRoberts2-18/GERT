@@ -187,16 +187,24 @@ function setLimits(){
 	  var i, L = document.getElementById("Latitude").options.length - 1;
    	  for(i = L; i >= 0; i--) {
       		document.getElementById("Latitude").remove(i);
-   	  }	
+   	  }
+	  var LonList=[];
+	  var LatList=[];	
 	  for(let i=0;i<count;i++){
-	  	var optLat = document.createElement('option');
-    		optLat.value = dataSet[i]['Latitude'];
-    		optLat.innerHTML = dataSet[i]['Latitude'];
-    		document.getElementById("Latitude").appendChild(optLat);
-		var optLon = document.createElement('option');
-    		optLon.value = dataSet[i]['Longitude'];
-    		optLon.innerHTML = dataSet[i]['Longitude'];
-    		document.getElementById("Longitude").appendChild(optLon);  
+	  	if(LatList.includes(dataSet[i]['Latitude'])==false){
+			var optLat = document.createElement('option');
+			optLat.value = dataSet[i]['Latitude'];
+			optLat.innerHTML = dataSet[i]['Latitude'];
+			document.getElementById("Latitude").appendChild(optLat);
+			LatList.push(dataSet[i]['Latitude']);
+		}
+		if(LonList.includes(dataSet[i]['Longitude'])==false){  
+			var optLon = document.createElement('option');
+    			optLon.value = dataSet[i]['Longitude'];
+    			optLon.innerHTML = dataSet[i]['Longitude'];
+    			document.getElementById("Longitude").appendChild(optLon);
+			LonList.push(dataSet[i]['Longitude']);
+		}	
 	  }	
 	}
 	function chartGenerate(){
