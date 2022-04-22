@@ -323,11 +323,12 @@ def processAPICall():
 
 @app.route('/getGif/', methods = ['GET', 'POST'])
 def getGif():
-    colour = "gist_ncar"
-    country = "AFRICA"
+    colour = request.values.get('colour')
+    country = request.values.get('country')
+    
     path=request.values.get('path')
     SearchID=request.values.get('ID')
-    camslib.download_images(path, "/home/ubuntu/data/", "AFRICA", "gist_ncar", "", SearchID + colour + country)
+    ###camslib.download_images(path, "/home/ubuntu/data/", "AFRICA", "gist_ncar", "", SearchID + colour + country)
     return(SearchID + colour + country)
     
 
