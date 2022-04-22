@@ -402,13 +402,13 @@ function setLimits(){
 		allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataListCO})
 	}
 	if(document.getElementById("CH4").checked){
-		allData.push({'label':'CO Chart','borderColor': 'rgb(0, 255, 0)','data': dataListCH4})
+		allData.push({'label':'CH4 Chart','borderColor': 'rgb(0, 255, 0)','data': dataListCH4})
 	}
 	if(document.getElementById("NO2").checked){
-		allData.push({'label':'CO Chart','borderColor': 'rgb(255, 0, 0)','data': dataListNO2})
+		allData.push({'label':'NO2 Chart','borderColor': 'rgb(255, 0, 0)','data': dataListNO2})
 	}
 	if(document.getElementById("SO2").checked){
-		allData.push({'label':'CO Chart','borderColor': 'rgb(255, 255, 0)','data': dataListSO2})
+		allData.push({'label':'SO2 Chart','borderColor': 'rgb(255, 255, 0)','data': dataListSO2})
 	}
 	  
 	  var ctx = document.getElementById('myChart').getContext('2d');
@@ -494,8 +494,10 @@ $(function() {
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
 			document.getElementById("dateChart1").max = $date2;
+			document.getElementById("dateChart1").value = $date1;
 			document.getElementById("dateChart1").min = $date1;
 			document.getElementById("dateChart2").max = $date2;
+			document.getElementById("dateChart2").value = $date2;
 			document.getElementById("dateChart2").min = $date1;
 			
 			
