@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden; position:absolute;">
-  <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()"><br><br><br>	
+  <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()">&emsp;<input class="sidebutton" type="button" id="gifForm" value="Gif" onclick="gifForm"()"><br><br><br>	
   <a id="searchText" style="text-align:center;">Coordinates Selected </a>
   <label id="LongLabel" for="long">Longitude 1: </label><br><input class="number" type="number" name="long" id="Long" value="-1.266" readonly><br>
   <label id="LatLabel" for="lat">Latitude 1: </label><br><input class="number" type="number" name="lat" id="Lat" value="52.9" readonly><br><br>
@@ -23,6 +23,14 @@
 	<input class="buttonstyle"type="button" style="float:right;" value="analytics" id="openAnalytics"><br><br>
 </div>
 <div id="chart" style="width:70%; float:right;"><canvas id="myChart"></canvas></div>
+
+<div id="gifForm" style="width:70%; float:right;">
+	<label for="datastoreName">Data Store Name:</label><br>
+	<select name = "datastoreName" id="datastoreName" >
+            <option value = "cams-global-atmospheric-composition-forecasts" selected>cams-global-atmospheric-composition-forecasts</option>
+        </select>
+	<br>
+</div>
 	
 <script>
 
@@ -80,10 +88,18 @@ function setLimits(){
 	function Data(){	  
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="block";
-	  document.getElementById("chart").style.display="none";	
+	  document.getElementById("chart").style.display="none";
+	  document.getElementById("gifForm").style.display="none";
 	  }
 	function Map(){	  
 	  document.getElementById("map").style.display="block";
+	  document.getElementById("Data").style.display="none";
+	  document.getElementById("chart").style.display="none";	
+	  document.getElementById("gifForm").style.display="none";
+	  }
+	function gifs(){	  
+	  document.getElementById("gifForm").style.display="block";
+	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="none";	
 	  }
@@ -91,6 +107,7 @@ function setLimits(){
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="none";
 	  document.getElementById("chart").style.display="block";
+	  document.getElementById("gifForm").style.display="none";
 	  var lat=0;
 	  var lon=0;
 	  var labelsList=[];
