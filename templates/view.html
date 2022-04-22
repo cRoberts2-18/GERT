@@ -317,7 +317,7 @@ function setLimits(){
 	  var date="";
 	  var count=0;	
 	  var keys=Object.keys(dataSet[0]);
-	  /*if(keys.includes("Carbon Monoxide")==false){
+	  if(keys.includes("Carbon Monoxide")==false){
 	  	document.getElementById("CO").style.display="none";
 	  }else{document.getElementById("CO").style.display="block";}
 	  if(keys.includes("Nitrogen Dioxide")==false){
@@ -328,7 +328,7 @@ function setLimits(){
 	  }else{document.getElementById("SO2").style.display="block";}
 	  if(keys.includes("Methane")==false){
 	  	document.getElementById("CH4").style.display="none";
-	  }else{document.getElementById("CH4").style.display="block";}	*/
+	  }else{document.getElementById("CH4").style.display="block";}	
 	  for(let i=0;i<dataSet.length;i++){
 		  if(i==0){
 		  	date=dataSet[i]['date'];
