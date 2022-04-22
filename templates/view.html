@@ -217,7 +217,9 @@ function setLimits(){
 	  var date1=parseInt(String(document.getElementById("dateChart1").value).replaceAll("-",""));
 	  var date2=parseInt(String(document.getElementById("dateChart2").value).replaceAll("-",""));    
 	  var labelsList=[];
-	  var dataList=[];	
+	  var allData=[];
+	  var dataListCO=[];
+		
 	  for(let i=0;i<dataSet.length;i++){
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
 			if(date1<=dataSet[i]['date'] && date2>=dataSet[i]['date']){
@@ -227,6 +229,7 @@ function setLimits(){
 		}
 	  
 	  }
+	  allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataList})
 	  var ctx = document.getElementById('myChart').getContext('2d');
 	var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -235,11 +238,7 @@ function setLimits(){
         // The data for our dataset
     	data: {
         labels: labelsList,
-        datasets: [{
-            label: 'CO chart',
-            borderColor: 'rgb(0, 0, 255)',
-            data: dataList
-        }]
+        datasets: allData
     },
 
     // Configuration options go here
