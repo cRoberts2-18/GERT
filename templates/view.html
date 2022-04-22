@@ -224,12 +224,12 @@ function setLimits(){
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
 			if(date1<=dataSet[i]['date'] && date2>=dataSet[i]['date']){
 				labelsList.push(dataSet[i]['date']);
-				dataList.push(dataSet[i]['Carbon Monoxide'])
+				dataListCO.push(dataSet[i]['Carbon Monoxide'])
 			}
 		}
 	  
 	  }
-	  allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataList})
+	  allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataListCO})
 	  var ctx = document.getElementById('myChart').getContext('2d');
 	var chart = new Chart(ctx, {
         // The type of chart we want to create
