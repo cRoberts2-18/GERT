@@ -319,7 +319,7 @@ def processAPICall():
 
 @app.route('/getGif/', methods = ['GET', 'POST'])
 def getGif():
-    os.path.exists(path_to_file)
+    
     colour = request.values.get('colour')
     country = request.values.get('country')
     
