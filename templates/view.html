@@ -393,12 +393,14 @@ $(function() {
 			
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
+			var $colour = $("#colourStyle").val();
+			var $country = $("#area").val();
 			
 			
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('getGif')}}",
-			data: {"path":$path, "ID":$ID}
+			data: {"path":$path, "ID":$ID,"colour":$colour, "country":$country}
       			
    		})
 		.done(function(msg) {
