@@ -413,14 +413,14 @@ $(function() {
       			
    		})
 		.done(function(msg) {
-			alert(msg)
 			image = document.getElementById('gif');
      			image.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
+			$("#myGifModal").css('display','block');
 			
 		})   
 		.fail(function(msg){
 			alert(msg);
-			$("#myGifModal").css('display','block');
+			
 		});
 		});
  
