@@ -365,6 +365,7 @@ function setLimits(){
 	  }	
 	}
 	function chartGenerate(){
+	  document.getElementById("chart").innerHTML="<canvas id=\"myChart\"></canvas>"	
 	  document.getElementById("chart").style.display="block";
 	  document.getElementById("chartForm").style.display="none";		
 	  var lat=document.getElementById("Latitude").value;
