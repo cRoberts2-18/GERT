@@ -452,6 +452,8 @@
   z-index: 1000000; /* Sit on top */
   width: 50%;
   height: 50%; 
+  top: 25%;
+  left:25%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -469,8 +471,8 @@
   background-color: #111;
   width: 70%;
   height: 70%;
-  top: 50%;
-  left:50%;
+  top: 25%;
+  left:25%;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -488,6 +490,8 @@
 
 .modal2-body {padding: 2px 16px; margin-left:auto; margin-top:auto;}
 .modal2-body p{
+    top: 25%;
+    left:25%;
     font-size:30px;
     background-color:#111;
     color:white;
