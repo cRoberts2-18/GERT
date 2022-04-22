@@ -482,7 +482,7 @@
   width:70%;  
 }
 
-.modal2-body {padding: 2px 16px; width:70%;}
+.modal2-body {padding: 2px 16px; margin-left:auto; margin-top:auto;}
 .modal2-body p{
     font-size:30px;
     background-color:#111;
