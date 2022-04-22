@@ -194,15 +194,11 @@ function setLimits(){
 	function chartGenerate(){
 	  document.getElementById("chart").style.display="block";
 	  document.getElementById("chartForm").style.display="none";		
-	  var lat=0;
-	  var lon=0;
+	  var lat=document.getElementById("Latitude").value;
+	  var lon=document.getElementById("Longitude").value;
 	  var labelsList=[];
 	  var dataList=[];	
 	  for(let i=0;i<dataSet.length;i++){
-	  	if(i==0){
-			lat=dataSet[i]['Latitude'];
-			lon=dataSet[i]['Longitude'];
-		}
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
 			labelsList.push(dataSet[i]['date']);
 			dataList.push(dataSet[i]['Carbon Monoxide'])
