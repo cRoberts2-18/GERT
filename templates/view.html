@@ -75,18 +75,19 @@
 
 <div id="chartForm" style="width:70%; float:right; display:none;">
 	<h1>Chart Options</h1>
-	<label for="Longitude">Longitude:</label><br>
+	<label for="Longitude">Longitude:</label>
 	<select name = "Longitude" id="Longitude" >
 		
         </select>
 	<br><br>
-	<label for="Latitude">Latitude:</label><br>
+	<label for="Latitude">Latitude:</label>
 	<select name = "Latitude" id="Latitude" >
 		
         </select>
 	<br><br>
 	<label for="dateChart1">Date Start:   </label>&emsp;&emsp;<label for="dataChart2">   Date End:</label><br>
   	<input type="date" id="dateChart1">&emsp;<input type="date" id="dateChart2"><br><br>
+	<label>Select data to display</label><br>
 	<div style="width:200px;">
     	<div class="selectBox" onclick="showCheckboxes()">
       		<select id="select">
@@ -96,13 +97,13 @@
     	</div>
     	<div id="checkboxes">
       	<label for="one">
-        	<input type="checkbox" id="one" />Carbon Monoxide</label>
+        	<input type="checkbox" id="CO" />Carbon Monoxide</label>
       	<label for="two">
-        	<input type="checkbox" id="two" />Methane</label>
+        	<input type="checkbox" id="CH4" />Methane</label>
       	<label for="three">
-        	<input type="checkbox" id="three" />Nitrogen Dioxide</label>
+        	<input type="checkbox" id="NO2" />Nitrogen Dioxide</label>
 	<label for="four">
-        	<input type="checkbox" id="four" />Sulphur Dioxide</label>
+        	<input type="checkbox" id="SO2" />Sulphur Dioxide</label>
     	</div>
   	</div>
 	<br><br>
@@ -315,6 +316,19 @@ function setLimits(){
 	  document.getElementById("gifForm").style.display="none";
 	  var date="";
 	  var count=0;	
+	  var keys=Object.keys(dataSet[0]);
+	  if(keys.includes("Carbon Monoxide")==false){
+	  	document.getElementById("CO").style.display="none";
+	  }else{document.getElementById("CO").style.display="block";}
+	  if(keys.includes("Nitrogen Dioxide")==false){
+	  	document.getElementById("NO2").style.display="none";
+	  }else{document.getElementById("NO2").style.display="block";}
+	  if(keys.includes("Sulphur Dioxide")==false){
+	  	document.getElementById("SO2").style.display="none";
+	  }else{document.getElementById("SO2").style.display="block";}
+	  if(keys.includes("Methane")==false){
+	  	document.getElementById("CH4").style.display="none";
+	  }else{document.getElementById("CH4").style.display="block";}	
 	  for(let i=0;i<dataSet.length;i++){
 		  if(i==0){
 		  	date=dataSet[i]['date'];
@@ -360,17 +374,43 @@ function setLimits(){
 	  var labelsList=[];
 	  var allData=[];
 	  var dataListCO=[];
+	  var dataListNO2=[];
+	  var dataListSO2=[];
+	  var dataListCH4=[];	
 		
 	  for(let i=0;i<dataSet.length;i++){
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
 			if(date1<=dataSet[i]['date'] && date2>=dataSet[i]['date']){
 				labelsList.push(dataSet[i]['date']);
-				dataListCO.push(dataSet[i]['Carbon Monoxide'])
+				if(document.getElementById("CO").checked){
+					dataListCO.push(dataSet[i]['Carbon Monoxide'])
+				}
+				if(document.getElementById("CH4").checked){
+					dataListCH4.push(dataSet[i]['Methane'])
+				}
+				if(document.getElementById("NO2").checked){
+					dataListNO2.push(dataSet[i]['Nitrogen Dioxide'])
+				}
+				if(document.getElementById("SO2").checked){
+					dataListSO2.push(dataSet[i]['Sulphur Dioxide'])
+				}
 			}
 		}
 	  
 	  }
-	  allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataListCO})
+	  if(document.getElementById("CO").checked){
+		allData.push({'label':'CO Chart','borderColor': 'rgb(0, 0, 255)','data': dataListCO})
+	}
+	if(document.getElementById("CH4").checked){
+		allData.push({'label':'CO Chart','borderColor': 'rgb(0, 255, 0)','data': dataListCH4})
+	}
+	if(document.getElementById("NO2").checked){
+		allData.push({'label':'CO Chart','borderColor': 'rgb(255, 0, 0)','data': dataListNO2})
+	}
+	if(document.getElementById("SO2").checked){
+		allData.push({'label':'CO Chart','borderColor': 'rgb(255, 255, 0)','data': dataListSO2})
+	}
+	  
 	  var ctx = document.getElementById('myChart').getContext('2d');
 	var chart = new Chart(ctx, {
         // The type of chart we want to create
