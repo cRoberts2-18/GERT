@@ -131,21 +131,21 @@ var expanded = false;
 	
 //this sequence of onclicks changes the text of the dropdown for selecting variables	
 	$(function() {
-      $("#one").click(function () {
+      $("#CO").click(function () {
 	      var $str = "";
-	      if($("#one").is(":checked")){
+	      if($("#CO").is(":checked")){
 		      	$str=$str.concat("CO ");
 	      }	
 		      
-	      if($("#two").is(":checked")){
+	      if($("#CH4").is(":checked")){
 		      	$str=$str.concat("CH4 ");
 	      }	
 		      
-	      if($("#three").is(":checked")){
+	      if($("#NO2").is(":checked")){
 		      	$str=$str.concat("NO2 ");
 	      }	
 		      
-	      if($("#four").is(":checked")){
+	      if($("#SO2").is(":checked")){
 		      	$str=$str.concat("SO2 ");
 	      }	
 	      if($str==""){
@@ -159,21 +159,21 @@ var expanded = false;
 });  
 
 	  $(function() {
-      $("#two").click(function () {
+      $("#CH4").click(function () {
 	      var $str = "";
-	      if($("#one").is(":checked")){
+	      if($("#CO").is(":checked")){
 		      	$str=$str.concat("CO ");
 	      }	
 		      
-	      if($("#two").is(":checked")){
+	      if($("#CH4").is(":checked")){
 		      	$str=$str.concat("CH4 ");
 	      }	
 		      
-	      if($("#three").is(":checked")){
+	      if($("#NO2").is(":checked")){
 		      	$str=$str.concat("NO2 ");
 	      }	
 		      
-	      if($("#four").is(":checked")){
+	      if($("#SO2").is(":checked")){
 		      	$str=$str.concat("SO2 ");
 	      }	
 	      if($str==""){
@@ -187,21 +187,21 @@ var expanded = false;
 });  
 
 	  $(function() {
-      $("#three").click(function () {
+      $("#NO2").click(function () {
 	      var $str = "";
-	      if($("#one").is(":checked")){
+	      if($("#CO").is(":checked")){
 		      	$str=$str.concat("CO ");
 	      }	
 		      
-	      if($("#two").is(":checked")){
+	      if($("#CH4").is(":checked")){
 		      	$str=$str.concat("CH4 ");
 	      }	
 		      
-	      if($("#three").is(":checked")){
+	      if($("#NO2").is(":checked")){
 		      	$str=$str.concat("NO2 ");
 	      }	
 		      
-	      if($("#four").is(":checked")){
+	      if($("#SO2").is(":checked")){
 		      	$str=$str.concat("SO2 ");
 	      }	
 	      if($str==""){
@@ -215,21 +215,21 @@ var expanded = false;
 });  
 
 	  $(function() {
-      $("#four").click(function () {
+      $("#SO2").click(function () {
 	      var $str = "";
-	      if($("#one").is(":checked")){
+	      if($("#CO").is(":checked")){
 		      	$str=$str.concat("CO ");
 	      }	
 		      
-	      if($("#two").is(":checked")){
+	      if($("#CH4").is(":checked")){
 		      	$str=$str.concat("CH4 ");
 	      }	
 		      
-	      if($("#three").is(":checked")){
+	      if($("#NO2").is(":checked")){
 		      	$str=$str.concat("NO2 ");
 	      }	
 		      
-	      if($("#four").is(":checked")){
+	      if($("#SO2").is(":checked")){
 		      	$str=$str.concat("SO2 ");
 	      }	
 	      if($str==""){
@@ -317,7 +317,7 @@ function setLimits(){
 	  var date="";
 	  var count=0;	
 	  var keys=Object.keys(dataSet[0]);
-	  if(keys.includes("Carbon Monoxide")==false){
+	  /*if(keys.includes("Carbon Monoxide")==false){
 	  	document.getElementById("CO").style.display="none";
 	  }else{document.getElementById("CO").style.display="block";}
 	  if(keys.includes("Nitrogen Dioxide")==false){
@@ -328,7 +328,7 @@ function setLimits(){
 	  }else{document.getElementById("SO2").style.display="block";}
 	  if(keys.includes("Methane")==false){
 	  	document.getElementById("CH4").style.display="none";
-	  }else{document.getElementById("CH4").style.display="block";}	
+	  }else{document.getElementById("CH4").style.display="block";}	*/
 	  for(let i=0;i<dataSet.length;i++){
 		  if(i==0){
 		  	date=dataSet[i]['date'];
