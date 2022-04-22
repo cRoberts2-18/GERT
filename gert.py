@@ -36,12 +36,6 @@ def resetPassword():
 @app.route('/login/', methods = ['GET', 'POST'])
 def loginPage():
     return render_template('login.html')
-
-
-@app.route('/showMap/', methods = ['GET','POST'])
-def showMap():
-    camslib.get_projection_map("", "")
-    return("hello")
     
     
 @app.route('/saved/', methods = ['GET','POST'])
