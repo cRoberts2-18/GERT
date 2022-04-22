@@ -233,7 +233,7 @@ def download_images(output_filename, output_dir, projection, color_map, image_ti
 
             plt.title(str(image_title) + f' / {grb["parameterName"]} / date: {grb["dataDate"]} / hour: {grb["hour"]}',
                       loc='left')
-            plt.savefig(path.join(output_dir+"images/", f'{grb.messagenumber}'))
+            plt.savefig(path.join(output_dir+"images/"+"Test", f'{grb.messagenumber}'))
             plt.close()
             
             cpt += 1
