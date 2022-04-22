@@ -85,6 +85,8 @@
 		
         </select>
 	<br><br>
+	<label for="dateChart1">Date Start:   </label>&emsp;&emsp;<label for="dataChart2">   Date End:</label><br>
+  	<input type="date" id="dateChart1">&emsp;<input type="date" id="dateChart2"><br><br>
 	<input class="buttonstyle" type="button" style=" margin:auto;" id = "Generate" onclick="chartGenerate()" value = "Generate Chart">
 	<br><br>
 	
@@ -307,6 +309,10 @@ $(function() {
 			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input class=\"buttonstyle\" style=\"float:right;\" type=\"button\" onclick=\"charts()\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
+			document.getElementById("dateChart1").max = $date2;
+			document.getElementById("dateChart1").min = $date1;
+			document.getElementById("dateChart2").max = $date2;
+			document.getElementById("dateChart2").min = $date1;
 			
 			
 			var $PLACElat = parseFloat($("#Lat").val()); 
