@@ -417,10 +417,10 @@ $(function() {
    		})
 		.done(function(msg) {
 			text = document.getElementById("wait");
-			text.css('display','none');
+			text.style.display = "none";
 			image = document.getElementById('gif');
      			image.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
-			image.css('display','block');
+			image.style.display = "block";
 			
 		})   
 		.fail(function(msg){
