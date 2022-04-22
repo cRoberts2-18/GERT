@@ -25,4 +25,4 @@ search system works for a single time (currently earliest in the databaae) below
 2) allow searches by date
 these are the main two points. this will leave us with a deliverable system then any other polish will be good
 
-Login accounts can be created from the sign up page but one existing login is Username: Test9999 Password: Test9999!
+Login accounts can be created from the sign up page but one existing login is Username: admin Password: admin
