@@ -4,6 +4,8 @@ import pygrib
 import mysql.connector
 import camslib
 import json
+import os 
+
 
 #intial setup for the flask system
 app= Flask(__name__)
@@ -325,8 +327,11 @@ def getGif():
     
     path=request.values.get('path')
     SearchID=request.values.get('ID')
-    camslib.download_images(path, "/home/ubuntu/data/", country, colour, "", SearchID + colour + country)
-    return(SearchID + colour + country+".gif")
+    if os.path.exists("home/ubuntu/data/GERT/static/"+searchID+colour+country+".gif")
+        return("hello")
+    else:
+        camslib.download_images(path, "/home/ubuntu/data/", country, colour, "", SearchID + colour + country)
+        return(SearchID + colour + country+".gif")
     
 #clears the users session logging them out
 @app.route('/logout/')
