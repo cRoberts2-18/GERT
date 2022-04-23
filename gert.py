@@ -328,7 +328,7 @@ def getGif():
     path=request.values.get('path')
     SearchID=request.values.get('ID')
     if os.path.exists("home/ubuntu/data/GERT/static/"+SearchID+colour+country+".gif"):
-        return("hello")
+        return(SearchID + colour + country+".gif")
     else:
         camslib.download_images(path, "/home/ubuntu/data/", country, colour, "", SearchID + colour + country)
         return(SearchID + colour + country+".gif")
