@@ -39,7 +39,7 @@
 </div>
 <div id="chart" style="width:70%; float:right;"><canvas id="myChart"></canvas></div>
 
-<!-- This code below is to show a gif form and allow them to make some changes and request a gif on the data. --!>
+<!-- This code below is to show a gif form and allow them to make some changes and request a gif on the data. -->
 <div id="gifForm" style="width:70%; float:right; display:none;">
 	<h1>Gif Options</h1>
 	<label for="colourStyle">Colour Map Style:</label><br>
@@ -78,7 +78,7 @@
 </div>
 
 
-<!-- This code below is to show a modal when the user is waiting so they know they have correctly asked for information --!>
+<!-- This code below is to show a modal when the user is waiting so they know they have correctly asked for information -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -94,7 +94,7 @@
 
 </div>
 
-<!-- This code below is to change the custiomisations for a chart to a users need based on a few options --!>
+<!-- This code below is to change the custiomisations for a chart to a users need based on a few options -->
 <div id="chartForm" style="width:70%; float:right; display:none;">
 	<h1>Chart Options</h1>
 	<label for="Longitude">Longitude:</label>
@@ -342,6 +342,7 @@ function setLimits(){
 	  var date="";
 	  var count=0;	
 	  var keys=Object.keys(dataSet[0]);
+	  //this checks the selected data types so that they can be displayed correctly on the dropdown box
 	  if(keys.includes("Carbon Monoxide")==false){
 	  	document.getElementById("CO").style.display="none";
 		document.getElementById("COLabel").style.display="none";  
@@ -378,6 +379,7 @@ function setLimits(){
 		  	count+=1;
 		  }
 	  }
+	  //clears data when a new anaytic search is opened	
 	  var i, L = document.getElementById("Longitude").options.length - 1;
    	  for(i = L; i >= 0; i--) {
       		document.getElementById("Longitude").remove(i);
@@ -419,7 +421,7 @@ function setLimits(){
 	  var dataListNO2=[];
 	  var dataListSO2=[];
 	  var dataListCH4=[];	
-		
+	  //collects data from the dataset to create a dictionary for the chart data	
 	  for(let i=0;i<dataSet.length;i++){
 		if(lat==dataSet[i]['Latitude'] && lon==dataSet[i]['Longitude']){
 			if(date1<=dataSet[i]['date'] && date2>=dataSet[i]['date']){
@@ -513,6 +515,7 @@ function onMapClickFirst(e) {
 	boxBounds = [xy1, xy2];
         notifyMessage("You clicked the map at "+lon+","+lat , "info");
 	boxClickCounter++;
+	//generates a bounding box on a 3 click cycle where the first and second define corners of the box and the 3rd clears the box so that a new one may be generated
 	if (boxClickCounter == 3) {
 		xy1 = [0,0];
 		xy2 = [0,0];
@@ -545,10 +548,12 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
+			//creates a modal to make the user wait for funciton completion
 			$("#myModal").css('display','block');
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
 			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input class=\"buttonstyle\" style=\"float:right;\" type=\"button\" onclick=\"charts()\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
+			//collects data from the get location data sidebar form
 			document.getElementById("tablepicker").max = $date2;
 			document.getElementById("tablepicker").min = $date1;
 			document.getElementById("dateChart1").max = $date2;
@@ -562,6 +567,7 @@ $(function() {
     			var $PLACElong = parseFloat($("#Long").val());
 			var $PLACElat2 = parseFloat($("#Lat2").val()); 
     			var $PLACElong2 = parseFloat($("#Long2").val());
+			//generating placeholder variables and defining them based on bounding box variables 
 			var $lat=0;
 			var $long=0;
 			var $lat2=0;
@@ -582,13 +588,14 @@ $(function() {
 				$long2=$PLACElong+0.2;
 			}
 			
+			//gets the search ID from the URL to pass to python 
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
 			
 			var $ID = urlParams.get('ID');
 			var $path = "{{ download }}";
 			
-			
+			//sends relevant data to python for .grib data computation
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('searchData')}}",
@@ -604,6 +611,7 @@ $(function() {
 			var $dictIndex=parseInt(String($date1).replaceAll("-",""));
 			var $endIndex=parseInt(String($date2).replaceAll("-",""));
 			var $count=0;
+			//data is split into arrays for each piece of data so that it can then be appended to a dictionary for its assigned date
 			while($dictIndex!=($endIndex+1)){
 				const dataArray=msg[$dictIndex].split("!");
 				if($count==0){
@@ -668,6 +676,7 @@ $(function() {
 						table+="</tr>";
 					}
 				}
+				//a table is generated for each date with only the earliest one being displayed
 				table+="</table>"
 				table=table.replaceAll("<tr></tr>","");
 				document.getElementById("Data").innerHTML+=table;
@@ -675,6 +684,7 @@ $(function() {
 				$count+=1;
 				$dictIndex+=1;
 			}
+			//data is then stored to a dictionary and then the dictionary is appended to an array of dictionaries which stores all data to be accessed by the later functions
 			var date=parseInt(String($date1).replaceAll("-",""));
 			var dateEnd=parseInt(String($date2).replaceAll("-",""));
 			while(date<=dateEnd){
