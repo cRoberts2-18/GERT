@@ -223,6 +223,7 @@ def searchData():
     return dataDict
     
     
+#this function allows the user to login if the correct details are given
 @app.route('/processLogin/', methods = ['GET', 'POST'])
 def processLogin():
     stringRow = ""
@@ -232,7 +233,7 @@ def processLogin():
         password="root",
         database="GERT"
     )
-    
+    #connection to the database is made
     mycursor = mydb.cursor()
 
     mycursor.execute("SELECT * FROM Users")
@@ -247,7 +248,9 @@ def processLogin():
                 session['LoggedIn']=True
                 return('true')
     return('false')
-
+    #checks if the database has the user entered details in it. If there is a match, login
+    
+#this function takes the data from the api request in the main page
 @app.route('/processAPICall/', methods = ['GET', 'POST'])
 def processAPICall():
     no2=0
@@ -288,15 +291,16 @@ def processAPICall():
     if methane=="true":
         variables.append("total_column_methane")
         ch4=1
-    
+    #gathers all data and sets it to a variable
     requestdict={'date': datestring,'format': fileFormat, 'time': time, 'variable': variables ,'leadtime_hour': leadtimeHour, 'type': 'forecast','area': [
             90, -180, -90,
             180,
         ]}
-    
+    #make a dictionary with all data for the request
     c = cdsapi.Client()
 
     c.retrieve(dataName,requestdict,downloadpath)
+    #makes the api call
     mydb = mysql.connector.connect(
         host="localhost",
         user="root", 
@@ -315,10 +319,11 @@ def processAPICall():
     values=(SaveID,fileName,session['uid'],SaveName,no2,so2,co,ch4,datepicker1,datepicker2)
     mycursor.execute(sql, values)
     mydb.commit()
-
+    #saves the data and the location and name of the file within the sql database.
     
     return(str(SaveID))
 
+#this function gets the data and makes a .gif file out of it, this function uses the camslib libray
 @app.route('/getGif/', methods = ['GET', 'POST'])
 def getGif():
     
@@ -327,11 +332,14 @@ def getGif():
     
     path=request.values.get('path')
     SearchID=request.values.get('ID')
+    #get the variables for the gif
     if os.path.exists("home/ubuntu/GERT/static/"+SearchID+colour+country+".gif"):
         return(SearchID + colour + country+".gif")
+    #check if the gif already exists to save processing time and strain on the server
     else:
         camslib.download_images(path, "/home/ubuntu/data/", country, colour, "", SearchID + colour + country)
         return(SearchID + colour + country+".gif")
+        #make the gif and return it
     
 #clears the users session logging them out
 @app.route('/logout/')
