@@ -2,6 +2,7 @@
 {% block content %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+<!-- This code below is to create a form and show the user what data is bein selected based on their choices --!>
 <div id="mySidebar" class="sidebar" style="width:300px; padding-top:20px; overflow-y: hidden; position:absolute;">
   <input class="sidebutton" type="Button" id="MapText" value="Map" onclick="Map()">&emsp;<input class="sidebutton" type="button" id="ViewData" value="Data" onclick="Data()">&emsp;<input class="sidebutton" type="button" id="gifButton" value="Gif" onclick="gifs()"><br><br><br>	
   <a id="searchText" style="text-align:center;">Coordinates Selected </a>
@@ -16,6 +17,7 @@
 
   
 </div>
+<!-- This code below is to define a modal for gif generation and will show the gif they have just made --!>
 <div id="myGifModal" class="modal2" style = "margin-left: auto; margin-right: auto;">
 
   <!-- Modal content -->
@@ -29,6 +31,7 @@
 	    <p id = "wait">Please Wait for Your gif to Create, This may take a while</p>
 </div></div></div>
 
+
 <div id="map" class='map'></div>
 <div id="Data">
 	<br><br><input type="date" id="tablepicker" style="float:right;" onchange="handler(event);"><br><br>
@@ -36,6 +39,7 @@
 </div>
 <div id="chart" style="width:70%; float:right;"><canvas id="myChart"></canvas></div>
 
+<!-- This code below is to show a gif form and allow them to make some changes and request a gif on the data. --!>
 <div id="gifForm" style="width:70%; float:right; display:none;">
 	<h1>Gif Options</h1>
 	<label for="colourStyle">Colour Map Style:</label><br>
@@ -73,6 +77,8 @@
 	
 </div>
 
+
+<!-- This code below is to show a modal when the user is waiting so they know they have correctly asked for information --!>
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
@@ -88,6 +94,7 @@
 
 </div>
 
+<!-- This code below is to change the custiomisations for a chart to a users need based on a few options --!>
 <div id="chartForm" style="width:70%; float:right; display:none;">
 	<h1>Chart Options</h1>
 	<label for="Longitude">Longitude:</label>
@@ -257,7 +264,7 @@ var expanded = false;
       });
 });  
 	
-	
+//this fucntion checks if the datapicker is changed when looking at the data and changes the view of data accordingly 
 function handler(e){
 	var id = parseInt(String(e.target.value).replaceAll("-",""));
 	var min= parseInt(String(document.getElementById("tablepicker").min).replaceAll("-",""));
@@ -273,6 +280,7 @@ function handler(e){
 			}catch(err){}
 		}
 	}
+	
 }
 	
 	
@@ -290,6 +298,7 @@ function setLimits(){
 	document.getElementById("datepicker2").max = end;
 	document.getElementById("datepicker2").min = start;
 	document.getElementById("datepicker2").value = end;
+	//this function gets the min and max dates and only allows for a selection between them
 }
 
     function notifyMessage(msg,styles){
@@ -298,10 +307,11 @@ function setLimits(){
                  globalPosition: 'right center'
                         
                  });
+	    //this is a custom function using notify.js that made it easier for us to make them when needed.
      }
 	
 	
-	
+	//the functions below hide and show things based on the button pressed eg when map is called everything is hidden except map
 	function Data(){	  
 	  document.getElementById("map").style.display="none";
 	  document.getElementById("Data").style.display="block";
@@ -477,13 +487,14 @@ function setLimits(){
         center: [52.770775, -1.2043467],
         zoom: 5,
         zoomControl: false
-	    
-    });
+	 //this initialises the map with the original center on Loughborough England and zoomed out enough to see the UK
+	 });
     L.control.zoom({position: 'topright'}).addTo(map);
-    
+    //this adds the zoom controls to the top right so it can be used
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    }).addTo(map);
+    }).addTo(map); //this adds the images to the map and allows it to be used
+
     
     var boundingBox = L.rectangle([[52.8, -1.266], [52.74, -1.18]], {color: "#ff00dd", weight: 1});
 	  map.addLayer(boundingBox);
@@ -526,6 +537,8 @@ function onMapClickFirst(e) {
     }
     
     map.on('click', onMapClickFirst);
+
+    
 
 	
 	
@@ -704,13 +717,13 @@ $(function() {
 			var $path = "{{ download }}";
 			var $colour = $("#colourStyle").val();
 			var $country = $("#area").val();
-			
+			// get data to be sent to python for functions
 			
     	   	$.ajax({
     			method: "POST",
       			url: "{{ url_for('getGif')}}",
 			data: {"path":$path, "ID":$ID,"colour":$colour, "country":$country}
-      			
+      			//send data to python
    		})
 		.done(function(msg) {
 			
@@ -719,7 +732,7 @@ $(function() {
 			
      			gif.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
 			gif.style.display = "block";
-			
+			//change gif url based on the search and show gif
 		})   
 		.fail(function(msg){
 			alert(msg);
@@ -742,6 +755,7 @@ span.onclick = function() {
   modal1.style.display = "none";
   document.getElementById("close").style.display="none";
 }
+	
 
 	
 	
