@@ -21,7 +21,7 @@
   <!-- Modal content -->
   <div class="modal2-content" style = "margin-left: auto; margin-right: auto;">
   <div class="modal2-header" style = "margin-left: auto; margin-right: auto;">
-      <span class="close">&times;</span>
+      <span id="close" style="display:none;" class="close">&times;</span>
       <h2 id="Header">Your Gif Of Data</h2>
     </div>
     <div class="modal2-body" style = "margin-left: auto; margin-right: auto;">
@@ -714,7 +714,7 @@ $(function() {
    		})
 		.done(function(msg) {
 			
-			
+			document.getElementById("close").style.display="block";
 			text.style.display = "none";
 			
      			gif.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
@@ -740,6 +740,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal1.style.display = "none";
+  document.getElementById("close").style.display="none";
 }
 
 	
