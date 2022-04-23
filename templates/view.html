@@ -681,6 +681,8 @@ $(function() {
 			$("#myGifModal").css('display','block');
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
+			text = document.getElementById("wait");
+			text.style.display = "block";
 			gif = document.getElementById('gif');
 			gif.style.display = "none";
 			var $ID = urlParams.get('ID');
@@ -696,8 +698,8 @@ $(function() {
       			
    		})
 		.done(function(msg) {
-			alert(msg);
-			text = document.getElementById("wait");
+			
+			
 			text.style.display = "none";
 			
      			gif.src = "{{ url_for('static', filename='PLACEHOLDER') }}".replace("PLACEHOLDER",msg);
