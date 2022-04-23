@@ -73,6 +73,22 @@
 	
 </div>
 
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="Header">Loading...</h2>
+    </div>
+    <div class="modal-body">
+      <p id="Mline1">Please wait while your data is collected</p>
+    </div>
+    <div class="modal-footer"></div>
+  </div>
+
+</div>
+
 <div id="chartForm" style="width:70%; float:right; display:none;">
 	<h1>Chart Options</h1>
 	<label for="Longitude">Longitude:</label>
@@ -568,6 +584,7 @@ $(function() {
       			
    		})
 		.done(function(msg) {
+			$("#myModal").css('display','block');
 			Data();
 			dataSet=[];
 			var splitData=[];
@@ -665,7 +682,7 @@ $(function() {
 				date+=1	
 			}
 			console.log(dataSet);
-			
+			$("#myModal").css('display','none');
 			
 			
 		})   
@@ -716,17 +733,28 @@ $(function() {
 
 
     // Get the modal
-var modal = document.getElementById("myGifModal");
-
+var modal1 = document.getElementById("myGifModal");
+var modal = document.getElementById("myModal")
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+  modal1.style.display = "none";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none"; 
 }
 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+  
+}
 	
 	
 setLimits()	
