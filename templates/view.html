@@ -533,6 +533,7 @@ function onMapClickFirst(e) {
 	
 $(function() {
 		$("#GetData").click(function () {
+			$("#myModal").css('display','block');
 			var $date1 = $("#datepicker1").val();
 			var $date2 = $("#datepicker2").val();
 			document.getElementById("Data").innerHTML="<br><br><input type=\"date\" id=\"tablepicker\" style=\"float:right;\" onchange=\"handler(event);\" value=\""+$date1+"\"><br><br><input class=\"buttonstyle\" style=\"float:right;\" type=\"button\" onclick=\"charts()\" style=\"float:right;\" value=\"analytics\" id=\"Analytics\"><br><br>"
@@ -544,7 +545,6 @@ $(function() {
 			document.getElementById("dateChart2").max = $date2;
 			document.getElementById("dateChart2").value = $date2;
 			document.getElementById("dateChart2").min = $date1;
-			
 			
 			var $PLACElat = parseFloat($("#Lat").val()); 
     			var $PLACElong = parseFloat($("#Long").val());
@@ -584,7 +584,6 @@ $(function() {
       			
    		})
 		.done(function(msg) {
-			$("#myModal").css('display','block');
 			Data();
 			dataSet=[];
 			var splitData=[];
